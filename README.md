@@ -7,9 +7,7 @@ A modern portfolio website for Mohsin Builds, showcasing web design, e-commerce 
 [View the live website](https://mohsinbuilds.netlify.app)
 
 ## Preview
-<img width="1600" height="714" alt="mwd-preserve-machine" src="https://github.com/user-attachments/assets/83e7ec15-ef2c-4039-80f5-c39e196678bb" />
-
-
+<img width="1731" height="909" alt="mohsinbuilds-social-preview" src="https://github.com/user-attachments/assets/845472c6-fd55-4dc8-924b-50d3f281a74a" />
 
 ## Featured Work
 

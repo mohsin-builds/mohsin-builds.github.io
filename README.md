@@ -8,7 +8,7 @@ A modern portfolio website for Mohsin Builds, showcasing web design, e-commerce 
 
 ## Preview
 
-![Mohsin Builds Portfolio Preview](images/portfolio-preview.png)
+![Mohsin Builds Portfolio Preview](./portfolio-preview.png)
 
 ## Featured Work
 

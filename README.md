@@ -1,10 +1,14 @@
 # Mohsin Builds — Portfolio
 
-Personal portfolio website for Mohsin Builds, showcasing modern web design, e-commerce experiences and digital systems.
+A modern portfolio website for Mohsin Builds, showcasing web design, e-commerce experiences and digital systems.
 
-## Live Website
+## Live Demo
 
-https://mohsinbuilds.netlify.app
+[View the live website](https://mohsinbuilds.netlify.app)
+
+## Preview
+
+![Mohsin Builds Portfolio Preview](images/portfolio-preview.png)
 
 ## Featured Work
 
@@ -13,14 +17,20 @@ https://mohsinbuilds.netlify.app
 - AI Business Automation System
 - Local Business Website Transformation
 
-## Focus
+## Services
 
 - Web Design & Development
 - E-Commerce
 - UI/UX
-- Digital Systems & Automation
+- Digital Systems
+- Automation
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
 
 ## About
 
-Mohsin Builds creates modern websites and digital solutions that help businesses look stronger, work smarter and grow online.# mohsin-builds-portfolio
-Personal portfolio website for Mohsin Builds — web design, e-commerce and digital systems.
+Mohsin Builds creates modern websites and digital solutions that help businesses look stronger, work smarter and grow online.

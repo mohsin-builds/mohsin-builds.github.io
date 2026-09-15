@@ -40,7 +40,17 @@
 
 
     <!-- =====================================================
-         OPEN GRAPH
+         CANONICAL URL
+    ====================================================== -->
+
+    <link
+        rel="canonical"
+        href="https://mohsin-builds.github.io/"
+    >
+
+
+    <!-- =====================================================
+         OPEN GRAPH / SOCIAL SHARING
     ====================================================== -->
 
     <meta
@@ -49,53 +59,78 @@
     >
 
     <meta
+        property="og:site_name"
+        content="Mohsin Builds"
+    >
+
+    <meta
         property="og:title"
-        content="Mohsin Builds | Digital Systems for Modern Businesses"
+        content="Mohsin Builds | Websites, E-Commerce & Digital Systems"
     >
 
     <meta
         property="og:description"
-        content="Premium websites, e-commerce experiences, AI automation and digital systems."
+        content="Premium websites, e-commerce experiences, AI automation and digital systems designed around real business needs."
     >
 
     <meta
-    property="og:site_name"
-    content="Mohsin Builds"
+        property="og:url"
+        content="https://mohsin-builds.github.io/"
     >
 
     <meta
-    name="twitter:card"
-    content="summary_large_image"
+        property="og:image"
+        content="https://mohsin-builds.github.io/images/mohsinbuilds-social-preview.png"
     >
 
     <meta
-    name="twitter:title"
-    content="Mohsin Builds | Digital Systems for Modern Businesses"
+        property="og:image:width"
+        content="1200"
     >
 
     <meta
-    name="twitter:description"
-    content="Premium websites, e-commerce experiences, AI automation and digital systems."
+        property="og:image:height"
+        content="630"
     >
 
     <meta
-    property="og:image"
-    content="https://mohsinbuilds.netlify.app/images/mohsinbuilds-social-preview.png"
->
-
-    <meta
-    property="og:image:width"
-    content="1200"
+        property="og:image:type"
+        content="image/png"
     >
 
     <meta
-    property="og:image:height"
-    content="630"
+        property="og:image:alt"
+        content="Mohsin Builds — Web Development, E-Commerce and Digital Systems"
+    >
+
+
+    <!-- =====================================================
+         TWITTER / X
+    ====================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
     >
 
     <meta
-    property="og:image:alt"
-    content="Mohsin Builds — Web Development, E-Commerce and AI Automation"
+        name="twitter:title"
+        content="Mohsin Builds | Websites, E-Commerce & Digital Systems"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Premium websites, e-commerce experiences, AI automation and digital systems designed around real business needs."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://mohsin-builds.github.io/images/mohsinbuilds-social-preview.png"
+    >
+
+    <meta
+        name="twitter:image:alt"
+        content="Mohsin Builds — Web Development, E-Commerce and Digital Systems"
     >
 
 
@@ -106,6 +141,11 @@
     <link
         rel="icon"
         type="image/png"
+        href="images/favicon.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
         href="images/favicon.png"
     >
 
@@ -152,6 +192,26 @@
         rel="stylesheet"
         href="style.css"
     >
+
+    <!-- =====================================================
+         STRUCTURED DATA
+    ====================================================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Mohsin Builds",
+        "url": "https://mohsin-builds.github.io/",
+        "description": "Premium websites, e-commerce experiences, AI automation and digital systems designed around real business needs.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mohsin Builds",
+            "url": "https://mohsin-builds.github.io/",
+            "logo": "https://mohsin-builds.github.io/images/logo-full.png"
+        }
+    }
+    </script>
 
 </head>
 
@@ -1116,31 +1176,29 @@
                         break-even pricing, stress scenarios and commercial risk before selling.
                     </p>
 
-                        <div class="selected-project-actions">
+                    <div class="selected-project-actions">
 
-                            <a
-                                href="https://mohsin-builds.github.io/product-opportunity-engine/"
-                                class="selected-project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Open Product Opportunity Engine live demo"
-                            >
-                                <span>View Live Product</span>
-                                <span>→</span>
-                            </a>
+                        <a
+                            href="https://mohsin-builds.github.io/product-opportunity-engine/"
+                            class="selected-project-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span>View Live Product</span>
+                            <span>→</span>
+                        </a>
 
-                            <a
-                                href="https://github.com/mohsin-builds/product-opportunity-engine"
-                                class="selected-project-link selected-project-link--secondary"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View Product Opportunity Engine source code on GitHub"
-                            >
-                                <span>GitHub</span>
-                                <span>↗</span>
-                            </a>
+                        <a
+                            href="https://github.com/mohsin-builds/product-opportunity-engine"
+                            class="selected-project-link selected-project-link--secondary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span>GitHub</span>
+                            <span>↗</span>
+                        </a>
 
-                        </div>
+                    </div>
 
                 </div>
 

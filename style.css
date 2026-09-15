@@ -9367,3 +9367,43 @@ button:focus-visible {
   letter-spacing: -1px;
   line-height: 1;
 }
+
+/* =========================================================
+   PORTFOLIO PHASE 1 — REAL PROJECT PROOF
+   Keeps the locked visual system; updates selected work only.
+========================================================= */
+
+@media (min-width: 951px) {
+    .more-work-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr))
+            0.72fr;
+    }
+}
+
+.selected-project-actions {
+    margin-top: 9px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.selected-project-actions .selected-project-link {
+    margin-top: 0;
+}
+
+.selected-project-link--secondary {
+    color: rgba(242, 240, 235, 0.52);
+}
+
+.selected-project-link--secondary:hover {
+    color: rgba(242, 240, 235, 0.86);
+}
+
+@media (max-width: 580px) {
+    .selected-project-actions {
+        margin-top: 12px;
+        gap: 10px 18px;
+    }
+}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mohsin-builds.github.io/sitemap.xml
+Sitemap: https://mohsinbuilds.com/sitemap.xml

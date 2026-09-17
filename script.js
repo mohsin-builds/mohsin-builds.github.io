@@ -625,3 +625,136 @@ else {
     });
 
 }
+
+/* =========================================================
+   GOOGLE ANALYTICS — BUSINESS EVENTS
+========================================================= */
+
+function trackEvent(eventName, element) {
+
+    if (typeof window.gtag !== "function") {
+        return;
+    }
+
+    const linkText =
+        element.textContent
+            .trim()
+            .replace(/\s+/g, " ");
+
+    const linkUrl =
+        element.getAttribute("href") || "";
+
+    gtag("event", eventName, {
+        link_text: linkText,
+        link_url: linkUrl
+    });
+}
+
+
+/* CASE STUDY */
+document
+    .querySelectorAll(".portfolio-feature__link")
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+            trackEvent(
+                "case_study_click",
+                link
+            );
+        });
+
+    });
+
+
+/* LIVE PROJECTS */
+document
+    .querySelectorAll(
+        ".selected-project-link:not(.selected-project-link--secondary)"
+    )
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+            trackEvent(
+                "project_live_click",
+                link
+            );
+        });
+
+    });
+
+
+/* PROJECT SOURCE / GITHUB */
+document
+    .querySelectorAll(
+        ".selected-project-link--secondary"
+    )
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+            trackEvent(
+                "project_source_click",
+                link
+            );
+        });
+
+    });
+
+
+/* SERVICE LINKS */
+document
+    .querySelectorAll(".service-link")
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+            trackEvent(
+                "service_click",
+                link
+            );
+        });
+
+    });
+
+
+/* EMAIL */
+document
+    .querySelectorAll(".final-email-button")
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+            trackEvent(
+                "email_click",
+                link
+            );
+        });
+
+    });
+
+
+/* WHATSAPP */
+document
+    .querySelectorAll(".final-call-button")
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+            trackEvent(
+                "whatsapp_click",
+                link
+            );
+        });
+
+    });
+
+
+/* SOCIAL LINKS */
+document
+    .querySelectorAll(".footer-socials a")
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+            trackEvent(
+                "social_click",
+                link
+            );
+        });
+
+    });

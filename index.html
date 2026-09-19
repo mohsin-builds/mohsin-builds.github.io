@@ -2,17 +2,23 @@
 <html lang="en">
 
 <head>
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+    ====================================================== -->
 
-    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRW30YBDE9"></script>
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRW30YBDE9"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-            gtag('config', 'G-VRW30YBDE9');
-        </script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+        gtag("config", "G-VRW30YBDE9");
+    </script>
+
 
     <!-- =====================================================
          BASIC SEO
@@ -26,17 +32,17 @@
     >
 
     <title>
-        Mohsin Builds | Websites, E-Commerce & AI Systems
+        Mohsin Builds | Designer, Developer & Product Builder
     </title>
 
     <meta
         name="description"
-        content="Mohsin Builds creates premium websites, e-commerce experiences, AI automation and digital systems designed around real business needs."
+        content="Mohsin Builds is the portfolio of Mohsin Iqbal — designer, developer, product builder and founder of Mohsin Labs. Exploring digital products, intelligent systems and real business solutions."
     >
 
     <meta
         name="author"
-        content="Mohsin Builds"
+        content="Mohsin Iqbal"
     >
 
     <meta
@@ -46,124 +52,96 @@
 
     <meta
         name="theme-color"
-        content="#03070d"
+        content="#04070b"
     >
 
 
- <!-- =====================================================
-     CANONICAL URL
-====================================================== -->
+    <!-- =====================================================
+         CANONICAL
+    ====================================================== -->
 
-            <link
-                rel="canonical"
-                href="https://mohsinbuilds.com/"
-            >
-
-
-            <!-- =====================================================
-                OPEN GRAPH / SOCIAL SHARING
-            ====================================================== -->
-
-            <meta
-                property="og:type"
-                content="website"
-            >
-
-            <meta
-                property="og:site_name"
-                content="Mohsin Builds"
-            >
-
-            <meta
-                property="og:title"
-                content="Mohsin Builds | Websites, E-Commerce & Digital Systems"
-            >
-
-            <meta
-                property="og:description"
-                content="Premium websites, e-commerce experiences, AI automation and digital systems designed around real business needs."
-            >
-
-            <meta
-                property="og:url"
-                content="https://mohsinbuilds.com/"
-            >
-
-            <meta
-                property="og:image"
-                content="https://mohsinbuilds.com/images/mohsinbuilds-social-preview.png"
-            >
-
-            <meta
-                property="og:image:width"
-                content="1200"
-            >
-
-            <meta
-                property="og:image:height"
-                content="630"
-            >
-
-            <meta
-                property="og:image:type"
-                content="image/png"
-            >
-
-            <meta
-                property="og:image:alt"
-                content="Mohsin Builds — Web Development, E-Commerce and Digital Systems"
-            >
+    <link
+        rel="canonical"
+        href="https://mohsinbuilds.com/"
+    >
 
 
-            <!-- =====================================================
-                TWITTER / X
-            ====================================================== -->
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
 
-            <meta
-                name="twitter:card"
-                content="summary_large_image"
-            >
+    <meta
+        property="og:type"
+        content="website"
+    >
 
-            <meta
-                name="twitter:title"
-                content="Mohsin Builds | Websites, E-Commerce & Digital Systems"
-            >
+    <meta
+        property="og:site_name"
+        content="Mohsin Builds"
+    >
 
-            <meta
-                name="twitter:description"
-                content="Premium websites, e-commerce experiences, AI automation and digital systems designed around real business needs."
-            >
+    <meta
+        property="og:title"
+        content="Mohsin Builds — The Builder's Environment"
+    >
 
-            <meta
-                name="twitter:image"
-                content="https://mohsinbuilds.com/images/mohsinbuilds-social-preview.png"
-            >
+    <meta
+        property="og:description"
+        content="Design. Develop. Automate. Scale. Explore the digital systems, products and ideas built by Mohsin Iqbal."
+    >
 
-            <meta
-                name="twitter:image:alt"
-                content="Mohsin Builds — Web Development, E-Commerce and Digital Systems"
-            >
+    <meta
+        property="og:url"
+        content="https://mohsinbuilds.com/"
+    >
 
-<!-- =====================================================
-     FAVICON
-====================================================== -->
+    <meta
+        property="og:image"
+        content="https://mohsinbuilds.com/images/mohsinbuilds-social-preview.png"
+    >
 
-            <link
-                rel="icon"
-                type="image/png"
-                sizes="32x32"
-                href="/images/mohsin-builds-favicon.png"
-            >
 
-            <link
-                rel="shortcut icon"
-                href="/favicon.ico"
-            >
+    <!-- =====================================================
+         TWITTER / X
+    ====================================================== -->
 
-            <link
-                rel="apple-touch-icon"
-                href="/images/mohsin-builds-favicon.png"
-            >
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Mohsin Builds — The Builder's Environment"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Digital products, systems and experiences designed around real problems."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://mohsinbuilds.com/images/mohsinbuilds-social-preview.png"
+    >
+
+
+    <!-- =====================================================
+         FAVICONS
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/images/mohsin-builds-favicon.png"
+    >
+
+    <link
+        rel="shortcut icon"
+        href="/favicon.ico"
+    >
+
 
     <!-- =====================================================
          FONTS
@@ -181,60 +159,70 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Font Awesome Icons -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
-
-    <!-- HERO IMAGE PRELOAD -->
-    <link
-        rel="preload"
-        as="image"
-        href="images/laptop-hero-mockup.webp"
-        fetchpriority="high"
-    >
 
     <!-- =====================================================
-         CSS
+         V2 CSS
     ====================================================== -->
 
     <link
         rel="stylesheet"
-        href="style.css"
+        href="css/base.css"
     >
+
+    <link
+        rel="stylesheet"
+        href="css/founder-studio.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
 
     <!-- =====================================================
          STRUCTURED DATA
     ====================================================== -->
 
-<!-- =====================================================
-     STRUCTURED DATA
-====================================================== -->
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Mohsin Builds",
-    "url": "https://mohsinbuilds.com/",
-    "description": "Premium websites, e-commerce experiences, AI automation and digital systems designed around real business needs.",
-    "publisher": {
-        "@type": "Organization",
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
         "name": "Mohsin Builds",
         "url": "https://mohsinbuilds.com/",
-        "logo": "https://mohsinbuilds.com/images/logo-full.png"
+        "description": "Portfolio of Mohsin Iqbal — designer, developer, product builder and founder of Mohsin Labs.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mohsin Builds",
+            "url": "https://mohsinbuilds.com/",
+            "logo": "https://mohsinbuilds.com/images/logo-full.png"
+        }
     }
-}
-</script>
+    </script>
 </head>
 
 
 <body>
+
+    <!-- =====================================================
+         AMBIENT BACKGROUND
+    ====================================================== -->
+
+    <div class="ambient-world" aria-hidden="true">
+
+        <div class="ambient-world__noise"></div>
+
+        <div class="ambient-world__blue"></div>
+
+        <div class="ambient-world__violet"></div>
+
+        <div class="ambient-world__warm"></div>
+
+    </div>
 
 
     <!-- =====================================================
@@ -243,10 +231,7 @@
 
     <header class="site-header">
 
-        <div class="header-inner">
-
-
-            <!-- LOGO -->
+        <div class="site-header__inner">
 
             <a
                 href="#home"
@@ -257,83 +242,91 @@
                 <img
                     src="images/logo-full.png"
                     alt="Mohsin Builds"
-                    class="brand-logo"
+                    class="brand__logo"
                 >
 
             </a>
 
 
-
-            <!-- DESKTOP NAV -->
-
             <nav
                 class="main-nav"
-                aria-label="Primary navigation"
+                aria-label="Main navigation"
             >
 
-                <a href="#work">
+                <a
+                    href="#home"
+                    class="main-nav__link is-active"
+                >
+                    <span>01</span>
+                    Home
+                </a>
+
+                <a
+                    href="#work"
+                    class="main-nav__link"
+                >
+                    <span>02</span>
                     Work
                 </a>
 
-                <a href="#services">
-                    Services
+                <a
+                    href="#systems"
+                    class="main-nav__link"
+                >
+                    <span>03</span>
+                    Systems
                 </a>
 
-                <a href="#about">
+                <a
+                    href="#labs"
+                    class="main-nav__link"
+                >
+                    <span>04</span>
+                    Labs
+                </a>
+
+                <a
+                    href="#about"
+                    class="main-nav__link"
+                >
+                    <span>05</span>
                     About
-                </a>
-
-                <a href="#process">
-                    Process
-                </a>
-
-                <a href="#contact">
-                    Contact
                 </a>
 
             </nav>
 
 
+            <a
+                href="mailto:mohsinbuilds@gmail.com"
+                class="header-cta"
+            >
 
-            <!-- HEADER ACTIONS -->
+                <span>
+                    LET'S BUILD
+                </span>
 
-            <div class="header-actions">
+                <span aria-hidden="true">
+                    ↗
+                </span>
 
-                <a
-                    href="mailto:mohsinbuilds@gmail.com"
-                    class="header-cta"
-                >
-
-                    <span>
-                        Let's Talk
-                    </span>
-
-                    <span class="header-cta-arrow">
-                        ↗
-                    </span>
-
-                </a>
+            </a>
 
 
-                <button
-                    class="menu-toggle"
-                    type="button"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false"
-                >
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
 
-                    <span></span>
-                    <span></span>
+                <span></span>
+                <span></span>
 
-                </button>
-
-            </div>
-
+            </button>
 
         </div>
 
     </header>
-
 
 
     <!-- =====================================================
@@ -345,1780 +338,764 @@
         aria-hidden="true"
     >
 
-        <nav>
+        <a href="#home">
+            Home
+        </a>
 
-            <a href="#work">
-                Work
-            </a>
+        <a href="#work">
+            Work
+        </a>
 
-            <a href="#services">
-                Services
-            </a>
+        <a href="#systems">
+            Systems
+        </a>
 
-            <a href="#about">
-                About
-            </a>
+        <a href="#labs">
+            Mohsin Labs
+        </a>
 
-            <a href="#process">
-                Process
-            </a>
+        <a href="#about">
+            About
+        </a>
 
-            <a href="#contact">
-                Contact
-            </a>
-
-            <a href="mailto:mohsinbuilds@gmail.com">
-                Let's Talk
-            </a>
-
-        </nav>
+        <a href="mailto:mohsinbuilds@gmail.com">
+            Contact
+        </a>
 
     </div>
 
 
-
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
     <main>
 
-
         <!-- =================================================
-             SECTION 01 — HERO
+             SECTION 01 — FOUNDER STUDIO
         ================================================== -->
 
         <section
-            class="hero"
+            class="founder-studio"
             id="home"
-            aria-labelledby="hero-title"
         >
 
+            <!-- CINEMATIC ENVIRONMENT -->
 
-            <div class="hero-inner">
+           <div
+    class="studio-environment"
+    aria-hidden="true"
+>
+
+    <!-- =========================================
+         ARCHITECTURAL WINDOW
+    ========================================== -->
+
+    <div class="studio-window">
+
+        <div class="studio-window__sky"></div>
+
+        <div class="studio-window__moon"></div>
+
+        <div class="studio-window__horizon"></div>
 
 
-                <!-- =========================================
-                     LEFT CONTENT
-                ========================================== -->
+        <div class="studio-window__city">
 
-                <div class="hero-copy">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
 
 
-                    <p class="hero-kicker">
+        <div class="studio-window__frame studio-window__frame--one"></div>
 
-                        DIGITAL SYSTEMS. REAL IMPACT.
+        <div class="studio-window__frame studio-window__frame--two"></div>
+
+        <div class="studio-window__frame studio-window__frame--three"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         RIGHT ARCHITECTURAL WALL
+    ========================================== -->
+
+    <div class="studio-wall">
+
+        <div class="studio-wall__copy">
+
+            <span>IDEAS</span>
+
+            <span>DESIGN</span>
+
+            <span>CODE</span>
+
+            <span>AUTOMATE</span>
+
+            <span>SCALE</span>
+
+            <span>REPEAT</span>
+
+        </div>
+
+
+        <div class="studio-shelf">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         DESK
+    ========================================== -->
+
+    <div class="studio-desk">
+
+        <div class="studio-desk__surface"></div>
+
+        <div class="studio-desk__edge"></div>
+
+
+        <div class="studio-monitor">
+
+            <div class="studio-monitor__screen">
+
+                <span>
+                    MOHSIN
+                </span>
+
+                <small>
+                    BUILD SYSTEM
+                </small>
+
+            </div>
+
+            <div class="studio-monitor__stand"></div>
+
+        </div>
+
+
+        <div class="studio-laptop">
+
+            <div class="studio-laptop__screen">
+
+                <span>
+                    M
+                </span>
+
+            </div>
+
+            <div class="studio-laptop__base"></div>
+
+        </div>
+
+
+        <div class="studio-books">
+
+            <span>DESIGN</span>
+
+            <span>TECHNOLOGY</span>
+
+            <span>BUSINESS</span>
+
+        </div>
+
+
+        <div class="studio-mug">
+            M
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         WARM PRACTICAL LAMP
+    ========================================== -->
+
+    <div class="studio-lamp">
+
+        <div class="studio-lamp__shade"></div>
+
+        <div class="studio-lamp__stem"></div>
+
+        <div class="studio-lamp__base"></div>
+
+        <div class="studio-lamp__glow"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         CHAIR / FOUNDER SILHOUETTE
+    ========================================== -->
+
+    <div class="studio-chair">
+
+        <div class="studio-chair__back"></div>
+
+        <div class="studio-chair__seat"></div>
+
+        <div class="studio-chair__stem"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         FLOOR
+    ========================================== -->
+
+    <div class="studio-floor">
+
+        <div class="studio-floor__reflection"></div>
+
+        <div class="studio-floor__line studio-floor__line--1"></div>
+
+        <div class="studio-floor__line studio-floor__line--2"></div>
+
+        <div class="studio-floor__line studio-floor__line--3"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         ATMOSPHERIC LIGHTS
+    ========================================== -->
+
+    <div class="studio-light studio-light--blue"></div>
+
+    <div class="studio-light studio-light--violet"></div>
+
+    <div class="studio-light studio-light--warm"></div>
+
+    <div class="studio-pointer-light"></div>
+
+</div>
+
+
+            <!-- MAIN GRID -->
+
+            <div class="founder-studio__inner">
+
+                <!-- =====================================
+                     LEFT — FOUNDER
+                ====================================== -->
+
+                <div class="founder-copy">
+
+                    <p class="founder-kicker">
+
+                        <span></span>
+
+                        PORTFOLIO V2 — THE BUILDER'S ENVIRONMENT
 
                     </p>
 
 
+                    <h1 class="founder-title">
 
-                    <h1 id="hero-title">
+                        I build digital
 
-                        <span>
-                            I build digital
-                        </span>
+                        <em>
+                            systems
+                        </em>
 
-                        <span>
-                            experiences that
-                        </span>
+                        that turn
 
-                        <span>
-                            <strong>move</strong> businesses
-                        </span>
-
-                        <span class="hero-forward">
-                            forward.
-                        </span>
+                        <strong>
+                            ideas into impact.
+                        </strong>
 
                     </h1>
 
 
+                    <p class="founder-description">
 
-                    <p class="hero-description">
-                        Modern websites, e-commerce experiences and digital systems built to solve real business problems and support growth.
+                        Designer, developer and product builder creating
+                        digital products, intelligent systems and experiences
+                        around real business problems.
+
                     </p>
 
 
+                    <p class="founder-role">
 
-                    <!-- HERO BUTTONS -->
+                        DESIGNER · DEVELOPER · PRODUCT BUILDER
+                        <br>
+                        FOUNDER OF MOHSIN LABS
 
-                    <div class="hero-actions">
+                    </p>
 
+
+                    <div class="founder-actions">
 
                         <a
                             href="#work"
-                            class="hero-button hero-button-primary"
+                            class="button button--primary"
                         >
 
                             <span>
-                                View My Work
+                                Explore My Work
                             </span>
 
-                            <span class="button-arrow">
+                            <span>
                                 →
                             </span>
 
                         </a>
 
 
-
-                        <a
-                            href="mailto:mohsinbuilds@gmail.com"
-                            class="hero-button hero-button-secondary"
+                        <button
+                            class="button button--secondary"
+                            type="button"
+                            data-enter-environment
                         >
 
+                            <span class="button__cube">
+                                ◇
+                            </span>
+
                             <span>
-                                Start a Project
+                                Enter Environment
                             </span>
 
-                            <span class="round-arrow">
-                                ↗
-                            </span>
-
-                        </a>
-
+                        </button>
 
                     </div>
 
 
+                    <div class="founder-stats">
 
-                    <!-- TRUST -->
+                        <div>
 
-                    <p class="hero-trust">
-
-                        Built for ambitious businesses ready to strengthen their digital presence.
-
-                    </p>
-
-
-                </div>
-
-
-
-                <!-- =========================================
-                     RIGHT VISUAL
-                ========================================== -->
-
-                <div class="hero-visual">
-
-
-                    <img
-                        src="images/laptop-hero-mockup.webp"
-                        alt="MWD Italia automotive website redesign presented on a premium laptop"
-                        class="hero-visual-image"
-                        fetchpriority="high"
-                        loading="eager"
-                    >
-
-
-                    <!-- FEATURED PROJECT -->
-
-                    <div class="featured-project">
-
-
-                        <p class="featured-label">
-
-                            FEATURED PROJECT
-
-                        </p>
-
-
-                        <div class="featured-project-row">
-
+                            <strong>
+                                10+
+                            </strong>
 
                             <span>
-                                MWD ITALIA
+                                Projects
                             </span>
-
-
-                            <a
-                                href="#work"
-                                aria-label="View MWD Italia project"
-                            >
-                                ↗
-                            </a>
-
 
                         </div>
 
 
+                        <div>
+
+                            <strong>
+                                5+
+                            </strong>
+
+                            <span>
+                                Years
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                100%
+                            </strong>
+
+                            <span>
+                                Focused
+                            </span>
+
+                        </div>
+
                     </div>
+
+                </div>
+
+
+                <!-- =====================================
+                     CENTER — ECOSYSTEM
+                ====================================== -->
+
+                <div
+                    class="ecosystem-scene"
+                    id="systems"
+                >
+
+                    <!-- REAL 3D WORLD -->
+
+                    <div class="ecosystem-webgl">
+
+                        <canvas
+                            id="ecosystem-canvas"
+                            aria-label="Interactive Mohsin Builds digital ecosystem"
+                        ></canvas>
+
+                    </div>
+
+
+                    <!-- HTML LABEL OVERLAY -->
+
+                    <div class="ecosystem-labels">
+
+                        <button
+                            class="world-label world-label--labs"
+                            type="button"
+                            data-world-node="labs"
+                        >
+
+                            <span class="world-label__eyebrow">
+                                FLAGSHIP PROJECT
+                            </span>
+
+                            <strong>
+                                MOHSIN LABS
+                            </strong>
+
+                            <small>
+                                Experimental Products
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="world-label world-label--web"
+                            type="button"
+                            data-world-node="web"
+                        >
+
+                            <strong>
+                                WEB EXPERIENCES
+                            </strong>
+
+                            <small>
+                                Design + Development
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="world-label world-label--commerce"
+                            type="button"
+                            data-world-node="commerce"
+                        >
+
+                            <strong>
+                                E-COMMERCE
+                            </strong>
+
+                            <small>
+                                Digital Commerce
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="world-label world-label--automation"
+                            type="button"
+                            data-world-node="automation"
+                        >
+
+                            <strong>
+                                AI & AUTOMATION
+                            </strong>
+
+                            <small>
+                                Smarter Workflows
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="world-label world-label--business"
+                            type="button"
+                            data-world-node="business"
+                        >
+
+                            <strong>
+                                BUSINESS SYSTEMS
+                            </strong>
+
+                            <small>
+                                People + Processes
+                            </small>
+
+                        </button>
+
+</div>
+
+
+<div class="ecosystem-title">
+
+    <span>
+        MY ECOSYSTEM
+    </span>
+
+    <small>
+        PROJECTS · SYSTEMS · PRODUCTS · IMPACT
+    </small>
+
+</div>
 
 
                 </div>
 
 
+                <!-- =====================================
+                     RIGHT — LIVE SYSTEM PANEL
+                ====================================== -->
+
+                <aside class="studio-sidebar">
+
+                    <div class="studio-sidebar__intro">
+
+                        <span>
+                            ACTIVE SYSTEM
+                        </span>
+
+                        <span class="system-status">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="system-detail"
+                        data-system-detail
+                    >
+
+                        <p class="system-detail__index">
+                            01 / 06
+                        </p>
+
+                        <p class="system-detail__label">
+                            FLAGSHIP PROJECT
+                        </p>
+
+                        <h2>
+                            Mohsin Labs
+                        </h2>
+
+                        <p>
+                            Experimental digital products, intelligent
+                            systems and tools built around real-world
+                            problems.
+                        </p>
+
+                        <div class="system-detail__meta">
+
+                            <span>
+                                PRODUCT
+                            </span>
+
+                            <span>
+                                SYSTEMS
+                            </span>
+
+                            <span>
+                                LAB
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="#work"
+                            class="system-detail__link"
+                        >
+
+                            Explore Project
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                    <div class="studio-activity">
+
+    <div class="studio-activity__header">
+
+        <span>
+            LIVE ACTIVITY
+        </span>
+
+        <span>
+            SYSTEM STATUS
+        </span>
+
+    </div>
+
+
+    <div class="studio-activity__item">
+
+        <span class="activity-dot activity-dot--blue"></span>
+
+        <span>
+            Digital systems online
+        </span>
+
+        <strong>
+            06
+        </strong>
+
+    </div>
+
+
+    <div class="studio-activity__item">
+
+        <span class="activity-dot activity-dot--violet"></span>
+
+        <span>
+            Products in ecosystem
+        </span>
+
+        <strong>
+            04
+        </strong>
+
+    </div>
+
+
+    <div class="studio-activity__item">
+
+        <span class="activity-dot activity-dot--green"></span>
+
+        <span>
+            Portfolio status
+        </span>
+
+        <strong>
+            LIVE
+        </strong>
+
+    </div>
+
+
+    <div class="activity-graph">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</div>
+
+
+                    <div class="studio-philosophy">
+
+                        <p>
+                            SAME HUMAN.
+                            <br>
+                            BIGGER SYSTEMS.
+                        </p>
+
+                    </div>
+
+                </aside>
+
             </div>
 
 
+            <!-- BOTTOM -->
 
-            <!-- BOTTOM LINE -->
+            <div class="founder-studio__bottom">
 
-            <div
-                class="hero-bottom-line"
-                aria-hidden="true"
-            ></div>
+                <div class="founder-location">
 
+                    <span></span>
+
+                    BUILDING FROM EUROPE
+                    <br>
+                    FOR THE WORLD
+
+                </div>
+
+
+                <a
+                    href="#work"
+                    class="scroll-cue"
+                >
+
+                    <span class="scroll-cue__mouse"></span>
+
+                    SCROLL TO EXPLORE
+
+                </a>
+
+
+                <p class="founder-quote">
+
+                    “Discipline turns ideas into freedom.”
+
+                    <span>
+                        — MOHSIN IQBAL
+                    </span>
+
+                </p>
+
+            </div>
 
         </section>
 
 
-
         <!-- =================================================
-             NEXT SECTIONS
+             SECTION 02 PLACEHOLDER
+             WE BUILD THIS NEXT.
         ================================================== -->
 
-        <!-- =====================================================
-     SECTION 02 — WHAT I DO
-====================================================== -->
-
-<section
-    class="services-strip"
-    id="services"
-    aria-labelledby="services-title"
->
-
-    <div class="services-inner">
-
-
-        <!-- SECTION LABEL -->
-
-        <p
-            class="services-label"
-            id="services-title"
+        <section
+            class="next-stage"
+            id="work"
         >
-            WHAT I DO
-        </p>
 
-
-
-        <!-- SERVICES GRID -->
-
-        <div class="services-grid">
-
-
-            <!-- =========================================
-                 SERVICE 01
-            ========================================== -->
-
-            <article class="service-item">
-
-
-                <div class="service-heading">
-
-
-                    <span
-                        class="service-icon"
-                        aria-hidden="true"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-
-                            <rect
-                                x="3"
-                                y="4"
-                                width="18"
-                                height="14"
-                                rx="1.7"
-                                stroke="currentColor"
-                                stroke-width="1"
-                            />
-
-                            <path
-                                d="M8.5 21H15.5"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                            />
-
-                            <path
-                                d="M12 18V21"
-                                stroke="currentColor"
-                                stroke-width="1"
-                            />
-
-                            <path
-                                d="M14.4 8.2L11.1 11.5"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                            />
-
-                            <path
-                                d="M12.2 8.2H14.4V10.4"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-
-                        </svg>
-
-                    </span>
-
-
-                    <h3>
-                        Website Design & Development
-                    </h3>
-
-
-                </div>
-
-
-
-                <p class="service-description">
-
-                    Modern, responsive websites built for clarity, performance and conversion.
-
-                </p>
-
-
-
-                <a
-                    href="#work"
-                    class="service-link"
-                >
-
-                    <span>
-                        Learn more
-                    </span>
-
-                    <span class="service-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-            </article>
-
-
-
-            <!-- =========================================
-                 SERVICE 02
-            ========================================== -->
-
-            <article class="service-item">
-
-
-                <div class="service-heading">
-
-
-                    <span
-                        class="service-icon"
-                        aria-hidden="true"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-
-                            <path
-                                d="M2.5 4H5L7.2 15H18.3L21 7H6"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-
-                            <circle
-                                cx="8.5"
-                                cy="19"
-                                r="1.2"
-                                stroke="currentColor"
-                                stroke-width="1"
-                            />
-
-                            <circle
-                                cx="17.5"
-                                cy="19"
-                                r="1.2"
-                                stroke="currentColor"
-                                stroke-width="1"
-                            />
-
-                        </svg>
-
-                    </span>
-
-
-                    <h3>
-                        E-Commerce Solutions
-                    </h3>
-
-
-                </div>
-
-
-
-                <p class="service-description">
-
-                    Online stores designed to build trust, 
-                    simplify shopping and support sales.
-
-                </p>
-
-
-
-                <a
-                    href="#work"
-                    class="service-link"
-                >
-
-                    <span>
-                        Learn more
-                    </span>
-
-                    <span class="service-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-            </article>
-
-
-
-            <!-- =========================================
-                 SERVICE 03
-            ========================================== -->
-
-            <article class="service-item">
-
-
-                <div class="service-heading">
-
-
-                    <span
-                        class="service-icon"
-                        aria-hidden="true"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-
-                            <path
-                                d="M12 3L13.4 8.1L18 10L13.4 11.9L12 17L10.6 11.9L6 10L10.6 8.1L12 3Z"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linejoin="round"
-                            />
-
-                            <path
-                                d="M19 3V7"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                            />
-
-                            <path
-                                d="M17 5H21"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                            />
-
-                            <path
-                                d="M5 16V20"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                            />
-
-                            <path
-                                d="M3 18H7"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linecap="round"
-                            />
-
-                        </svg>
-
-                    </span>
-
-
-                    <h3>
-                        AI &amp; Automation Systems
-                    </h3>
-
-
-                </div>
-
-
-
-                <p class="service-description">
-
-                    Automate workflows, reduce manual
-                    work and operate smarter.
-
-                </p>
-
-
-
-                <a
-                    href="#work"
-                    class="service-link"
-                >
-
-                    <span>
-                        Learn more
-                    </span>
-
-                    <span class="service-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-            </article>
-
-
-
-            <!-- =========================================
-                 SERVICE 04
-            ========================================== -->
-
-            <article class="service-item">
-
-
-                <div class="service-heading">
-
-
-                    <span
-                        class="service-icon"
-                        aria-hidden="true"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-
-                            <path
-                                d="M12 2.8L20 7.3V16.7L12 21.2L4 16.7V7.3L12 2.8Z"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linejoin="round"
-                            />
-
-                            <path
-                                d="M4.5 7.6L12 12L19.5 7.6"
-                                stroke="currentColor"
-                                stroke-width="1"
-                                stroke-linejoin="round"
-                            />
-
-                            <path
-                                d="M12 12V21"
-                                stroke="currentColor"
-                                stroke-width="1"
-                            />
-
-                        </svg>
-
-                    </span>
-
-
-                    <h3>
-                        Custom Business Systems
-                    </h3>
-
-
-                </div>
-
-
-
-                <p class="service-description">
-
-                    Dashboards, internal tools and custom
-                    platforms built around your business.
-
-                </p>
-
-
-
-                <a
-                    href="#work"
-                    class="service-link"
-                >
-
-                    <span>
-                        Learn more
-                    </span>
-
-                    <span class="service-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     SECTION 03 — FEATURED WORK
-====================================================== -->
-
-<section
-    class="portfolio-feature"
-    id="work"
-    aria-labelledby="portfolio-feature-title"
->
-    <div class="portfolio-feature__inner">
-
-
-        <!-- =========================================
-             LEFT — PROJECT INFORMATION
-        ========================================== -->
-
-        <div class="portfolio-feature__content">
-
-            <p class="portfolio-feature__eyebrow">
-                FEATURED WORK
+            <p class="next-stage__eyebrow">
+                NEXT ENVIRONMENT
             </p>
 
-
-            <div class="portfolio-feature__number">
-
-                <span>01</span>
-
-                <i aria-hidden="true"></i>
-
-            </div>
-
-
-            <h2 id="portfolio-feature-title">
-                MWD ITALIA
+            <h2>
+                Project Ecosystem
             </h2>
 
-
-            <p class="portfolio-feature__type">
-                Automotive Protection Atelier
+            <p>
+                Mohsin Labs, Product Opportunity Engine,
+                Website Cost Calculator, MWD and future systems.
             </p>
 
+        </section>
 
-            <p class="portfolio-feature__description">
-                A premium website redesign concept for an automotive protection studio, 
-                focused on stronger brand presentation, clearer service 
-                discovery and a more refined customer experience.
-            </p>
 
-
-            <div class="portfolio-feature__tags">
-
-                <span>Web Design</span>
-                <span>Development</span>
-                <span>Brand Direction</span>
-                <span>UI/UX</span>
-
-            </div>
-
-
-            <a
-                href="Projects/mwd-redesign/index.html"
-                class="portfolio-feature__link"
-                target="_blank"
-                rel="noopener"
-            >
-                <span>View Case Study</span>
-                <span aria-hidden="true">→</span>
-            </a>
-
-        </div>
-
-
-
-        <!-- =========================================
-             CENTER — MAIN PROJECT
-        ========================================== -->
-
-        <div class="portfolio-feature__main">
-
-            <div class="portfolio-feature__main-screen">
-
-                <img
-                    src="images/mwd-preserve-machine.webp"
-                    alt="MWD Italia website redesign concept"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <span
-                class="portfolio-feature__flow"
-                aria-hidden="true"
-            >
-                →
-            </span>
-
-        </div>
-
-
-
-        <!-- =========================================
-             RIGHT — BEFORE / AFTER
-        ========================================== -->
-
-        <div class="portfolio-feature__comparison">
-
-
-            <!-- BEFORE -->
-
-            <article class="portfolio-feature__comparison-card">
-
-                <span class="portfolio-feature__comparison-label">
-                    BEFORE
-                </span>
-
-                <div class="portfolio-feature__before-screen">
-
-                    <img
-                        src="images/mwd-before-site.webp"
-                        alt="Original MWD Italia website"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </article>
-
-
-
-            <!-- AFTER -->
-
-            <article class="portfolio-feature__comparison-card">
-
-                <span class="portfolio-feature__comparison-label">
-                    AFTER
-                </span>
-
-                <div class="portfolio-feature__after-screen">
-
-                    <img
-                        src="images/mwd-services-showcase.webp"
-                        alt="MWD Italia redesign concept"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
-</section>
-
-    <!-- =====================================================
-     SECTION 04 — MORE SELECTED WORK
-====================================================== -->
-
-<section
-    class="more-work"
-    id="more-work"
-    aria-labelledby="more-work-title"
->
-
-    <div class="more-work-inner">
-
-        <p
-            class="more-work-label"
-            id="more-work-title"
-        >
-            MORE SELECTED WORK
-        </p>
-
-
-        <div class="more-work-grid">
-
-            <!-- =================================================
-                 PROJECT 02 — PRODUCT OPPORTUNITY ENGINE
-            ================================================== -->
-
-            <article class="selected-project">
-
-                <div class="selected-project-media">
-
-                    <div class="selected-project-meta">
-
-                        <span class="selected-project-number">
-                            02
-                        </span>
-
-                        <span class="selected-project-category">
-                            MOHSIN LABS / PRODUCT ENGINE
-                        </span>
-
-                    </div>
-
-                    <img
-                        src="images/product-opportunity-engine-preview.webp"
-                        alt="Product Opportunity Engine profitability and risk decision dashboard"
-                        loading="lazy"
-                        decoding="async"
-                    >
-
-                </div>
-
-
-                <div class="selected-project-copy">
-
-                    <h3>
-                        Product Opportunity Engine
-                    </h3>
-
-                    <p>
-                        A product decision engine for evaluating profit, margin, ROI,
-                        break-even pricing, stress scenarios and commercial risk before selling.
-                    </p>
-
-                    <div class="selected-project-actions">
-
-                        <a
-                            href="https://mohsinbuilds.com/product-opportunity-engine/"
-                            class="selected-project-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span>View Live Product</span>
-                            <span>→</span>
-                        </a>
-
-                        <a
-                            href="https://github.com/mohsin-builds/product-opportunity-engine"
-                            class="selected-project-link selected-project-link--secondary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span>GitHub</span>
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 PROJECT 03 — WEBSITE COST CALCULATOR
-            ================================================== -->
-
-            <article class="selected-project">
-
-                <div class="selected-project-media">
-
-                    <div class="selected-project-meta">
-
-                        <span class="selected-project-number">
-                            03
-                        </span>
-
-                        <span class="selected-project-category">
-                            MOHSIN LABS / BUSINESS TOOL
-                        </span>
-
-                    </div>
-
-                    <img
-                        src="images/website-cost-calculator-preview.webp"
-                        alt="Mohsin Labs Website Cost Calculator interactive estimation tool"
-                        loading="lazy"
-                        decoding="async"
-                    >
-
-                </div>
-
-
-                <div class="selected-project-copy">
-
-                    <h3>
-                        Website Cost Calculator
-                    </h3>
-
-                    <p>
-                        An eight-step interactive estimator that turns business requirements,
-                        features and project scope into a practical website budget range.
-                    </p>
-
-                    <div class="selected-project-actions">
-
-                        <a
-                            href="https://mohsin-labs-website-cost-calculator.netlify.app/"
-                            class="selected-project-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span>View Live Tool</span>
-                            <span>→</span>
-                        </a>
-
-                        <a
-                            href="https://github.com/mohsin-builds/website-cost-calculator"
-                            class="selected-project-link selected-project-link--secondary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span>GitHub</span>
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 MORE PROJECTS
-            ================================================== -->
-
-            <aside class="more-projects">
-
-                <h3>
-                    More products
-                    <span>
-                        in development.
-                    </span>
-                </h3>
-
-                <a
-                    href="https://github.com/mohsin-builds"
-                    class="more-projects-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span>
-                        Explore GitHub
-                    </span>
-                    <span>
-                        ↗
-                    </span>
-                </a>
-
-            </aside>
-
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- =====================================================
-     SECTION 05 — MY PROCESS
-====================================================== -->
-
-<section
-    class="process-strip"
-    id="process"
-    aria-labelledby="process-title"
->
-
-    <div class="process-strip-inner">
-
-
-        <!-- SECTION LABEL -->
-
-        <p
-            class="process-strip-label"
-            id="process-title"
-        >
-            MY PROCESS
-        </p>
-
-
-
-        <!-- PROCESS STEPS -->
-
-        <div class="process-steps">
-
-
-            <!-- 01 -->
-
-            <article class="process-step">
-
-                <span class="process-number">
-                    01
-                </span>
-
-
-                <div class="process-step-copy">
-
-                    <h3>
-                        Discover
-                    </h3>
-
-                    <p>
-                        Understand your business, goals, audience and current challenges.
-                    </p>
-
-                </div>
-
-
-                <span
-                    class="process-arrow"
-                    aria-hidden="true"
-                >
-                    →
-                </span>
-
-            </article>
-
-
-
-            <!-- 02 -->
-
-            <article class="process-step">
-
-                <span class="process-number">
-                    02
-                </span>
-
-
-                <div class="process-step-copy">
-
-                    <h3>
-                        Plan
-                    </h3>
-
-                    <p>
-                        Define the strategy, structure and right digital solution.
-                    </p>
-
-                </div>
-
-
-                <span
-                    class="process-arrow"
-                    aria-hidden="true"
-                >
-                    →
-                </span>
-
-            </article>
-
-
-
-            <!-- 03 -->
-
-            <article class="process-step">
-
-                <span class="process-number">
-                    03
-                </span>
-
-
-                <div class="process-step-copy">
-
-                    <h3>
-                        Design
-                    </h3>
-
-                    <p>
-                        Create a clear, modern experience built around trust and usability.
-                    </p>
-
-                </div>
-
-
-                <span
-                    class="process-arrow"
-                    aria-hidden="true"
-                >
-                    →
-                </span>
-
-            </article>
-
-
-
-            <!-- 04 -->
-
-            <article class="process-step">
-
-                <span class="process-number">
-                    04
-                </span>
-
-
-                <div class="process-step-copy">
-
-                    <h3>
-                        Build
-                    </h3>
-
-                    <p>
-                        Develop the solution with performance, reliability and scalability in mind.
-                    </p>
-
-                </div>
-
-
-                <span
-                    class="process-arrow"
-                    aria-hidden="true"
-                >
-                    →
-                </span>
-
-            </article>
-
-
-
-            <!-- 05 -->
-
-            <article class="process-step process-step-last">
-
-                <span class="process-number">
-                    05
-                </span>
-
-
-                <div class="process-step-copy">
-
-                    <h3>
-                        Launch & Improve
-                    </h3>
-
-                    <p>
-                        Launch, test and refine the experience based on real needs and feedback.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     SECTION 06 — ABOUT / EXPERTISE
-====================================================== -->
-
-<section
-    class="about-section"
-    id="about"
-    aria-labelledby="about-title"
->
-
-    <div class="about-inner">
-
-
-        <!-- =========================================
-             LEFT — ABOUT ME
-        ========================================== -->
-
-        <div class="about-copy">
-
-
-            <p class="about-label">
-                ABOUT ME
-            </p>
-
-
-            <h2 id="about-title">
-
-                I solve business problems
-
-                <span>
-                    with
-                    <strong>
-                        digital systems.
-                    </strong>
-                </span>
-
-            </h2>
-
-
-            <p class="about-description">
-
-                I’m Mohsin, a web developer and digital systems builder.
-
-                I create modern websites and digital solutions that help 
-                businesses look stronger, work smarter and grow online.
-            </p>
-
-
-
-            <!-- STATS -->
-
-            <div class="about-stats">
-
-
-                <div class="about-stat">
-
-                    <strong>
-                        3+
-                    </strong>
-
-                    <span>
-                        Years Experience
-                    </span>
-
-                </div>
-
-
-                <div class="about-stat">
-
-                    <strong>
-                        4
-                    </strong>
-
-                    <span>
-                        Core Service Areas
-                    </span>
-
-                </div>
-
-
-                <div class="about-stat">
-
-                    <strong>
-                        3
-                    </strong>
-
-                    <span>
-                        Featured Projects
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =========================================
-             CENTER — PORTRAIT
-        ========================================== -->
-
-        <div class="about-visual">
-
-
-            <img
-                src="images/mohsin-portrait.webp"
-                alt="Mohsin, web developer and digital systems builder"
-                class="about-photo"
-                loading="lazy"
-                width="1000"
-                height="1396"
-            >
-
-
-            <div
-                class="about-photo-overlay"
-                aria-hidden="true"
-            ></div>
-
-
-        </div>
-
-
-
-        <!-- =========================================
-             RIGHT — EXPERTISE
-        ========================================== -->
-
-        <div class="expertise-panel">
-
-
-            <p class="expertise-label">
-                EXPERTISE
-            </p>
-
-
-
-            <!-- EXPERTISE TAGS -->
-
-            <div class="expertise-tags">
-
-
-                <span>
-                    Web Development
-                </span>
-
-                <span>
-                    WordPress
-                </span>
-
-                <span>
-                    Shopify
-                </span>
-
-
-                <span>
-                    E-Commerce
-                </span>
-
-                <span>
-                    AI Automation
-                </span>
-
-                <span>
-                    UI/UX Design
-                </span>
-
-
-                <span>
-                    Business Systems
-                </span>
-
-                <span>
-                    Dashboard Design
-                </span>
-
-                <span>
-                    APIs
-                </span>
-
-
-            </div>
-
-
-
-            <!-- =====================================
-                 TOOLS HEADING
-            ====================================== -->
-
-            <div class="tools-heading">
-
-                <span>
-                    TOOLS &amp; TECHNOLOGIES
-                </span>
-
-                <div></div>
-
-            </div>
-
-
-
-            <!-- =====================================
-                 TOOL ICONS
-            ====================================== -->
-
-            <div
-                class="tools-grid"
-                aria-label="Tools and technologies"
-            >
-
-
-                <!-- WORDPRESS -->
-
-                <div
-                    class="tool-icon tool-wordpress"
-                    title="WordPress"
-                    aria-label="WordPress"
-                >
-
-                    <i
-                        class="fa-brands fa-wordpress"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-
-                <!-- SHOPIFY -->
-
-                <div
-                    class="tool-icon tool-shopify"
-                    title="Shopify"
-                    aria-label="Shopify"
-                >
-
-                    <i
-                        class="fa-brands fa-shopify"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-
-                <!-- REACT -->
-
-                <div
-                    class="tool-icon tool-react"
-                    title="React"
-                    aria-label="React"
-                >
-
-                    <i
-                        class="fa-brands fa-react"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-
-                <!-- NODE.JS -->
-
-                <div
-                    class="tool-icon tool-node"
-                    title="Node.js"
-                    aria-label="Node.js"
-                >
-
-                    <i
-                        class="fa-brands fa-node-js"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-
-                <!-- PYTHON -->
-
-                <div
-                    class="tool-icon tool-python"
-                    title="Python"
-                    aria-label="Python"
-                >
-
-                    <i
-                        class="fa-brands fa-python"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-
-                <!-- FIGMA -->
-
-                <div
-                    class="tool-icon tool-figma"
-                    title="Figma"
-                    aria-label="Figma"
-                >
-
-                    <i
-                        class="fa-brands fa-figma"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-
-                <!-- API -->
-
-                <div
-                    class="tool-icon tool-api"
-                    title="API Integration"
-                    aria-label="API Integration"
-                >
-
-                    <i
-                        class="fa-solid fa-code"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-
-                <!-- GITHUB -->
-
-                <div
-                    class="tool-icon tool-github"
-                    title="GitHub"
-                    aria-label="GitHub"
-                >
-
-                    <i
-                        class="fa-brands fa-github"
-                        aria-hidden="true"
-                    ></i>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     SECTION 07 — FINAL CTA + FOOTER
-====================================================== -->
-
-<section
-    class="final-contact"
-    id="contact"
-    aria-labelledby="final-contact-title"
->
-
-    <div class="final-contact-inner">
-
-
-        <!-- =========================================
-             CTA PANEL
-        ========================================== -->
-
-        <div class="final-cta-card">
-
-
-            <!-- LEFT -->
-
-            <div class="final-cta-copy">
-
-                <p class="final-cta-label">
-                    LET'S BUILD SOMETHING EXCEPTIONAL.
-                </p>
-
-
-                <h2 id="final-contact-title">
-
-                    Let’s build the
-                    <strong>solution</strong>
-
-                    <span>
-                        your business deserves.
-                    </span>
-
-                </h2>
-
-            </div>
-
-
-
-            <!-- RIGHT -->
-
-            <div class="final-cta-action">
-
-
-                <p>
-
-                    Have a project in mind?<br>
-
-                    Let's create something impactful<br>
-
-                    together.
-
-                </p>
-
-
-
-                <div class="final-cta-buttons">
-
-
-                    <a
-                        href="mailto:mohsinbuilds@gmail.com"
-                        class="final-email-button"
-                    >
-
-                        <span>
-                            mohsinbuilds@gmail.com
-                        </span>
-
-                        <span>
-                            →
-                        </span>
-
-                    </a>
-
-
-
-                        <a
-                            href="https://wa.me/393477257569?text=Hi%20Mohsin%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project."
-                            class="final-call-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-
-                        <span>
-                            Request a Call
-                        </span>
-
-                        <span>
-                            →
-                        </span>
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =========================================
-             FOOTER
-        ========================================== -->
-
-        <footer class="site-footer">
-
-
-            <!-- BRAND -->
-
-            <a
-                href="#home"
-                class="footer-brand"
-                aria-label="Mohsin Builds home"
-            >
-
-                <img
-                    src="images/logo-full.png"
-                    alt="Mohsin Builds"
-                >
-
-            </a>
-
-
-
-            <!-- COPYRIGHT -->
-
-            <p class="footer-copyright">
-
-                ©
-                <span id="current-year">2026</span>
-                Mohsin Builds. All rights reserved.
-
-            </p>
-
-
-
-            <!-- SOCIALS -->
-
-            <nav class="footer-socials" aria-label="Social media">
-
-  <a
-    href="https://www.linkedin.com/in/mohsinbuilds/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
-    title="LinkedIn"
-  >
-    <i class="fa-brands fa-linkedin-in"></i>
-  </a>
-
-  <a
-    href="https://instagram.com/mohsinbuild"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-    title="Instagram"
-  >
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-
-  <a
-    href="https://x.com/Mohsinbuilds"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="X"
-    title="X"
-  >
-    <i class="fa-brands fa-x-twitter"></i>
-  </a>
-
-  <a
-    href="https://www.upwork.com/freelancers/~01d1ae5333d044ed91"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Upwork"
-    title="Upwork"
-  >
-    <i class="fa-brands fa-upwork"></i>
-  </a>
-
-  <a
-    href="https://www.behance.net/mohsinbuilds"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Behance"
-    title="Behance"
-  >
-    <i class="fa-brands fa-behance"></i>
-  </a>
-
-  <a
-    href="https://github.com/mohsin-builds"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="GitHub"
-    title="GitHub"
-  >
-    <i class="fa-brands fa-github"></i>
-  </a>
-
-    <a
-        href="https://www.fiverr.com/mohsinbuild/design-and-develop-a-modern-responsive-business-website"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Fiverr"
-        title="Fiverr"
-    >
-    <span class="fiverr-icon">fi</span>
-    </a>
-
-</nav>
-
-
-        </footer>
-
-
-    </div>
-
-</section>
-
+        <div
+            id="about"
+            aria-hidden="true"
+        ></div>
 
     </main>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <script src="script.js"></script>
-
+                <script
+                type="module"
+                src="js/main.js"
+            ></script>
 
 </body>
 

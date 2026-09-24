@@ -2,27 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- =====================================================
-         GOOGLE ANALYTICS
-    ====================================================== -->
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRW30YBDE9"></script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag("js", new Date());
-        gtag("config", "G-VRW30YBDE9");
-    </script>
-
-
-    <!-- =====================================================
-         BASIC SEO
-    ====================================================== -->
 
     <meta charset="UTF-8">
 
@@ -32,42 +11,32 @@
     >
 
     <title>
-        Mohsin Builds | Designer, Developer & Product Builder
+        Mohsin Builds — Designer, Developer & Product Builder
     </title>
 
     <meta
         name="description"
-        content="Mohsin Builds is the portfolio of Mohsin Iqbal — designer, developer, product builder and founder of Mohsin Labs. Exploring digital products, intelligent systems and real business solutions."
+        content="Mohsin Builds — designer, developer and product builder creating premium websites, digital products, business systems and useful technology."
     >
-
-    <meta
-        name="author"
-        content="Mohsin Iqbal"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <meta
-        name="theme-color"
-        content="#04070b"
-    >
-
-
-    <!-- =====================================================
-         CANONICAL
-    ====================================================== -->
 
     <link
         rel="canonical"
         href="https://mohsinbuilds.com/"
     >
 
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020b13"
+    >
+
 
     <!-- =====================================================
-         OPEN GRAPH
+         SOCIAL PREVIEW METADATA
     ====================================================== -->
 
     <meta
@@ -82,12 +51,12 @@
 
     <meta
         property="og:title"
-        content="Mohsin Builds — The Builder's Environment"
+        content="Mohsin Builds — Designer, Developer & Product Builder"
     >
 
     <meta
         property="og:description"
-        content="Design. Develop. Automate. Scale. Explore the digital systems, products and ideas built by Mohsin Iqbal."
+        content="Premium websites, digital products, business systems and useful technology built by Mohsin Iqbal."
     >
 
     <meta
@@ -97,13 +66,14 @@
 
     <meta
         property="og:image"
-        content="https://mohsinbuilds.com/images/mohsinbuilds-social-preview.png"
+        content="https://mohsinbuilds.com/assets/images/developer-os-wallpaper.png"
     >
 
+    <meta
+        property="og:image:alt"
+        content="Mohsin Builds Developer OS portfolio interface"
+    >
 
-    <!-- =====================================================
-         TWITTER / X
-    ====================================================== -->
 
     <meta
         name="twitter:card"
@@ -112,34 +82,27 @@
 
     <meta
         name="twitter:title"
-        content="Mohsin Builds — The Builder's Environment"
+        content="Mohsin Builds — Designer, Developer & Product Builder"
     >
 
     <meta
         name="twitter:description"
-        content="Digital products, systems and experiences designed around real problems."
+        content="Premium websites, digital products, business systems and useful technology built by Mohsin Iqbal."
     >
 
     <meta
         name="twitter:image"
-        content="https://mohsinbuilds.com/images/mohsinbuilds-social-preview.png"
+        content="https://mohsinbuilds.com/assets/images/developer-os-wallpaper.png"
     >
 
 
     <!-- =====================================================
-         FAVICONS
+         FAVICON
     ====================================================== -->
 
     <link
         rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/images/mohsin-builds-favicon.png"
-    >
-
-    <link
-        rel="shortcut icon"
-        href="/favicon.ico"
+        href="favicon.ico"
     >
 
 
@@ -159,29 +122,67 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet"
     >
 
 
     <!-- =====================================================
-         V2 CSS
+         ICON LIBRARY
     ====================================================== -->
 
     <link
         rel="stylesheet"
-        href="css/base.css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
+
+
+    <!-- =====================================================
+         PAGE STYLES
+    ====================================================== -->
 
     <link
         rel="stylesheet"
-        href="css/founder-studio.css"
+        href="css/home.css"
     >
 
-    <link
-        rel="stylesheet"
-        href="css/responsive.css"
-    >
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+    ====================================================== -->
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-VRW30YBDE9"
+    ></script>
+
+    <script>
+
+        window.dataLayer =
+            window.dataLayer || [];
+
+
+        function gtag() {
+
+            dataLayer.push(
+                arguments
+            );
+
+        }
+
+
+        gtag(
+            "js",
+            new Date()
+        );
+
+
+        gtag(
+            "config",
+            "G-VRW30YBDE9"
+        );
+
+    </script>
 
 
     <!-- =====================================================
@@ -189,913 +190,2057 @@
     ====================================================== -->
 
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Mohsin Builds",
-        "url": "https://mohsinbuilds.com/",
-        "description": "Portfolio of Mohsin Iqbal — designer, developer, product builder and founder of Mohsin Labs.",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Mohsin Builds",
+
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Mohsin Iqbal",
             "url": "https://mohsinbuilds.com/",
-            "logo": "https://mohsinbuilds.com/images/logo-full.png"
+            "image": "https://mohsinbuilds.com/assets/images/mohsin-profile.png",
+            "jobTitle": "Designer, Developer and Product Builder",
+            "sameAs": [
+                "https://linkedin.com/in/mohsinbuilds",
+                "https://github.com/mohsin-builds",
+                "https://www.behance.net/mohsinbuilds",
+                "https://instagram.com/mohsinbuild",
+                "https://x.com/Mohsinbuilds"
+            ]
         }
-    }
+
     </script>
+
 </head>
 
 
 <body>
 
-    <!-- =====================================================
-         AMBIENT BACKGROUND
-    ====================================================== -->
 
-    <div class="ambient-world" aria-hidden="true">
-
-        <div class="ambient-world__noise"></div>
-
-        <div class="ambient-world__blue"></div>
-
-        <div class="ambient-world__violet"></div>
-
-        <div class="ambient-world__warm"></div>
-
-    </div>
+<div
+    class="desktop"
+    id="desktop"
+>
 
 
     <!-- =====================================================
-         HEADER
+         WALLPAPER
     ====================================================== -->
 
-    <header class="site-header">
+    <div
+        class="wallpaper"
+        aria-hidden="true"
+    ></div>
 
-        <div class="site-header__inner">
+
+    <div
+        class="wallpaper-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="os-sidebar">
+
+
+        <a
+            href="index.html"
+            class="os-brand"
+            aria-label="Mohsin Builds Home"
+        >
+
+            <img
+                src="assets/images/logo-full.png"
+                alt="Mohsin Builds"
+                class="os-brand-logo"
+            >
+
+            <span class="os-brand-system">
+                DEVELOPER OS
+            </span>
+
+        </a>
+
+
+
+        <nav
+            class="side-nav"
+            aria-label="Portfolio navigation"
+        >
+
 
             <a
-                href="#home"
-                class="brand"
-                aria-label="Mohsin Builds home"
+                href="index.html"
+                class="side-item is-active"
+                aria-current="page"
             >
 
-                <img
-                    src="images/logo-full.png"
-                    alt="Mohsin Builds"
-                    class="brand__logo"
-                >
+                <span class="side-icon">
 
-            </a>
+                    <i class="fa-solid fa-house"></i>
 
+                </span>
 
-            <nav
-                class="main-nav"
-                aria-label="Main navigation"
-            >
-
-                <a
-                    href="#home"
-                    class="main-nav__link is-active"
-                >
-                    <span>01</span>
+                <span class="side-label">
                     Home
-                </a>
-
-                <a
-                    href="#work"
-                    class="main-nav__link"
-                >
-                    <span>02</span>
-                    Work
-                </a>
-
-                <a
-                    href="#systems"
-                    class="main-nav__link"
-                >
-                    <span>03</span>
-                    Systems
-                </a>
-
-                <a
-                    href="#labs"
-                    class="main-nav__link"
-                >
-                    <span>04</span>
-                    Labs
-                </a>
-
-                <a
-                    href="#about"
-                    class="main-nav__link"
-                >
-                    <span>05</span>
-                    About
-                </a>
-
-            </nav>
-
-
-            <a
-                href="mailto:mohsinbuilds@gmail.com"
-                class="header-cta"
-            >
-
-                <span>
-                    LET'S BUILD
-                </span>
-
-                <span aria-hidden="true">
-                    ↗
                 </span>
 
             </a>
+
+
+
+            <a
+                href="projects.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Projects
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="about.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </span>
+
+                <span class="side-label">
+                    About
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="architecture.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Architecture
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="labs.html"
+                class="side-item"
+            >
+
+                <span class="side-icon side-icon-labs">
+
+                    <i class="fa-solid fa-flask"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Mohsin Labs
+                </span>
+
+            </a>
+
 
 
             <button
-                class="menu-toggle"
+                class="side-item"
+                data-open="terminal"
                 type="button"
-                aria-label="Open menu"
-                aria-expanded="false"
+                aria-controls="terminalWindow"
             >
 
-                <span></span>
-                <span></span>
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-terminal"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Terminal
+                </span>
 
             </button>
 
+
+
+            <a
+                href="contact.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Contact
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <div class="sidebar-status">
+
+            <span class="status-light"></span>
+
+            <strong>
+                AVAILABLE
+            </strong>
+
         </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         SYSTEM BAR
+    ====================================================== -->
+
+    <header class="system-bar">
+
+
+        <div class="system-path">
+
+            <span class="path-home">
+
+                <i class="fa-solid fa-desktop"></i>
+
+            </span>
+
+            <span>
+                Desktop
+            </span>
+
+            <i class="fa-solid fa-chevron-right path-arrow"></i>
+
+            <strong id="currentWorkspace">
+                Home
+            </strong>
+
+        </div>
+
+
+
+        <button
+            class="system-search"
+            id="searchButton"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="commandOverlay"
+            aria-expanded="false"
+        >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <span>
+                Search projects, apps, ideas...
+            </span>
+
+            <kbd>
+                ⌘ K
+            </kbd>
+
+        </button>
+
+
+
+        <div class="system-right">
+
+
+            <div
+                class="system-indicators"
+                aria-hidden="true"
+            >
+
+                <i class="fa-solid fa-wifi"></i>
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                <i class="fa-solid fa-battery-three-quarters"></i>
+
+            </div>
+
+
+
+            <div class="system-time">
+
+                <span id="topDate">
+                    --
+                </span>
+
+                <strong id="topTime">
+                    --:--
+                </strong>
+
+            </div>
+
+
+        </div>
+
 
     </header>
 
 
+
     <!-- =====================================================
-         MOBILE MENU
+         WORKSPACE
     ====================================================== -->
 
-    <div
-        class="mobile-menu"
-        aria-hidden="true"
-    >
+    <main class="workspace">
 
-        <a href="#home">
-            Home
-        </a>
-
-        <a href="#work">
-            Work
-        </a>
-
-        <a href="#systems">
-            Systems
-        </a>
-
-        <a href="#labs">
-            Mohsin Labs
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-        <a href="mailto:mohsinbuilds@gmail.com">
-            Contact
-        </a>
-
-    </div>
-
-
-    <main>
 
         <!-- =================================================
-             SECTION 01 — FOUNDER STUDIO
+             WELCOME
         ================================================== -->
 
         <section
-            class="founder-studio"
-            id="home"
+            class="os-window welcome-window"
+            data-window="welcome"
+            data-reveal="1"
         >
 
-            <!-- CINEMATIC ENVIRONMENT -->
 
-           <div
-    class="studio-environment"
-    aria-hidden="true"
->
+            <div class="window-bar drag-handle">
 
-    <!-- =========================================
-         ARCHITECTURAL WINDOW
-    ========================================== -->
 
-    <div class="studio-window">
+                <div class="window-controls">
 
-        <div class="studio-window__sky"></div>
 
-        <div class="studio-window__moon"></div>
+                    <button
+                        class="window-control control-close"
+                        data-action="close"
+                        type="button"
+                        aria-label="Close window"
+                    ></button>
 
-        <div class="studio-window__horizon"></div>
 
+                    <button
+                        class="window-control control-minimize"
+                        data-action="minimize"
+                        type="button"
+                        aria-label="Minimize window"
+                    ></button>
 
-        <div class="studio-window__city">
 
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+                    <button
+                        class="window-control control-maximize"
+                        data-action="maximize"
+                        type="button"
+                        aria-label="Maximize window"
+                    ></button>
 
-        </div>
-
-
-        <div class="studio-window__frame studio-window__frame--one"></div>
-
-        <div class="studio-window__frame studio-window__frame--two"></div>
-
-        <div class="studio-window__frame studio-window__frame--three"></div>
-
-    </div>
-
-
-    <!-- =========================================
-         RIGHT ARCHITECTURAL WALL
-    ========================================== -->
-
-    <div class="studio-wall">
-
-        <div class="studio-wall__copy">
-
-            <span>IDEAS</span>
-
-            <span>DESIGN</span>
-
-            <span>CODE</span>
-
-            <span>AUTOMATE</span>
-
-            <span>SCALE</span>
-
-            <span>REPEAT</span>
-
-        </div>
-
-
-        <div class="studio-shelf">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================================
-         DESK
-    ========================================== -->
-
-    <div class="studio-desk">
-
-        <div class="studio-desk__surface"></div>
-
-        <div class="studio-desk__edge"></div>
-
-
-        <div class="studio-monitor">
-
-            <div class="studio-monitor__screen">
-
-                <span>
-                    MOHSIN
-                </span>
-
-                <small>
-                    BUILD SYSTEM
-                </small>
-
-            </div>
-
-            <div class="studio-monitor__stand"></div>
-
-        </div>
-
-
-        <div class="studio-laptop">
-
-            <div class="studio-laptop__screen">
-
-                <span>
-                    M
-                </span>
-
-            </div>
-
-            <div class="studio-laptop__base"></div>
-
-        </div>
-
-
-        <div class="studio-books">
-
-            <span>DESIGN</span>
-
-            <span>TECHNOLOGY</span>
-
-            <span>BUSINESS</span>
-
-        </div>
-
-
-        <div class="studio-mug">
-            M
-        </div>
-
-    </div>
-
-
-    <!-- =========================================
-         WARM PRACTICAL LAMP
-    ========================================== -->
-
-    <div class="studio-lamp">
-
-        <div class="studio-lamp__shade"></div>
-
-        <div class="studio-lamp__stem"></div>
-
-        <div class="studio-lamp__base"></div>
-
-        <div class="studio-lamp__glow"></div>
-
-    </div>
-
-
-    <!-- =========================================
-         CHAIR / FOUNDER SILHOUETTE
-    ========================================== -->
-
-    <div class="studio-chair">
-
-        <div class="studio-chair__back"></div>
-
-        <div class="studio-chair__seat"></div>
-
-        <div class="studio-chair__stem"></div>
-
-    </div>
-
-
-    <!-- =========================================
-         FLOOR
-    ========================================== -->
-
-    <div class="studio-floor">
-
-        <div class="studio-floor__reflection"></div>
-
-        <div class="studio-floor__line studio-floor__line--1"></div>
-
-        <div class="studio-floor__line studio-floor__line--2"></div>
-
-        <div class="studio-floor__line studio-floor__line--3"></div>
-
-    </div>
-
-
-    <!-- =========================================
-         ATMOSPHERIC LIGHTS
-    ========================================== -->
-
-    <div class="studio-light studio-light--blue"></div>
-
-    <div class="studio-light studio-light--violet"></div>
-
-    <div class="studio-light studio-light--warm"></div>
-
-    <div class="studio-pointer-light"></div>
-
-</div>
-
-
-            <!-- MAIN GRID -->
-
-            <div class="founder-studio__inner">
-
-                <!-- =====================================
-                     LEFT — FOUNDER
-                ====================================== -->
-
-                <div class="founder-copy">
-
-                    <p class="founder-kicker">
-
-                        <span></span>
-
-                        PORTFOLIO V2 — THE BUILDER'S ENVIRONMENT
-
-                    </p>
-
-
-                    <h1 class="founder-title">
-
-                        I build digital
-
-                        <em>
-                            systems
-                        </em>
-
-                        that turn
-
-                        <strong>
-                            ideas into impact.
-                        </strong>
-
-                    </h1>
-
-
-                    <p class="founder-description">
-
-                        Designer, developer and product builder creating
-                        digital products, intelligent systems and experiences
-                        around real business problems.
-
-                    </p>
-
-
-                    <p class="founder-role">
-
-                        DESIGNER · DEVELOPER · PRODUCT BUILDER
-                        <br>
-                        FOUNDER OF MOHSIN LABS
-
-                    </p>
-
-
-                    <div class="founder-actions">
-
-                        <a
-                            href="#work"
-                            class="button button--primary"
-                        >
-
-                            <span>
-                                Explore My Work
-                            </span>
-
-                            <span>
-                                →
-                            </span>
-
-                        </a>
-
-
-                        <button
-                            class="button button--secondary"
-                            type="button"
-                            data-enter-environment
-                        >
-
-                            <span class="button__cube">
-                                ◇
-                            </span>
-
-                            <span>
-                                Enter Environment
-                            </span>
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="founder-stats">
-
-                        <div>
-
-                            <strong>
-                                10+
-                            </strong>
-
-                            <span>
-                                Projects
-                            </span>
-
-                        </div>
-
-
-                        <div>
-
-                            <strong>
-                                5+
-                            </strong>
-
-                            <span>
-                                Years
-                            </span>
-
-                        </div>
-
-
-                        <div>
-
-                            <strong>
-                                100%
-                            </strong>
-
-                            <span>
-                                Focused
-                            </span>
-
-                        </div>
-
-                    </div>
 
                 </div>
 
 
-                <!-- =====================================
-                     CENTER — ECOSYSTEM
-                ====================================== -->
 
-                <div
-                    class="ecosystem-scene"
-                    id="systems"
+                <div class="window-name">
+
+                    <span class="window-file-icon">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </span>
+
+                    Welcome.mbs
+
+                </div>
+
+
+
+                <div class="window-live">
+
+                    <i></i>
+
+                    LIVE
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="welcome-content">
+
+
+                <span class="terminal-eyebrow">
+
+                    <i class="fa-solid fa-angle-right"></i>
+
+                    hello@visitor ~
+
+                </span>
+
+
+
+                <h1>
+
+                    I design and build
+
+                    <strong>
+                        digital products
+                    </strong>
+
+                    that solve real problems.
+
+                </h1>
+
+
+
+                <p>
+                    Designer, developer and product builder creating
+                    websites, digital systems and useful products for
+                    real businesses and ambitious ideas.
+                </p>
+
+
+
+                <div class="welcome-actions">
+
+
+                    <a
+                        href="projects.html"
+                        class="primary-button"
+                    >
+
+                        Explore My Work
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+
+                    <a
+                        href="about.html"
+                        class="ghost-button"
+                    >
+
+                        <i class="fa-solid fa-user"></i>
+
+                        About Me
+
+                    </a>
+
+
+                </div>
+
+
+
+                <div class="welcome-footer">
+
+                    <span class="system-ready">
+
+                        <i></i>
+
+                        SYSTEM READY
+
+                    </span>
+
+                    <span>
+                        DESIGN
+                    </span>
+
+                    <span>
+                        DEVELOPMENT
+                    </span>
+
+                    <span>
+                        PRODUCTS
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FEATURED PROJECT
+        ================================================== -->
+
+        <section
+            class="os-window featured-window"
+            data-window="featured"
+            data-reveal="2"
+        >
+
+
+            <div class="window-bar drag-handle">
+
+
+                <div class="window-controls">
+
+
+                    <button
+                        class="window-control control-close"
+                        data-action="close"
+                        type="button"
+                        aria-label="Close window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-minimize"
+                        data-action="minimize"
+                        type="button"
+                        aria-label="Minimize window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-maximize"
+                        data-action="maximize"
+                        type="button"
+                        aria-label="Maximize window"
+                    ></button>
+
+
+                </div>
+
+
+
+                <div class="window-name">
+
+                    <span class="window-file-icon">
+
+                        <i class="fa-solid fa-star"></i>
+
+                    </span>
+
+                    Featured Project
+
+                </div>
+
+
+
+                <span
+                    class="window-counter"
+                    id="projectCounter"
                 >
-
-                    <!-- REAL 3D WORLD -->
-
-                    <div class="ecosystem-webgl">
-
-                        <canvas
-                            id="ecosystem-canvas"
-                            aria-label="Interactive Mohsin Builds digital ecosystem"
-                        ></canvas>
-
-                    </div>
+                    01 / 03
+                </span>
 
 
-                    <!-- HTML LABEL OVERLAY -->
-
-                    <div class="ecosystem-labels">
-
-                        <button
-                            class="world-label world-label--labs"
-                            type="button"
-                            data-world-node="labs"
-                        >
-
-                            <span class="world-label__eyebrow">
-                                FLAGSHIP PROJECT
-                            </span>
-
-                            <strong>
-                                MOHSIN LABS
-                            </strong>
-
-                            <small>
-                                Experimental Products
-                            </small>
-
-                        </button>
+            </div>
 
 
-                        <button
-                            class="world-label world-label--web"
-                            type="button"
-                            data-world-node="web"
-                        >
 
-                            <strong>
-                                WEB EXPERIENCES
-                            </strong>
-
-                            <small>
-                                Design + Development
-                            </small>
-
-                        </button>
+            <div class="featured-content">
 
 
-                        <button
-                            class="world-label world-label--commerce"
-                            type="button"
-                            data-world-node="commerce"
-                        >
-
-                            <strong>
-                                E-COMMERCE
-                            </strong>
-
-                            <small>
-                                Digital Commerce
-                            </small>
-
-                        </button>
+                <div class="featured-copy">
 
 
-                        <button
-                            class="world-label world-label--automation"
-                            type="button"
-                            data-world-node="automation"
-                        >
+                    <span class="featured-badge">
 
-                            <strong>
-                                AI & AUTOMATION
-                            </strong>
+                        <i class="fa-solid fa-bolt"></i>
 
-                            <small>
-                                Smarter Workflows
-                            </small>
+                        FEATURED BUILD
 
-                        </button>
+                    </span>
 
 
-                        <button
-                            class="world-label world-label--business"
-                            type="button"
-                            data-world-node="business"
-                        >
 
-                            <strong>
-                                BUSINESS SYSTEMS
-                            </strong>
-
-                            <small>
-                                People + Processes
-                            </small>
-
-                        </button>
-
-</div>
+                    <h2 id="featuredTitle">
+                        Product Opportunity Engine
+                    </h2>
 
 
-<div class="ecosystem-title">
 
-    <span>
-        MY ECOSYSTEM
-    </span>
+                    <p id="featuredDescription">
+                        A decision-support system for discovering,
+                        evaluating and comparing product opportunities
+                        using structured market data.
+                    </p>
 
-    <small>
-        PROJECTS · SYSTEMS · PRODUCTS · IMPACT
-    </small>
-
-</div>
-
-
-                </div>
-
-
-                <!-- =====================================
-                     RIGHT — LIVE SYSTEM PANEL
-                ====================================== -->
-
-                <aside class="studio-sidebar">
-
-                    <div class="studio-sidebar__intro">
-
-                        <span>
-                            ACTIVE SYSTEM
-                        </span>
-
-                        <span class="system-status">
-                            ● LIVE
-                        </span>
-
-                    </div>
 
 
                     <div
-                        class="system-detail"
-                        data-system-detail
-                    >
+                        class="technology-list"
+                        id="featuredStack"
+                    ></div>
 
-                        <p class="system-detail__index">
-                            01 / 06
-                        </p>
 
-                        <p class="system-detail__label">
-                            FLAGSHIP PROJECT
-                        </p>
 
-                        <h2>
-                            Mohsin Labs
-                        </h2>
-
-                        <p>
-                            Experimental digital products, intelligent
-                            systems and tools built around real-world
-                            problems.
-                        </p>
-
-                        <div class="system-detail__meta">
-
-                            <span>
-                                PRODUCT
-                            </span>
-
-                            <span>
-                                SYSTEMS
-                            </span>
-
-                            <span>
-                                LAB
-                            </span>
-
-                        </div>
+                    <div class="featured-actions">
 
 
                         <a
-                            href="#work"
-                            class="system-detail__link"
+                            href="projects.html"
+                            class="primary-button project-primary"
                         >
 
-                            Explore Project
+                            View Project
 
-                            <span>
-                                ↗
-                            </span>
+                            <i class="fa-solid fa-arrow-right"></i>
 
                         </a>
 
-                    </div>
-
-                    <div class="studio-activity">
-
-    <div class="studio-activity__header">
-
-        <span>
-            LIVE ACTIVITY
-        </span>
-
-        <span>
-            SYSTEM STATUS
-        </span>
-
-    </div>
 
 
-    <div class="studio-activity__item">
+                        <a
+                            href="projects.html"
+                            class="ghost-button project-secondary"
+                        >
 
-        <span class="activity-dot activity-dot--blue"></span>
+                            Case Study
 
-        <span>
-            Digital systems online
-        </span>
+                        </a>
 
-        <strong>
-            06
-        </strong>
-
-    </div>
-
-
-    <div class="studio-activity__item">
-
-        <span class="activity-dot activity-dot--violet"></span>
-
-        <span>
-            Products in ecosystem
-        </span>
-
-        <strong>
-            04
-        </strong>
-
-    </div>
-
-
-    <div class="studio-activity__item">
-
-        <span class="activity-dot activity-dot--green"></span>
-
-        <span>
-            Portfolio status
-        </span>
-
-        <strong>
-            LIVE
-        </strong>
-
-    </div>
-
-
-    <div class="activity-graph">
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </div>
-
-</div>
-
-
-                    <div class="studio-philosophy">
-
-                        <p>
-                            SAME HUMAN.
-                            <br>
-                            BIGGER SYSTEMS.
-                        </p>
 
                     </div>
 
-                </aside>
-
-            </div>
-
-
-            <!-- BOTTOM -->
-
-            <div class="founder-studio__bottom">
-
-                <div class="founder-location">
-
-                    <span></span>
-
-                    BUILDING FROM EUROPE
-                    <br>
-                    FOR THE WORLD
 
                 </div>
 
 
+
+                <div class="project-visual">
+
+
+                    <div class="project-ui-top">
+
+
+                        <div
+                            class="project-ui-dots"
+                            aria-hidden="true"
+                        >
+
+                            <span></span>
+
+                            <span></span>
+
+                            <span></span>
+
+                        </div>
+
+
+
+                        <div class="project-ui-actions">
+
+
+                            <span class="ui-status">
+                                LIVE SYSTEM
+                            </span>
+
+
+
+                            <div class="project-switcher">
+
+
+                                <button
+                                    id="previousProject"
+                                    type="button"
+                                    aria-label="Previous featured project"
+                                >
+
+                                    <i class="fa-solid fa-arrow-left"></i>
+
+                                </button>
+
+
+
+                                <button
+                                    id="nextProject"
+                                    type="button"
+                                    aria-label="Next featured project"
+                                >
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </button>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="project-ui-body">
+
+
+                        <aside class="preview-navigation">
+
+
+                            <div class="preview-brand">
+                                M
+                            </div>
+
+
+                            <span class="preview-nav-active"></span>
+
+                            <span></span>
+
+                            <span></span>
+
+                            <span></span>
+
+                            <span></span>
+
+
+                        </aside>
+
+
+
+                        <div class="preview-dashboard">
+
+
+                            <div class="preview-title-row">
+
+
+                                <div>
+
+                                    <small>
+                                        MARKET OVERVIEW
+                                    </small>
+
+                                    <strong>
+                                        Opportunity Engine
+                                    </strong>
+
+                                </div>
+
+
+                                <span class="preview-chip">
+                                    LIVE
+                                </span>
+
+
+                            </div>
+
+
+
+                            <div class="preview-metrics">
+
+
+                                <article>
+
+                                    <small>
+                                        Products
+                                    </small>
+
+                                    <strong>
+                                        248
+                                    </strong>
+
+                                </article>
+
+
+
+                                <article>
+
+                                    <small>
+                                        Opportunities
+                                    </small>
+
+                                    <strong>
+                                        37
+                                    </strong>
+
+                                </article>
+
+
+
+                                <article>
+
+                                    <small>
+                                        Score
+                                    </small>
+
+                                    <strong>
+                                        92
+                                    </strong>
+
+                                </article>
+
+
+                            </div>
+
+
+
+                            <div class="preview-bottom">
+
+
+                                <div class="preview-chart">
+
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+
+                                </div>
+
+
+
+                                <div class="preview-list">
+
+                                    <span></span>
+
+                                    <span></span>
+
+                                    <span></span>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section
+            class="os-window about-window"
+            data-window="about"
+            data-reveal="3"
+        >
+
+
+            <div class="window-bar drag-handle">
+
+
+                <div class="window-controls">
+
+
+                    <button
+                        class="window-control control-close"
+                        data-action="close"
+                        type="button"
+                        aria-label="Close window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-minimize"
+                        data-action="minimize"
+                        type="button"
+                        aria-label="Minimize window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-maximize"
+                        data-action="maximize"
+                        type="button"
+                        aria-label="Maximize window"
+                    ></button>
+
+
+                </div>
+
+
+
+                <div class="window-name">
+
+                    <span class="window-file-icon">
+
+                        <i class="fa-solid fa-address-card"></i>
+
+                    </span>
+
+                    About.exe
+
+                </div>
+
+
+
                 <a
-                    href="#work"
-                    class="scroll-cue"
+                    href="about.html"
+                    class="window-external"
+                    aria-label="Open About page"
                 >
 
-                    <span class="scroll-cue__mouse"></span>
-
-                    SCROLL TO EXPLORE
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
                 </a>
 
 
-                <p class="founder-quote">
+            </div>
 
-                    “Discipline turns ideas into freedom.”
 
-                    <span>
-                        — MOHSIN IQBAL
-                    </span>
 
+            <div class="about-content">
+
+
+                <div class="profile-header">
+
+
+                    <div class="profile-frame">
+
+                        <img
+                            src="assets/images/mohsin-profile.png"
+                            alt="Mohsin Iqbal"
+                            class="profile-image"
+                        >
+
+                        <span class="profile-online"></span>
+
+                    </div>
+
+
+
+                    <div class="profile-intro">
+
+                        <span class="profile-label">
+                            PROFILE
+                        </span>
+
+                        <h2>
+                            Mohsin Iqbal
+                        </h2>
+
+                        <p>
+                            Designer · Developer<br>
+                            Product Builder
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <p class="about-description">
+                    I turn ideas and business problems into polished
+                    websites, useful products and practical digital systems.
                 </p>
+
+
+
+                <div class="about-skills">
+
+
+                    <div>
+
+                        <i class="fa-solid fa-pen-ruler"></i>
+
+                        <span>
+                            Design
+                        </span>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <span>
+                            Development
+                        </span>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <i class="fa-solid fa-gears"></i>
+
+                        <span>
+                            Systems
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <a
+                    href="about.html"
+                    class="window-cta"
+                >
+
+                    View Full Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
 
             </div>
 
+
         </section>
+
 
 
         <!-- =================================================
-             SECTION 02 PLACEHOLDER
-             WE BUILD THIS NEXT.
+             PROJECT FOLDERS
         ================================================== -->
 
         <section
-            class="next-stage"
-            id="work"
+            class="os-window projects-window"
+            data-window="projects"
+            data-reveal="4"
         >
 
-            <p class="next-stage__eyebrow">
-                NEXT ENVIRONMENT
-            </p>
 
-            <h2>
-                Project Ecosystem
-            </h2>
+            <div class="window-bar drag-handle">
 
-            <p>
-                Mohsin Labs, Product Opportunity Engine,
-                Website Cost Calculator, MWD and future systems.
-            </p>
+
+                <div class="window-controls">
+
+
+                    <button
+                        class="window-control control-close"
+                        data-action="close"
+                        type="button"
+                        aria-label="Close window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-minimize"
+                        data-action="minimize"
+                        type="button"
+                        aria-label="Minimize window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-maximize"
+                        data-action="maximize"
+                        type="button"
+                        aria-label="Maximize window"
+                    ></button>
+
+
+                </div>
+
+
+
+                <div class="window-name">
+
+                    <span class="window-file-icon">
+
+                        <i class="fa-solid fa-folder-open"></i>
+
+                    </span>
+
+                    Projects
+
+                </div>
+
+
+
+                <span class="window-meta">
+                    4 folders
+                </span>
+
+
+            </div>
+
+
+
+            <div class="folder-grid">
+
+
+                <a
+                    href="projects.html?category=web"
+                    class="folder-card"
+                >
+
+                    <div class="folder-icon">
+
+                        <i class="fa-solid fa-window-maximize"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Web Projects
+                        </strong>
+
+                        <span>
+                            Client & product builds
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-right folder-arrow"></i>
+
+                </a>
+
+
+
+                <a
+                    href="projects.html?category=tools"
+                    class="folder-card"
+                >
+
+                    <div class="folder-icon">
+
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Business Tools
+                        </strong>
+
+                        <span>
+                            Calculators & systems
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-right folder-arrow"></i>
+
+                </a>
+
+
+
+                <a
+                    href="projects.html?category=ecommerce"
+                    class="folder-card"
+                >
+
+                    <div class="folder-icon">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            E-Commerce
+                        </strong>
+
+                        <span>
+                            Stores & growth builds
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-right folder-arrow"></i>
+
+                </a>
+
+
+
+                <a
+                    href="labs.html"
+                    class="folder-card folder-labs"
+                >
+
+                    <div class="folder-icon">
+
+                        <i class="fa-solid fa-flask-vial"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Mohsin Labs
+                        </strong>
+
+                        <span>
+                            Products & experiments
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-right folder-arrow"></i>
+
+                </a>
+
+
+            </div>
+
 
         </section>
 
 
-        <div
-            id="about"
+
+        <!-- =================================================
+             MOHSIN LABS
+        ================================================== -->
+
+        <section
+            class="os-window labs-window"
+            data-window="labs"
+            data-reveal="5"
+        >
+
+
+            <div class="window-bar drag-handle">
+
+
+                <div class="window-controls">
+
+
+                    <button
+                        class="window-control control-close"
+                        data-action="close"
+                        type="button"
+                        aria-label="Close window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-minimize"
+                        data-action="minimize"
+                        type="button"
+                        aria-label="Minimize window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-maximize"
+                        data-action="maximize"
+                        type="button"
+                        aria-label="Maximize window"
+                    ></button>
+
+
+                </div>
+
+
+
+                <div class="window-name">
+
+                    <span class="window-file-icon labs-file-icon">
+
+                        <i class="fa-solid fa-flask"></i>
+
+                    </span>
+
+                    Mohsin Labs.app
+
+                </div>
+
+
+
+                <span class="labs-status">
+                    PRODUCT LAB
+                </span>
+
+
+            </div>
+
+
+
+            <div class="labs-content">
+
+
+                <div class="labs-logo">
+
+                    <span>
+                        ML
+                    </span>
+
+                    <i></i>
+
+                </div>
+
+
+
+                <div class="labs-copy">
+
+                    <span class="labs-founder">
+                        FOUNDED BY MOHSIN IQBAL
+                    </span>
+
+                    <h2>
+                        Mohsin Labs
+                    </h2>
+
+                    <p>
+                        My product lab for useful digital products,
+                        AI tools and experimental systems.
+                    </p>
+
+                    <span class="labs-relation">
+                        A Mohsin Builds venture
+                    </span>
+
+                </div>
+
+
+
+                <a
+                    href="labs.html"
+                    class="labs-button"
+                >
+
+                    Explore Lab
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ARCHITECTURE
+        ================================================== -->
+
+        <section
+            class="os-window architecture-window"
+            data-window="architecture"
+            data-reveal="6"
+        >
+
+
+            <div class="window-bar drag-handle">
+
+
+                <div class="window-controls">
+
+
+                    <button
+                        class="window-control control-close"
+                        data-action="close"
+                        type="button"
+                        aria-label="Close window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-minimize"
+                        data-action="minimize"
+                        type="button"
+                        aria-label="Minimize window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-maximize"
+                        data-action="maximize"
+                        type="button"
+                        aria-label="Maximize window"
+                    ></button>
+
+
+                </div>
+
+
+
+                <div class="window-name">
+
+                    <span class="window-file-icon">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                    </span>
+
+                    Architecture.app
+
+                </div>
+
+
+
+                <a
+                    href="architecture.html"
+                    class="window-external"
+                    aria-label="Open Architecture page"
+                >
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="architecture-content">
+
+
+                <div class="architecture-visual">
+
+                    <span class="architecture-layer layer-one"></span>
+
+                    <span class="architecture-layer layer-two"></span>
+
+                    <span class="architecture-layer layer-three"></span>
+
+                    <span class="architecture-layer layer-four"></span>
+
+                    <span class="architecture-core">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </span>
+
+                </div>
+
+
+
+                <div class="architecture-copy">
+
+                    <span class="architecture-label">
+                        BUILD SYSTEM
+                    </span>
+
+                    <h3>
+                        From idea<br>
+                        to impact.
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Research
+                        </li>
+
+                        <li>
+                            Design
+                        </li>
+
+                        <li>
+                            Development
+                        </li>
+
+                        <li>
+                            Deployment
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             TERMINAL
+        ================================================== -->
+
+        <section
+            class="os-window terminal-window is-hidden"
+            id="terminalWindow"
+            data-window="terminal"
+            role="dialog"
+            aria-label="Terminal"
             aria-hidden="true"
-        ></div>
+        >
+
+
+            <div class="window-bar drag-handle">
+
+
+                <div class="window-controls">
+
+
+                    <button
+                        class="window-control control-close"
+                        data-action="close"
+                        type="button"
+                        aria-label="Close window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-minimize"
+                        data-action="minimize"
+                        type="button"
+                        aria-label="Minimize window"
+                    ></button>
+
+
+                    <button
+                        class="window-control control-maximize"
+                        data-action="maximize"
+                        type="button"
+                        aria-label="Maximize window"
+                    ></button>
+
+
+                </div>
+
+
+
+                <div class="window-name">
+
+                    <span class="window-file-icon terminal-file-icon">
+
+                        <i class="fa-solid fa-terminal"></i>
+
+                    </span>
+
+                    Terminal
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                class="terminal-output"
+                id="terminalOutput"
+            >
+
+                <p>
+
+                    <strong>
+                        mohsin@builds:~$
+                    </strong>
+
+                    whoami
+
+                </p>
+
+
+                <p>
+                    Mohsin Iqbal — designer, developer & product builder.
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        mohsin@builds:~$
+                    </strong>
+
+                    help
+
+                </p>
+
+
+                <p class="terminal-muted">
+                    whoami · projects · labs · skills · contact · clear
+                </p>
+
+
+            </div>
+
+
+
+            <div class="terminal-input-row">
+
+                <span>
+                    mohsin@builds:~$
+                </span>
+
+                <input
+                    id="terminalInput"
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-label="Terminal command"
+                >
+
+            </div>
+
+
+        </section>
+
 
     </main>
 
 
-                <script
-                type="module"
-                src="js/main.js"
-            ></script>
+
+    <!-- =====================================================
+         DOCK
+    ====================================================== -->
+
+    <nav
+        class="os-dock"
+        id="osDock"
+        aria-label="Developer OS dock"
+    >
+
+
+        <a
+            href="index.html"
+            class="dock-item dock-app is-active"
+            data-label="Home"
+            aria-label="Home"
+            aria-current="page"
+        >
+
+            <span class="dock-icon dock-home">
+
+                <i class="fa-solid fa-house"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="projects.html"
+            class="dock-item dock-app"
+            data-label="Projects"
+            aria-label="Projects"
+        >
+
+            <span class="dock-icon dock-projects">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="labs.html"
+            class="dock-item dock-app"
+            data-label="Mohsin Labs"
+            aria-label="Mohsin Labs"
+        >
+
+            <span class="dock-icon dock-labs">
+
+                <i class="fa-solid fa-flask"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <button
+            class="dock-item dock-app"
+            data-open="terminal"
+            data-label="Terminal"
+            type="button"
+            aria-label="Terminal"
+            aria-controls="terminalWindow"
+        >
+
+            <span class="dock-icon dock-terminal">
+
+                <i class="fa-solid fa-terminal"></i>
+
+            </span>
+
+        </button>
+
+
+
+        <a
+            href="about.html"
+            class="dock-item dock-app"
+            data-label="About"
+            aria-label="About"
+        >
+
+            <span class="dock-icon dock-about">
+
+                <i class="fa-solid fa-user"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <div class="dock-divider"></div>
+
+
+
+        <a
+            href="https://linkedin.com/in/mohsinbuilds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-linkedin"
+            data-label="LinkedIn"
+            aria-label="LinkedIn"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://instagram.com/mohsinbuild"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-instagram"
+            data-label="Instagram"
+            aria-label="Instagram"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://x.com/Mohsinbuilds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-x"
+            data-label="X"
+            aria-label="X"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-x-twitter"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://www.upwork.com/freelancers/~01d1ae5333d044ed91"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-upwork"
+            data-label="Upwork"
+            aria-label="Upwork"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-upwork"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://www.behance.net/mohsinbuilds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-behance"
+            data-label="Behance"
+            aria-label="Behance"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-behance"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://github.com/mohsin-builds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-github"
+            data-label="GitHub"
+            aria-label="GitHub"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-github"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://www.fiverr.com/mohsinbuild/design-and-develop-a-modern-responsive-business-website"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-fiverr"
+            data-label="Fiverr"
+            aria-label="Fiverr"
+        >
+
+            <span class="dock-icon fiverr-logo">
+                fi
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         COMMAND PALETTE
+    ====================================================== -->
+
+    <div
+        class="command-overlay is-hidden"
+        id="commandOverlay"
+        aria-hidden="true"
+    >
+
+
+        <section
+            class="command-palette"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Portfolio command palette"
+        >
+
+
+            <div class="command-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input
+                    id="commandInput"
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-label="Search portfolio navigation"
+                    placeholder="Search Mohsin Builds..."
+                >
+
+
+                <kbd>
+                    ESC
+                </kbd>
+
+            </div>
+
+
+
+            <div class="command-heading">
+                NAVIGATE
+            </div>
+
+
+
+            <div class="command-results">
+
+
+                <a href="projects.html">
+
+                    <span>
+
+                        <i class="fa-solid fa-folder-open"></i>
+
+                    </span>
+
+                    Projects
+
+                    <kbd>
+                        ⌥ P
+                    </kbd>
+
+                </a>
+
+
+
+                <a href="about.html">
+
+                    <span>
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </span>
+
+                    About Mohsin
+
+                    <kbd>
+                        ⌥ A
+                    </kbd>
+
+                </a>
+
+
+
+                <a href="architecture.html">
+
+                    <span>
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                    </span>
+
+                    Architecture
+
+                    <kbd>
+                        ⌥ R
+                    </kbd>
+
+                </a>
+
+
+
+                <a href="labs.html">
+
+                    <span>
+
+                        <i class="fa-solid fa-flask"></i>
+
+                    </span>
+
+                    Mohsin Labs
+
+                    <kbd>
+                        ⌥ L
+                    </kbd>
+
+                </a>
+
+
+
+                <button
+                    data-open="terminal"
+                    type="button"
+                    aria-controls="terminalWindow"
+                >
+
+                    <span>
+
+                        <i class="fa-solid fa-terminal"></i>
+
+                    </span>
+
+                    Terminal
+
+                    <kbd>
+                        ⌥ T
+                    </kbd>
+
+                </button>
+
+
+
+                <a href="contact.html">
+
+                    <span>
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </span>
+
+                    Contact
+
+                    <kbd>
+                        ⌥ C
+                    </kbd>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+</div>
+
+
+<script
+    src="js/main.js"
+    defer
+></script>
+
 
 </body>
 

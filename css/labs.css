@@ -1,0 +1,2334 @@
+/* =========================================================
+   MOHSIN BUILDS — MOHSIN LABS
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body.labs-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #020911;
+}
+
+
+/* =========================================================
+   DESKTOP ENVIRONMENT
+========================================================= */
+
+.labs-desktop {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: visible;
+
+    background: #020911;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.labs-desktop .wallpaper {
+    position: fixed;
+    inset: 0;
+
+    filter:
+        brightness(.58)
+        saturate(.90)
+        contrast(1.05);
+}
+
+.labs-desktop .wallpaper-overlay {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 58% 38%,
+            rgba(93, 55, 196, .10),
+            transparent 31%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 6, 13, .80),
+            rgba(0, 8, 17, .38) 34%,
+            rgba(0, 8, 17, .31) 68%,
+            rgba(0, 5, 12, .78)
+        );
+}
+
+
+/* =========================================================
+   WORKSPACE
+========================================================= */
+
+.labs-workspace {
+    position: relative;
+    z-index: 10;
+
+    width:
+        calc(
+            100%
+            -
+            var(--sidebar-width)
+        );
+
+    margin-left:
+        var(--sidebar-width);
+
+    padding:
+        calc(
+            var(--topbar-height)
+            +
+            20px
+        )
+        20px
+        115px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.labs-app {
+    width: 100%;
+    height: 860px;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-rows:
+        44px
+        minmax(0, 1fr)
+        30px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(107, 170, 211, .27);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(6, 21, 34, .97),
+            rgba(3, 11, 21, .98)
+        );
+
+    box-shadow:
+        0 28px 75px
+        rgba(0, 0, 0, .40),
+        inset 0 1px 0
+        rgba(255, 255, 255, .035);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* =========================================================
+   WINDOW BAR
+========================================================= */
+
+.labs-app-bar {
+    min-width: 0;
+
+    padding:
+        0
+        15px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(100, 158, 196, .15);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(29, 55, 74, .43),
+            rgba(13, 31, 46, .24)
+        );
+}
+
+.labs-title-left,
+.window-controls,
+.labs-window-title,
+.labs-window-center,
+.labs-window-status {
+    display: flex;
+    align-items: center;
+}
+
+.labs-title-left {
+    gap: 12px;
+}
+
+.window-controls {
+    gap: 6px;
+}
+
+.labs-dot {
+    width: 9px;
+    height: 9px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.dot-red {
+    background: #ff6158;
+}
+
+.dot-yellow {
+    background: #ffc04a;
+}
+
+.dot-green {
+    background: #35d26b;
+}
+
+.labs-window-title {
+    gap: 7px;
+
+    color: #dce8ef;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.labs-window-title i {
+    color: #997cff;
+}
+
+.labs-window-center {
+    gap: 8px;
+
+    color: #668398;
+
+    font-family: var(--mono);
+    font-size: 6px;
+
+    letter-spacing: .08em;
+}
+
+.labs-window-center strong {
+    color: #aa92ff;
+}
+
+.labs-window-center i {
+    font-size: 5px;
+}
+
+.labs-window-status {
+    justify-self: end;
+
+    gap: 6px;
+
+    color: #638598;
+
+    font-family: var(--mono);
+    font-size: 5.8px;
+}
+
+.status-dot {
+    width: 5px;
+    height: 5px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: #43e5a7;
+}
+
+
+/* =========================================================
+   LAB SEARCH
+========================================================= */
+
+.labs-search {
+    cursor: text;
+}
+
+.labs-search input {
+    min-width: 0;
+
+    flex: 1;
+
+    color: #d7e5ec;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-size: 8px;
+}
+
+.labs-search input::placeholder {
+    color: #8099aa;
+    opacity: 1;
+}
+
+.labs-search:focus-within {
+    border-color:
+        rgba(143, 111, 255, .45);
+
+    background:
+        rgba(13, 15, 38, .48);
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.labs-grid {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        250px
+        minmax(0, 1fr)
+        295px;
+
+    align-items: stretch;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VENTURE IDENTITY
+========================================================= */
+
+.labs-sidebar-panel {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        22px
+        18px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(84, 142, 178, .13);
+
+    background:
+        rgba(2, 11, 19, .29);
+}
+
+.panel-eyebrow,
+.section-kicker {
+    color: #6f819c;
+
+    font-family: var(--mono);
+    font-size: 5.3px;
+
+    letter-spacing: .11em;
+}
+
+
+/* =========================================================
+   LAB MARK
+========================================================= */
+
+.labs-mark {
+    width: 65px;
+    height: 65px;
+
+    margin-top: 18px;
+
+    display: grid;
+    place-items: center;
+
+    color: #e7e0ff;
+
+    border:
+        1px solid
+        rgba(143, 111, 255, .35);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(116, 70, 234, .31),
+            rgba(37, 25, 91, .27)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(73, 40, 180, .12);
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.labs-sidebar-panel h1 {
+    margin:
+        14px
+        0
+        0;
+
+    color: #eef4f8;
+
+    font-size: 25px;
+
+    letter-spacing: -.04em;
+}
+
+.labs-founder {
+    margin:
+        9px
+        0
+        0;
+
+    color: #8b9cad;
+
+    font-size: 7.4px;
+
+    line-height: 1.6;
+}
+
+.labs-founder strong {
+    color: #c8d6de;
+}
+
+.labs-intro {
+    margin:
+        16px
+        0
+        0;
+
+    color: #7f97a7;
+
+    font-size: 7.4px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   VENTURE RELATIONSHIP
+========================================================= */
+
+.venture-link-map {
+    margin-top: 22px;
+}
+
+.venture-node {
+    min-height: 53px;
+
+    padding:
+        8px
+        9px;
+
+    display: grid;
+
+    grid-template-columns:
+        36px
+        1fr;
+
+    gap: 9px;
+
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(76, 140, 179, .15);
+
+    border-radius: 8px;
+
+    background:
+        rgba(4, 20, 32, .34);
+}
+
+.venture-node-labs {
+    border-color:
+        rgba(132, 99, 255, .25);
+
+    background:
+        rgba(76, 45, 156, .10);
+}
+
+.venture-icon {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    color: #7cdfff;
+
+    border:
+        1px solid
+        rgba(74, 184, 226, .22);
+
+    border-radius: 8px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.venture-node-labs .venture-icon {
+    color: #d6c9ff;
+
+    border-color:
+        rgba(142, 107, 255, .30);
+}
+
+.venture-node small,
+.venture-node strong {
+    display: block;
+}
+
+.venture-node small {
+    color: #536f82;
+
+    font-family: var(--mono);
+    font-size: 4.6px;
+}
+
+.venture-node strong {
+    margin-top: 4px;
+
+    color: #cfdee5;
+
+    font-size: 7px;
+}
+
+.venture-connector {
+    height: 34px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    gap: 8px;
+
+    align-items: center;
+
+    color: #695f92;
+
+    font-family: var(--mono);
+    font-size: 4.5px;
+}
+
+.venture-connector span {
+    height: 1px;
+
+    background:
+        rgba(126, 103, 211, .22);
+}
+
+
+/* =========================================================
+   FOCUS AREAS
+========================================================= */
+
+.labs-focus {
+    margin-top: 22px;
+}
+
+.focus-item {
+    min-height: 32px;
+
+    margin-top: 6px;
+
+    padding:
+        0
+        9px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid
+        rgba(77, 132, 166, .11);
+
+    border-radius: 6px;
+
+    background:
+        rgba(4, 17, 27, .27);
+}
+
+.focus-item i {
+    width: 14px;
+
+    color: #9a82ff;
+
+    text-align: center;
+
+    font-size: 7px;
+}
+
+.focus-item span {
+    color: #8ea3b0;
+
+    font-size: 6.5px;
+}
+
+
+/* =========================================================
+   EXTERNAL LAB LINK
+========================================================= */
+
+.labs-primary-link {
+    min-height: 41px;
+
+    margin-top: 20px;
+
+    padding:
+        0
+        11px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: #eef0ff;
+
+    border:
+        1px solid
+        rgba(141, 107, 255, .38);
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(98, 65, 210, .25),
+            rgba(49, 38, 116, .18)
+        );
+
+    font-size: 7.2px;
+    font-weight: 700;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.labs-primary-link:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(169, 141, 255, .60);
+
+    box-shadow:
+        0 10px 25px
+        rgba(72, 44, 177, .12);
+}
+
+
+/* =========================================================
+   CENTER PANEL
+========================================================= */
+
+.labs-center {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+.labs-center-scroll {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        24px
+        27px
+        100px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(89, 149, 210, .25)
+        transparent;
+}
+
+.labs-center-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.labs-center-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.labs-center-scroll::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(89, 149, 210, .25);
+}
+
+.labs-center-scroll::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(105, 169, 229, .43);
+}
+
+
+/* =========================================================
+   LAB HERO
+========================================================= */
+
+.labs-hero {
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(106, 139, 217, .19);
+
+    border-radius: 12px;
+
+    background:
+        rgba(5, 16, 29, .45);
+}
+
+.labs-hero-media {
+    position: relative;
+
+    height: 285px;
+
+    overflow: hidden;
+
+    background: #070f1e;
+}
+
+.labs-hero-media img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: top center;
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 35%,
+            rgba(3, 10, 20, .58)
+        );
+}
+
+.hero-badge {
+    position: absolute;
+
+    left: 15px;
+    bottom: 14px;
+
+    padding:
+        6px
+        8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #95b8a9;
+
+    border:
+        1px solid
+        rgba(67, 200, 154, .20);
+
+    border-radius: 6px;
+
+    background:
+        rgba(3, 21, 23, .78);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    font-family: var(--mono);
+    font-size: 5px;
+}
+
+.labs-hero-copy {
+    padding: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        .95fr
+        1.05fr;
+
+    gap: 28px;
+
+    align-items: end;
+}
+
+.labs-hero-copy h2 {
+    margin:
+        7px
+        0
+        0;
+
+    color: #eef3f8;
+
+    font-size: 23px;
+
+    line-height: 1.07;
+
+    letter-spacing: -.04em;
+}
+
+.labs-hero-copy h2 em {
+    color: #a68cff;
+
+    font-style: normal;
+}
+
+.labs-hero-copy p {
+    margin: 0;
+
+    color: #8299a8;
+
+    font-size: 7.7px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.labs-products,
+.labs-pipeline {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(77, 139, 176, .15);
+
+    border-radius: 11px;
+
+    background:
+        rgba(4, 17, 29, .32);
+}
+
+.labs-section-heading {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.labs-section-heading h2 {
+    margin:
+        6px
+        0
+        0;
+
+    color: #e7eff3;
+
+    font-size: 18px;
+}
+
+.product-count {
+    color: #645d82;
+
+    font-family: var(--mono);
+    font-size: 5px;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS
+========================================================= */
+
+.product-grid {
+    margin-top: 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 12px;
+}
+
+.lab-product-card {
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(79, 140, 177, .15);
+
+    border-radius: 9px;
+
+    background:
+        rgba(3, 15, 25, .42);
+
+    cursor: pointer;
+
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        box-shadow .22s ease;
+}
+
+.lab-product-card:hover,
+.lab-product-card.is-selected {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(130, 102, 244, .38);
+}
+
+.lab-product-card.is-selected {
+    box-shadow:
+        0 10px 28px
+        rgba(50, 33, 130, .08);
+}
+
+.lab-product-card:focus-visible {
+    outline:
+        2px solid
+        rgba(165, 137, 255, .68);
+
+    outline-offset: 3px;
+}
+
+.product-visual {
+    position: relative;
+
+    height: 175px;
+
+    overflow: hidden;
+
+    background: #07131e;
+}
+
+.product-visual img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: top center;
+}
+
+.product-live {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    padding:
+        5px
+        7px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #9cb7ac;
+
+    border:
+        1px solid
+        rgba(62, 205, 151, .18);
+
+    border-radius: 5px;
+
+    background:
+        rgba(2, 18, 18, .76);
+
+    font-family: var(--mono);
+    font-size: 4.8px;
+}
+
+.product-live i {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #43e5a7;
+}
+
+.product-copy {
+    padding: 13px;
+}
+
+.product-meta {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    color: #58758a;
+
+    font-family: var(--mono);
+    font-size: 4.7px;
+}
+
+.product-meta strong {
+    color: #8170be;
+}
+
+.product-copy h3 {
+    margin:
+        8px
+        0
+        0;
+
+    color: #e4edf2;
+
+    font-size: 11px;
+}
+
+.product-copy p {
+    margin:
+        8px
+        0
+        0;
+
+    color: #78919f;
+
+    font-size: 6.6px;
+
+    line-height: 1.55;
+}
+
+.product-tags {
+    margin-top: 11px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.product-tags span {
+    padding:
+        4px
+        6px;
+
+    color: #748e9d;
+
+    border:
+        1px solid
+        rgba(76, 134, 169, .14);
+
+    border-radius: 4px;
+
+    font-size: 5px;
+}
+
+
+/* =========================================================
+   PRODUCT PROCESS
+========================================================= */
+
+.lab-process {
+    margin-top: 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        16px
+        1fr
+        16px
+        1fr
+        16px
+        1fr
+        16px
+        1fr;
+
+    gap: 4px;
+
+    align-items: center;
+}
+
+.lab-process > i {
+    color: #415f77;
+
+    text-align: center;
+
+    font-size: 6px;
+}
+
+.lab-process-item {
+    min-height: 68px;
+
+    padding: 10px;
+
+    border:
+        1px solid
+        rgba(78, 134, 168, .13);
+
+    border-radius: 7px;
+
+    background:
+        rgba(4, 20, 32, .31);
+}
+
+.lab-process-item span,
+.lab-process-item strong,
+.lab-process-item small {
+    display: block;
+}
+
+.lab-process-item span {
+    color: #9b82ff;
+
+    font-family: var(--mono);
+    font-size: 5px;
+}
+
+.lab-process-item strong {
+    margin-top: 6px;
+
+    color: #d8e3e9;
+
+    font-size: 7px;
+}
+
+.lab-process-item small {
+    margin-top: 5px;
+
+    color: #657f8e;
+
+    font-size: 5.3px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PRODUCT INSPECTOR
+========================================================= */
+
+.labs-inspector {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        20px
+        16px
+        24px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-left:
+        1px solid
+        rgba(84, 142, 178, .13);
+
+    background:
+        rgba(2, 11, 19, .31);
+}
+
+.inspector-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inspector-heading span {
+    color: #56778b;
+
+    font-family: var(--mono);
+    font-size: 5.2px;
+
+    letter-spacing: .09em;
+}
+
+.inspector-heading strong {
+    color: #5a798c;
+
+    font-family: var(--mono);
+    font-size: 5.5px;
+}
+
+.inspector-product-preview {
+    height: 158px;
+
+    margin-top: 18px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(99, 151, 186, .19);
+
+    border-radius: 9px;
+
+    background: #07131e;
+}
+
+.inspector-product-preview img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: top center;
+}
+
+.inspector-type {
+    margin-top: 16px;
+
+    display: block;
+
+    color: #9d84ff;
+
+    font-family: var(--mono);
+    font-size: 5.1px;
+
+    letter-spacing: .10em;
+}
+
+.labs-inspector h2 {
+    margin:
+        7px
+        0
+        0;
+
+    color: #eef4f8;
+
+    font-size: 22px;
+
+    letter-spacing: -.035em;
+}
+
+.labs-inspector > p {
+    margin:
+        11px
+        0
+        0;
+
+    color: #8198a7;
+
+    font-size: 7.4px;
+
+    line-height: 1.6;
+}
+
+.inspector-divider {
+    height: 1px;
+
+    margin:
+        17px
+        0;
+
+    background:
+        rgba(78, 132, 165, .13);
+}
+
+
+/* =========================================================
+   PRODUCT STATUS
+========================================================= */
+
+.product-status-grid {
+    margin:
+        9px
+        0
+        16px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 7px;
+}
+
+.product-status-grid div {
+    padding: 9px;
+
+    border:
+        1px solid
+        rgba(74, 130, 164, .13);
+
+    border-radius: 7px;
+
+    background:
+        rgba(4, 18, 29, .30);
+}
+
+.product-status-grid span,
+.product-status-grid strong {
+    display: block;
+}
+
+.product-status-grid span {
+    color: #527084;
+
+    font-family: var(--mono);
+    font-size: 4.4px;
+}
+
+.product-status-grid strong {
+    margin-top: 5px;
+
+    color: #aabdc7;
+
+    font-size: 6.2px;
+}
+
+.live-value {
+    color: #43dda4;
+}
+
+
+/* =========================================================
+   INSPECTOR TAGS
+========================================================= */
+
+.inspector-tags {
+    margin-top: 9px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.inspector-tags span {
+    padding:
+        5px
+        7px;
+
+    color: #829baa;
+
+    border:
+        1px solid
+        rgba(76, 134, 170, .16);
+
+    border-radius: 5px;
+
+    background:
+        rgba(5, 22, 34, .34);
+
+    font-size: 5.5px;
+}
+
+
+/* =========================================================
+   OWNERSHIP
+========================================================= */
+
+.ownership-card {
+    padding: 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        39px
+        1fr;
+
+    gap: 9px;
+
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(126, 99, 235, .20);
+
+    border-radius: 8px;
+
+    background:
+        rgba(73, 44, 153, .08);
+}
+
+.ownership-icon {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    color: #d7ceff;
+
+    border:
+        1px solid
+        rgba(143, 111, 255, .28);
+
+    border-radius: 9px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.ownership-card small,
+.ownership-card strong {
+    display: block;
+}
+
+.ownership-card small {
+    color: #6d628c;
+
+    font-family: var(--mono);
+    font-size: 4.5px;
+}
+
+.ownership-card strong {
+    margin-top: 4px;
+
+    color: #cdd8df;
+
+    font-size: 6.4px;
+}
+
+
+/* =========================================================
+   INSPECTOR ACTIONS
+========================================================= */
+
+.inspector-live-link,
+.inspector-project-link {
+    min-height: 40px;
+
+    margin-top: 12px;
+
+    padding:
+        0
+        11px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 7px;
+
+    font-size: 6.9px;
+    font-weight: 700;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.inspector-live-link {
+    color: #f2efff;
+
+    border:
+        1px solid
+        rgba(146, 111, 255, .34);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(111, 70, 231, .28),
+            rgba(53, 38, 126, .19)
+        );
+}
+
+.inspector-live-link:hover {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(164, 134, 255, .53);
+
+    box-shadow:
+        0 9px 24px
+        rgba(74, 45, 176, .10);
+}
+
+.inspector-project-link {
+    color: #93a9b6;
+
+    border:
+        1px solid
+        rgba(75, 136, 171, .17);
+
+    background:
+        rgba(4, 18, 29, .31);
+}
+
+.inspector-project-link:hover {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(90, 169, 211, .32);
+}
+
+
+/* =========================================================
+   SEARCH FEEDBACK
+========================================================= */
+
+.labs-search-match {
+    border-color:
+        rgba(158, 126, 255, .60);
+
+    box-shadow:
+        0 0 0 1px
+        rgba(145, 113, 255, .08),
+        0 14px 34px
+        rgba(0, 0, 0, .14);
+}
+
+.lab-product-card.labs-search-match {
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   STATUS BAR
+========================================================= */
+
+.labs-statusbar {
+    padding:
+        0
+        13px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    color: #567386;
+
+    border-top:
+        1px solid
+        rgba(88, 140, 174, .12);
+
+    background:
+        rgba(2, 10, 17, .96);
+
+    font-family: var(--mono);
+    font-size: 5.2px;
+}
+
+.labs-statusbar div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.labs-statusbar > span:nth-child(2) {
+    justify-self: center;
+}
+
+.labs-statusbar > span:last-child {
+    justify-self: end;
+}
+
+
+/* =========================================================
+   DOCK
+========================================================= */
+
+.labs-dock {
+    position: fixed;
+
+    z-index: 5000;
+
+    left: 50%;
+    bottom: 24px;
+
+    margin: 0;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.labs-terminal {
+    position: fixed;
+
+    z-index: 12000;
+
+    top: 50%;
+    left: 50%;
+
+    width:
+        min(
+            700px,
+            calc(
+                100%
+                -
+                40px
+            )
+        );
+
+    height: 420px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(98, 175, 215, .38);
+
+    border-radius: 13px;
+
+    background:
+        rgba(2, 12, 20, .98);
+
+    box-shadow:
+        0 35px 100px
+        rgba(0, 0, 0, .66);
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.labs-terminal.is-hidden {
+    display: none;
+}
+
+.labs-terminal-bar {
+    height: 42px;
+
+    padding:
+        0
+        14px;
+
+    display: flex;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(87, 145, 183, .16);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(28, 55, 74, .48),
+            rgba(12, 30, 45, .28)
+        );
+}
+
+.terminal-heading {
+    margin-left: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #d9e5ea;
+
+    font-size: 8px;
+}
+
+.labs-terminal-close {
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #8199aa;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+.labs-terminal-close:hover {
+    color: #f0ecff;
+
+    background:
+        rgba(115, 78, 220, .12);
+}
+
+.labs-terminal-output {
+    height:
+        calc(
+            100%
+            -
+            86px
+        );
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    color: #a3b6c2;
+
+    font-family: var(--mono);
+    font-size: 8px;
+
+    line-height: 1.7;
+}
+
+.labs-terminal-output strong {
+    color: #4fe3aa;
+}
+
+.labs-terminal-input {
+    height: 44px;
+
+    padding:
+        0
+        20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border-top:
+        1px solid
+        rgba(84, 138, 173, .14);
+
+    font-family: var(--mono);
+    font-size: 8px;
+}
+
+.labs-terminal-input span {
+    color: #4fe3aa;
+}
+
+.labs-terminal-input input {
+    min-width: 0;
+
+    flex: 1;
+
+    color: #d6e2e8;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+========================================================= */
+
+.labs-primary-link:focus-visible,
+.inspector-live-link:focus-visible,
+.inspector-project-link:focus-visible,
+.labs-terminal-close:focus-visible {
+    outline:
+        2px solid
+        rgba(166, 137, 255, .72);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   MOTION
+========================================================= */
+
+.status-dot,
+.status-light,
+.product-live i {
+    animation:
+        labsPulse
+        3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes labsPulse {
+
+    0%,
+    100% {
+        opacity: .62;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+========================================================= */
+
+@media (max-width: 1350px) {
+
+    .labs-grid {
+        grid-template-columns:
+            225px
+            minmax(0, 1fr)
+            265px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .labs-app {
+        height: auto;
+
+        min-height: 900px;
+    }
+
+
+    .labs-grid {
+        grid-template-columns:
+            220px
+            minmax(0, 1fr);
+
+        height: auto;
+    }
+
+
+    .labs-sidebar-panel {
+        height: auto;
+    }
+
+
+    .labs-center {
+        height: auto;
+    }
+
+
+    .labs-center-scroll {
+        height: auto;
+
+        overflow: visible;
+    }
+
+
+    /*
+       The inspector remains part of the experience on
+       smaller screens instead of being removed.
+    */
+
+    .labs-inspector {
+        grid-column:
+            1 / -1;
+
+        height: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(180px, .85fr)
+            minmax(220px, 1.15fr)
+            minmax(210px, 1fr);
+
+        column-gap: 18px;
+
+        padding:
+            20px;
+
+        overflow: visible;
+
+        border-left: 0;
+
+        border-top:
+            1px solid
+            rgba(84, 142, 178, .13);
+    }
+
+
+    .inspector-heading {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .inspector-product-preview {
+        grid-column: 1;
+
+        grid-row:
+            2 / span 4;
+
+        height: 150px;
+
+        margin-top: 18px;
+    }
+
+
+    .inspector-type {
+        grid-column: 2;
+
+        margin-top: 18px;
+    }
+
+
+    .labs-inspector h2 {
+        grid-column: 2;
+    }
+
+
+    .labs-inspector > p {
+        grid-column: 2;
+    }
+
+
+    .labs-inspector
+    > .inspector-divider:first-of-type {
+        display: none;
+    }
+
+
+    .labs-inspector
+    > .panel-eyebrow:first-of-type {
+        grid-column: 3;
+
+        margin-top: 18px;
+    }
+
+
+    .product-status-grid {
+        grid-column: 3;
+
+        margin:
+            9px
+            0
+            12px;
+    }
+
+
+    .labs-inspector
+    > .panel-eyebrow:nth-of-type(2) {
+        grid-column: 3;
+    }
+
+
+    .inspector-tags {
+        grid-column: 3;
+    }
+
+
+    .labs-inspector
+    > .inspector-divider:last-of-type {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+
+        margin:
+            14px
+            0;
+    }
+
+
+    .ownership-card {
+        grid-column:
+            1 / 2;
+    }
+
+
+    .inspector-live-link {
+        grid-column:
+            2 / 3;
+
+        margin-top: 0;
+    }
+
+
+    .inspector-project-link {
+        grid-column:
+            3 / 4;
+
+        margin-top: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .labs-workspace {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            calc(
+                var(--topbar-height)
+                +
+                12px
+            )
+            10px
+            95px;
+    }
+
+
+    .labs-app {
+        height: auto;
+    }
+
+
+    .labs-window-center,
+    .labs-window-status {
+        display: none;
+    }
+
+
+    .labs-app-bar {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .labs-grid {
+        display: block;
+    }
+
+
+    .labs-sidebar-panel {
+        overflow: visible;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid
+            rgba(84, 142, 178, .13);
+    }
+
+
+    .labs-center-scroll {
+        padding:
+            20px
+            14px
+            90px;
+    }
+
+
+    .labs-hero-media {
+        height: 240px;
+    }
+
+
+    .labs-hero-copy {
+        grid-template-columns:
+            1fr;
+
+        gap: 16px;
+    }
+
+
+    .product-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .product-visual {
+        height: 205px;
+    }
+
+
+    .lab-process {
+        grid-template-columns:
+            1fr;
+
+        gap: 7px;
+    }
+
+
+    .lab-process > i {
+        transform:
+            rotate(90deg);
+    }
+
+
+    .labs-inspector {
+        display: block;
+
+        height: auto;
+
+        padding:
+            22px
+            16px
+            25px;
+
+        overflow: visible;
+
+        border-left: 0;
+
+        border-top:
+            1px solid
+            rgba(84, 142, 178, .13);
+    }
+
+
+    .inspector-product-preview {
+        height: 190px;
+
+        margin-top: 18px;
+    }
+
+
+    .inspector-type {
+        margin-top: 16px;
+    }
+
+
+    .labs-inspector
+    > .inspector-divider:first-of-type {
+        display: block;
+    }
+
+
+    .product-status-grid {
+        margin:
+            9px
+            0
+            16px;
+    }
+
+
+    .labs-inspector
+    > .inspector-divider:last-of-type {
+        margin:
+            17px
+            0;
+    }
+
+
+    .inspector-live-link,
+    .inspector-project-link {
+        margin-top: 12px;
+    }
+
+
+    .labs-terminal {
+        width:
+            calc(
+                100%
+                -
+                24px
+            );
+
+        height:
+            min(
+                420px,
+                calc(
+                    100vh
+                    -
+                    110px
+                )
+            );
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .labs-center-scroll {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .labs-hero-media {
+        height: 210px;
+    }
+
+
+    .labs-hero-copy {
+        padding: 15px;
+    }
+
+
+    .labs-hero-copy h2 {
+        font-size: 21px;
+    }
+
+
+    .labs-products,
+    .labs-pipeline {
+        padding: 14px;
+    }
+
+
+    .product-visual {
+        height: 185px;
+    }
+
+
+    .labs-sidebar-panel h1 {
+        font-size: 23px;
+    }
+
+
+    .labs-inspector h2 {
+        font-size: 21px;
+    }
+
+
+    .labs-statusbar {
+        grid-template-columns:
+            1fr
+            auto;
+    }
+
+
+    .labs-statusbar > span:last-child {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .status-dot,
+    .status-light,
+    .product-live i {
+        animation: none;
+    }
+
+
+    .lab-product-card,
+    .labs-primary-link,
+    .inspector-live-link,
+    .inspector-project-link {
+        transition: none;
+    }
+
+}

@@ -1,0 +1,2498 @@
+/* =========================================================
+   MOHSIN BUILDS — ARCHITECTURE.APP
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body.architecture-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #020911;
+}
+
+
+/* =========================================================
+   DESKTOP ENVIRONMENT
+========================================================= */
+
+.architecture-desktop {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: visible;
+
+    background: #020911;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.architecture-desktop .wallpaper {
+    position: fixed;
+
+    inset: 0;
+
+    filter:
+        brightness(.62)
+        saturate(.82)
+        contrast(1.04);
+}
+
+.architecture-desktop .wallpaper-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 6, 13, .79),
+            rgba(0, 8, 17, .38) 31%,
+            rgba(0, 8, 17, .32) 68%,
+            rgba(0, 5, 12, .76)
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 7, 14, .34),
+            rgba(0, 7, 14, .06) 48%,
+            rgba(0, 5, 12, .40)
+        );
+}
+
+
+/* =========================================================
+   WORKSPACE
+========================================================= */
+
+.architecture-workspace {
+    position: relative;
+
+    z-index: 10;
+
+    width:
+        calc(
+            100%
+            -
+            var(--sidebar-width)
+        );
+
+    margin-left:
+        var(--sidebar-width);
+
+    padding:
+        calc(
+            var(--topbar-height)
+            +
+            20px
+        )
+        20px
+        115px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.architecture-app {
+    width: 100%;
+    height: 860px;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-rows:
+        44px
+        minmax(0, 1fr)
+        30px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(100, 170, 211, .28);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(5, 21, 34, .96),
+            rgba(2, 11, 20, .98)
+        );
+
+    box-shadow:
+        0 28px 75px
+        rgba(0, 0, 0, .40),
+        inset 0 1px 0
+        rgba(255, 255, 255, .035);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* =========================================================
+   WINDOW BAR
+========================================================= */
+
+.architecture-app-bar {
+    min-width: 0;
+
+    padding:
+        0
+        15px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(100, 158, 196, .15);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(29, 55, 74, .43),
+            rgba(13, 31, 46, .24)
+        );
+}
+
+.architecture-title-left,
+.window-controls,
+.architecture-window-title,
+.architecture-window-center,
+.architecture-window-status,
+.architecture-health > div,
+.delivery-heading,
+.pipeline-status,
+.inspector-heading,
+.architecture-statusbar div,
+.terminal-heading {
+    display: flex;
+    align-items: center;
+}
+
+.architecture-title-left {
+    gap: 12px;
+}
+
+.window-controls {
+    gap: 6px;
+}
+
+.arch-dot {
+    width: 9px;
+    height: 9px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.dot-red {
+    background: #ff6158;
+}
+
+.dot-yellow {
+    background: #ffc04a;
+}
+
+.dot-green {
+    background: #35d26b;
+}
+
+.architecture-window-title {
+    gap: 7px;
+
+    color: #dce8ef;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.architecture-window-title i {
+    color: #64d9ff;
+}
+
+.architecture-window-center {
+    gap: 8px;
+
+    color: #668398;
+
+    font-family: var(--mono);
+    font-size: 6px;
+
+    letter-spacing: .08em;
+}
+
+.architecture-window-center strong {
+    color: #6cdbff;
+}
+
+.architecture-window-center i {
+    font-size: 5px;
+}
+
+.architecture-window-status {
+    justify-self: end;
+
+    gap: 6px;
+
+    color: #638598;
+
+    font-family: var(--mono);
+    font-size: 5.8px;
+}
+
+.status-dot {
+    width: 5px;
+    height: 5px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: #43e5a7;
+}
+
+
+/* =========================================================
+   ARCHITECTURE SEARCH
+========================================================= */
+
+.architecture-search {
+    cursor: text;
+}
+
+.architecture-search input {
+    min-width: 0;
+
+    flex: 1;
+
+    color: #d7e5ec;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-size: 8px;
+}
+
+.architecture-search input::placeholder {
+    color: #8099aa;
+
+    opacity: 1;
+}
+
+.architecture-search:focus-within {
+    border-color:
+        rgba(78, 200, 255, .42);
+
+    background:
+        rgba(4, 20, 32, .50);
+}
+
+
+/* =========================================================
+   THREE-COLUMN SYSTEM
+========================================================= */
+
+.architecture-grid {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        235px
+        minmax(0, 1fr)
+        285px;
+
+    align-items: stretch;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SYSTEM LIBRARY
+========================================================= */
+
+.architecture-library {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        22px
+        18px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(84, 142, 178, .13);
+
+    background:
+        rgba(2, 11, 19, .28);
+}
+
+.library-heading > span,
+.module-caption {
+    color: #56778b;
+
+    font-family: var(--mono);
+    font-size: 5.3px;
+
+    letter-spacing: .10em;
+}
+
+.library-heading h2 {
+    margin:
+        8px
+        0
+        0;
+
+    color: #eef5f8;
+
+    font-size: 24px;
+
+    line-height: 1.08;
+
+    letter-spacing: -.04em;
+}
+
+.library-heading p {
+    margin:
+        12px
+        0
+        0;
+
+    color: #7f98a8;
+
+    font-size: 7.3px;
+
+    line-height: 1.58;
+}
+
+
+/* =========================================================
+   OPERATING MODES
+========================================================= */
+
+.architecture-mode {
+    margin-top: 24px;
+
+    display: grid;
+
+    gap: 8px;
+}
+
+.mode-card {
+    min-height: 52px;
+
+    padding:
+        8px
+        10px;
+
+    display: grid;
+
+    grid-template-columns:
+        34px
+        1fr;
+
+    gap: 10px;
+
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(78, 137, 173, .14);
+
+    border-radius: 8px;
+
+    background:
+        rgba(4, 18, 29, .31);
+}
+
+.mode-card.is-active {
+    border-color:
+        rgba(70, 201, 244, .31);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 130, 174, .13),
+            rgba(4, 18, 29, .35)
+        );
+}
+
+.mode-icon {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #57d6ff;
+
+    border:
+        1px solid
+        rgba(82, 190, 231, .20);
+
+    border-radius: 8px;
+
+    background:
+        rgba(18, 82, 111, .10);
+}
+
+.mode-card strong,
+.mode-card small {
+    display: block;
+}
+
+.mode-card strong {
+    color: #dbe7ec;
+
+    font-size: 7.5px;
+}
+
+.mode-card small {
+    margin-top: 4px;
+
+    color: #647f90;
+
+    font-size: 5.8px;
+}
+
+
+/* =========================================================
+   CORE PRINCIPLES
+========================================================= */
+
+.architecture-principles {
+    margin-top: 24px;
+}
+
+.principle-row {
+    min-height: 34px;
+
+    display: grid;
+
+    grid-template-columns:
+        25px
+        1fr;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(72, 125, 157, .10);
+}
+
+.principle-row span {
+    color: #46c9f5;
+
+    font-family: var(--mono);
+    font-size: 5.5px;
+}
+
+.principle-row strong {
+    color: #829aa8;
+
+    font-size: 6.6px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SYSTEM HEALTH
+========================================================= */
+
+.architecture-health {
+    margin-top: 24px;
+
+    padding: 11px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    border:
+        1px solid
+        rgba(72, 170, 142, .15);
+
+    border-radius: 8px;
+
+    background:
+        rgba(22, 83, 67, .07);
+}
+
+.architecture-health > div {
+    gap: 8px;
+}
+
+.health-light {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #43e5a7;
+}
+
+.architecture-health strong,
+.architecture-health small {
+    display: block;
+}
+
+.architecture-health strong {
+    color: #a5c3b7;
+
+    font-size: 6.7px;
+}
+
+.architecture-health small {
+    margin-top: 3px;
+
+    color: #5d7e72;
+
+    font-size: 5.2px;
+}
+
+.architecture-health > span {
+    color: #45dba3;
+
+    font-family: var(--mono);
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   CENTER PANEL
+========================================================= */
+
+.architecture-center {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+.architecture-center-scroll {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        24px
+        27px
+        100px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(76, 172, 216, .28)
+        transparent;
+}
+
+.architecture-center-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.architecture-center-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.architecture-center-scroll::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(76, 172, 216, .28);
+}
+
+.architecture-center-scroll::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(86, 194, 237, .46);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.architecture-intro {
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, .85fr)
+        1.15fr;
+
+    gap: 44px;
+
+    align-items: end;
+}
+
+.architecture-eyebrow {
+    color: #54cff7;
+
+    font-family: var(--mono);
+    font-size: 5.8px;
+
+    letter-spacing: .12em;
+}
+
+.architecture-intro h1 {
+    margin:
+        8px
+        0
+        0;
+
+    color: #eef5f8;
+
+    font-size: 31px;
+
+    line-height: 1.02;
+
+    letter-spacing: -.045em;
+}
+
+.architecture-intro h1 em {
+    color: #56d7ff;
+
+    font-style: normal;
+}
+
+.architecture-intro-copy p {
+    margin: 0;
+
+    color: #849dac;
+
+    font-size: 8.2px;
+
+    line-height: 1.65;
+}
+
+.architecture-intro-meta {
+    margin-top: 14px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.architecture-intro-meta span {
+    padding:
+        5px
+        7px;
+
+    color: #59788b;
+
+    border:
+        1px solid
+        rgba(75, 135, 171, .13);
+
+    border-radius: 4px;
+
+    font-family: var(--mono);
+    font-size: 4.7px;
+}
+
+
+/* =========================================================
+   SYSTEM MAP
+========================================================= */
+
+.system-map {
+    position: relative;
+
+    height: 430px;
+
+    margin-top: 24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(79, 146, 187, .18);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            rgba(20, 66, 93, .035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(20, 66, 93, .035) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(29, 127, 176, .09),
+            transparent 34%
+        ),
+        rgba(3, 15, 25, .42);
+
+    background-size:
+        30px 30px,
+        30px 30px,
+        auto,
+        auto;
+}
+
+
+/* =========================================================
+   SYSTEM CONNECTIONS
+========================================================= */
+
+.system-connections {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+.connection-line {
+    fill: none;
+
+    stroke:
+        rgba(73, 194, 235, .34);
+
+    stroke-width: 1.6;
+
+    stroke-dasharray:
+        5
+        8;
+
+    animation:
+        lineFlow
+        7s
+        linear
+        infinite;
+}
+
+@keyframes lineFlow {
+
+    to {
+        stroke-dashoffset: -80;
+    }
+
+}
+
+
+/* =========================================================
+   SYSTEM NODES
+========================================================= */
+
+.architecture-node {
+    position: absolute;
+
+    width: 145px;
+    height: 68px;
+
+    padding: 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        22px
+        32px
+        1fr;
+
+    gap: 8px;
+
+    align-items: center;
+
+    color: inherit;
+
+    text-align: left;
+
+    border:
+        1px solid
+        rgba(73, 145, 185, .19);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 31, 48, .91),
+            rgba(3, 17, 28, .96)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, .16);
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.architecture-node:hover,
+.architecture-node.is-active {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(77, 205, 249, .50);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9, 40, 61, .98),
+            rgba(3, 19, 31, .98)
+        );
+
+    box-shadow:
+        0 14px 32px
+        rgba(0, 0, 0, .20);
+}
+
+.node-number {
+    color: #426b82;
+
+    font-family: var(--mono);
+    font-size: 5.4px;
+}
+
+.node-icon {
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #5edcff;
+
+    border:
+        1px solid
+        rgba(77, 192, 234, .22);
+
+    border-radius: 7px;
+
+    background:
+        rgba(23, 94, 126, .10);
+}
+
+.node-copy strong,
+.node-copy small {
+    display: block;
+}
+
+.node-copy strong {
+    color: #dce7ec;
+
+    font-size: 7.5px;
+}
+
+.node-copy small {
+    margin-top: 4px;
+
+    color: #607e90;
+
+    font-size: 5.5px;
+}
+
+
+/* =========================================================
+   NODE POSITIONS
+========================================================= */
+
+.node-research {
+    top: 55px;
+    left: 7%;
+}
+
+.node-design {
+    top: 181px;
+    left: 7%;
+}
+
+.node-development {
+    top: 307px;
+    left: 7%;
+}
+
+.node-product {
+    top: 55px;
+    right: 7%;
+}
+
+.node-automation {
+    top: 181px;
+    right: 7%;
+}
+
+.node-impact {
+    top: 307px;
+    right: 7%;
+}
+
+
+/* =========================================================
+   SYSTEM CORE
+========================================================= */
+
+.architecture-core {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: inherit;
+
+    border:
+        1px solid
+        rgba(78, 201, 245, .34);
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(25, 116, 158, .18),
+            rgba(4, 22, 34, .95) 69%
+        );
+
+    box-shadow:
+        0 0 45px
+        rgba(39, 166, 214, .10),
+        inset 0 0 25px
+        rgba(70, 193, 237, .04);
+
+    cursor: pointer;
+
+    transform:
+        translate(-50%, -50%);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.architecture-core:hover,
+.architecture-core.is-active {
+    border-color:
+        rgba(87, 215, 255, .56);
+
+    box-shadow:
+        0 0 55px
+        rgba(39, 166, 214, .15),
+        inset 0 0 28px
+        rgba(70, 193, 237, .06);
+}
+
+.core-logo {
+    position: relative;
+
+    z-index: 3;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #79e4ff;
+
+    border:
+        1px solid
+        rgba(81, 209, 249, .35);
+
+    border-radius: 12px;
+
+    background:
+        rgba(13, 67, 92, .31);
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.architecture-core strong {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 10px;
+
+    color: #dcebf1;
+
+    font-family: var(--mono);
+    font-size: 6.3px;
+
+    letter-spacing: .08em;
+}
+
+.architecture-core small {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 5px;
+
+    color: #507084;
+
+    font-family: var(--mono);
+    font-size: 4.8px;
+}
+
+.core-ring {
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(76, 203, 246, .15);
+
+    border-radius: 50%;
+}
+
+.core-ring-one {
+    width: 112px;
+    height: 112px;
+
+    animation:
+        coreRotate
+        12s
+        linear
+        infinite;
+}
+
+.core-ring-two {
+    width: 132px;
+    height: 132px;
+
+    border-style: dashed;
+
+    animation:
+        coreRotateReverse
+        18s
+        linear
+        infinite;
+}
+
+@keyframes coreRotate {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+@keyframes coreRotateReverse {
+
+    to {
+        transform:
+            rotate(-360deg);
+    }
+
+}
+
+
+/* =========================================================
+   MAP LABELS
+========================================================= */
+
+.map-label {
+    position: absolute;
+
+    color: #365a70;
+
+    font-family: var(--mono);
+    font-size: 5px;
+
+    letter-spacing: .12em;
+}
+
+.map-label-input {
+    left: 12px;
+    bottom: 12px;
+}
+
+.map-label-output {
+    right: 12px;
+    bottom: 12px;
+}
+
+
+/* =========================================================
+   DELIVERY PIPELINE
+========================================================= */
+
+.delivery-system {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(77, 139, 176, .16);
+
+    border-radius: 11px;
+
+    background:
+        rgba(4, 18, 29, .32);
+}
+
+.delivery-heading {
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.delivery-heading span {
+    color: #56778b;
+
+    font-family: var(--mono);
+    font-size: 5.2px;
+
+    letter-spacing: .11em;
+}
+
+.delivery-heading h2 {
+    margin:
+        6px
+        0
+        0;
+
+    color: #e5eef2;
+
+    font-size: 17px;
+}
+
+.pipeline-status {
+    gap: 6px;
+
+    color: #638a7b;
+
+    font-family: var(--mono);
+    font-size: 5.2px;
+}
+
+.pipeline-status span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #43e5a7;
+}
+
+.pipeline-track {
+    margin-top: 17px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        18px
+        1fr
+        18px
+        1fr
+        18px
+        1fr
+        18px
+        1fr;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+.pipeline-track > i {
+    color: #33596f;
+
+    text-align: center;
+
+    font-size: 6px;
+}
+
+.pipeline-step {
+    min-height: 65px;
+
+    padding: 10px;
+
+    border:
+        1px solid
+        rgba(71, 132, 168, .13);
+
+    border-radius: 7px;
+
+    background:
+        rgba(4, 20, 32, .30);
+}
+
+.pipeline-step span,
+.pipeline-step strong,
+.pipeline-step small {
+    display: block;
+}
+
+.pipeline-step span {
+    color: #48c9f4;
+
+    font-family: var(--mono);
+    font-size: 5px;
+}
+
+.pipeline-step strong {
+    margin-top: 6px;
+
+    color: #d7e3e9;
+
+    font-size: 7px;
+}
+
+.pipeline-step small {
+    margin-top: 5px;
+
+    color: #607c8d;
+
+    font-size: 5.3px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MODULE INSPECTOR
+========================================================= */
+
+.architecture-inspector {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        20px
+        16px
+        24px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-left:
+        1px solid
+        rgba(84, 142, 178, .13);
+
+    background:
+        rgba(2, 11, 19, .31);
+}
+
+.inspector-heading {
+    justify-content: space-between;
+}
+
+.inspector-heading span {
+    color: #56778b;
+
+    font-family: var(--mono);
+    font-size: 5.2px;
+
+    letter-spacing: .09em;
+}
+
+.inspector-heading strong {
+    color: #5a798c;
+
+    font-family: var(--mono);
+    font-size: 5.5px;
+}
+
+.inspector-module-icon {
+    width: 49px;
+    height: 49px;
+
+    margin-top: 22px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #5edcff;
+
+    border:
+        1px solid
+        rgba(75, 190, 233, .26);
+
+    border-radius: 11px;
+
+    background:
+        rgba(20, 80, 108, .12);
+
+    font-size: 16px;
+}
+
+.inspector-category {
+    margin-top: 18px;
+
+    display: block;
+
+    color: #49c8f2;
+
+    font-family: var(--mono);
+    font-size: 5.2px;
+
+    letter-spacing: .10em;
+}
+
+.architecture-inspector h2 {
+    margin:
+        7px
+        0
+        0;
+
+    color: #edf4f7;
+
+    font-size: 25px;
+
+    letter-spacing: -.035em;
+}
+
+.architecture-inspector > p {
+    margin:
+        12px
+        0
+        0;
+
+    color: #819aa9;
+
+    font-size: 7.6px;
+
+    line-height: 1.62;
+}
+
+.inspector-divider {
+    height: 1px;
+
+    margin:
+        18px
+        0;
+
+    background:
+        rgba(78, 132, 165, .13);
+}
+
+
+/* =========================================================
+   PRIMARY OUTPUT
+========================================================= */
+
+.inspector-output {
+    min-height: 42px;
+
+    margin-top: 9px;
+
+    padding:
+        0
+        11px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #9ab5c3;
+
+    border:
+        1px solid
+        rgba(67, 177, 142, .15);
+
+    border-radius: 7px;
+
+    background:
+        rgba(23, 88, 70, .07);
+
+    font-size: 6.5px;
+}
+
+.inspector-output i {
+    color: #43e5a7;
+}
+
+
+/* =========================================================
+   TOOLS / METHODS
+========================================================= */
+
+.inspector-stack {
+    margin-top: 9px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.inspector-stack span {
+    padding:
+        5px
+        7px;
+
+    color: #89a1b0;
+
+    border:
+        1px solid
+        rgba(76, 134, 170, .17);
+
+    border-radius: 5px;
+
+    background:
+        rgba(5, 22, 34, .34);
+
+    font-size: 5.6px;
+}
+
+
+/* =========================================================
+   SYSTEM SIGNAL
+========================================================= */
+
+.signal-board {
+    margin-top: 9px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 6px;
+}
+
+.signal-board div {
+    padding:
+        9px
+        7px;
+
+    border:
+        1px solid
+        rgba(75, 133, 169, .14);
+
+    border-radius: 7px;
+
+    background:
+        rgba(5, 20, 31, .33);
+}
+
+.signal-board span,
+.signal-board strong {
+    display: block;
+}
+
+.signal-board span {
+    color: #537185;
+
+    font-family: var(--mono);
+    font-size: 4.3px;
+}
+
+.signal-board strong {
+    margin-top: 5px;
+
+    color: #a7bdc8;
+
+    font-size: 6.4px;
+}
+
+.signal-board .signal-live {
+    color: #42dca2;
+}
+
+
+/* =========================================================
+   INSPECTOR CTA
+========================================================= */
+
+.architecture-cta {
+    min-height: 42px;
+
+    margin-top: 18px;
+
+    padding:
+        0
+        12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: #03131d;
+
+    border:
+        1px solid
+        #69e0ff;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #61e0ff,
+            #48baff
+        );
+
+    font-size: 7.3px;
+    font-weight: 700;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.architecture-cta:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 9px 22px
+        rgba(55, 192, 255, .14);
+}
+
+
+/* =========================================================
+   STATUS BAR
+========================================================= */
+
+.architecture-statusbar {
+    padding:
+        0
+        13px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    color: #567386;
+
+    border-top:
+        1px solid
+        rgba(88, 140, 174, .12);
+
+    background:
+        rgba(2, 10, 17, .96);
+
+    font-family: var(--mono);
+    font-size: 5.2px;
+}
+
+.architecture-statusbar div {
+    gap: 6px;
+}
+
+.architecture-statusbar > span:nth-child(2) {
+    justify-self: center;
+}
+
+.architecture-statusbar > span:last-child {
+    justify-self: end;
+}
+
+
+/* =========================================================
+   DOCK
+========================================================= */
+
+.architecture-dock {
+    position: fixed;
+
+    z-index: 5000;
+
+    left: 50%;
+    bottom: 24px;
+
+    margin: 0;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.architecture-terminal {
+    position: fixed;
+
+    z-index: 12000;
+
+    top: 50%;
+    left: 50%;
+
+    width:
+        min(
+            700px,
+            calc(100% - 40px)
+        );
+
+    height: 420px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(98, 175, 215, .38);
+
+    border-radius: 13px;
+
+    background:
+        rgba(2, 12, 20, .98);
+
+    box-shadow:
+        0 35px 100px
+        rgba(0, 0, 0, .66);
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.architecture-terminal.is-hidden {
+    display: none;
+}
+
+.architecture-terminal-bar {
+    height: 42px;
+
+    padding:
+        0
+        14px;
+
+    display: flex;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(87, 145, 183, .16);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(28, 55, 74, .48),
+            rgba(12, 30, 45, .28)
+        );
+}
+
+.terminal-heading {
+    margin-left: 11px;
+
+    gap: 7px;
+
+    color: #d9e5ea;
+
+    font-size: 8px;
+}
+
+.architecture-terminal-close {
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #8199aa;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+.architecture-terminal-close:hover {
+    color: #e2f7ff;
+
+    background:
+        rgba(38, 118, 156, .12);
+}
+
+.architecture-terminal-output {
+    height:
+        calc(
+            100%
+            -
+            86px
+        );
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    color: #a3b6c2;
+
+    font-family: var(--mono);
+    font-size: 8px;
+
+    line-height: 1.7;
+}
+
+.architecture-terminal-output strong {
+    color: #4fe3aa;
+}
+
+.architecture-terminal-input {
+    height: 44px;
+
+    padding:
+        0
+        20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border-top:
+        1px solid
+        rgba(84, 138, 173, .14);
+
+    font-family: var(--mono);
+    font-size: 8px;
+}
+
+.architecture-terminal-input span {
+    color: #4fe3aa;
+}
+
+.architecture-terminal-input input {
+    min-width: 0;
+
+    flex: 1;
+
+    color: #d6e2e8;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / KEYBOARD FOCUS
+========================================================= */
+
+.architecture-node:focus-visible,
+.architecture-core:focus-visible,
+.architecture-cta:focus-visible,
+.architecture-terminal-close:focus-visible {
+    outline:
+        2px solid
+        rgba(87, 219, 255, .72);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   SEARCH FEEDBACK
+========================================================= */
+
+.architecture-search-match {
+    border-color:
+        rgba(83, 211, 255, .68);
+
+    box-shadow:
+        0 0 0 1px
+        rgba(83, 211, 255, .11),
+        0 14px 34px
+        rgba(0, 0, 0, .16);
+}
+
+
+/* =========================================================
+   MOTION
+========================================================= */
+
+.status-dot,
+.status-light,
+.health-light,
+.pipeline-status span {
+    animation:
+        architecturePulse
+        3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes architecturePulse {
+
+    0%,
+    100% {
+        opacity: .62;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+========================================================= */
+
+@media (max-width: 1350px) {
+
+    .architecture-grid {
+        grid-template-columns:
+            215px
+            minmax(0, 1fr)
+            260px;
+    }
+
+
+    .architecture-intro h1 {
+        font-size: 27px;
+    }
+
+
+    .architecture-node {
+        width: 128px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .architecture-app {
+        height: auto;
+
+        min-height: 900px;
+    }
+
+
+    .architecture-grid {
+        grid-template-columns:
+            210px
+            minmax(0, 1fr);
+
+        height: auto;
+    }
+
+
+    .architecture-library {
+        height: auto;
+    }
+
+
+    .architecture-center,
+    .architecture-center-scroll {
+        height: auto;
+    }
+
+
+    .architecture-center-scroll {
+        overflow: visible;
+    }
+
+
+    /*
+       Inspector information remains available instead of
+       disappearing on smaller screens.
+    */
+
+    .architecture-inspector {
+        grid-column:
+            1 / -1;
+
+        height: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            60px
+            minmax(0, 1.4fr)
+            minmax(220px, 1fr);
+
+        column-gap: 18px;
+
+        padding:
+            18px
+            20px
+            22px;
+
+        overflow: visible;
+
+        border-left: 0;
+
+        border-top:
+            1px solid
+            rgba(84, 142, 178, .13);
+    }
+
+
+    .inspector-heading {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .inspector-module-icon {
+        grid-column: 1;
+        grid-row:
+            2 / span 3;
+
+        margin-top: 18px;
+    }
+
+
+    .inspector-category {
+        grid-column: 2;
+
+        margin-top: 18px;
+    }
+
+
+    .architecture-inspector h2 {
+        grid-column: 2;
+
+        margin-top: 5px;
+    }
+
+
+    .architecture-inspector > p {
+        grid-column: 2;
+
+        margin-top: 8px;
+    }
+
+
+    .architecture-inspector
+    .inspector-divider:first-of-type {
+        display: none;
+    }
+
+
+    .architecture-inspector
+    > .module-caption:first-of-type {
+        grid-column: 3;
+        grid-row: 2;
+
+        margin-top: 18px;
+    }
+
+
+    .inspector-output {
+        grid-column: 3;
+        grid-row: 3;
+
+        margin-top: 0;
+    }
+
+
+    .architecture-inspector
+    > .module-caption:nth-of-type(3) {
+        grid-column: 3;
+        grid-row: 4;
+    }
+
+
+    .inspector-stack {
+        grid-column: 3;
+
+        margin-top: 0;
+    }
+
+
+    .signal-board {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .architecture-cta {
+        grid-column:
+            1 / -1;
+
+        margin-top: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .architecture-workspace {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            calc(
+                var(--topbar-height)
+                +
+                12px
+            )
+            10px
+            95px;
+    }
+
+
+    .architecture-app {
+        height: auto;
+
+        min-height: 900px;
+    }
+
+
+    .architecture-window-center,
+    .architecture-window-status {
+        display: none;
+    }
+
+
+    .architecture-app-bar {
+        grid-template-columns: 1fr;
+    }
+
+
+    .architecture-grid {
+        display: block;
+    }
+
+
+    .architecture-library {
+        height: auto;
+
+        overflow: visible;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid
+            rgba(84, 142, 178, .13);
+    }
+
+
+    .architecture-center {
+        height: auto;
+    }
+
+
+    .architecture-center-scroll {
+        height: auto;
+
+        overflow: visible;
+
+        padding:
+            24px
+            16px
+            80px;
+    }
+
+
+    .architecture-intro {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .architecture-intro h1 {
+        font-size: 29px;
+    }
+
+
+    /*
+       Mobile system map keeps the same six-stage relationship,
+       but uses narrower nodes so the map remains readable.
+    */
+
+    .system-map {
+        height: 700px;
+    }
+
+
+    .architecture-node {
+        width:
+            min(
+                145px,
+                39%
+            );
+
+        height: 72px;
+
+        grid-template-columns:
+            18px
+            30px
+            minmax(0, 1fr);
+
+        gap: 6px;
+
+        padding: 8px;
+    }
+
+
+    .node-research,
+    .node-design,
+    .node-development {
+        left: 3%;
+    }
+
+
+    .node-product,
+    .node-automation,
+    .node-impact {
+        right: 3%;
+    }
+
+
+    .node-research,
+    .node-product {
+        top: 68px;
+    }
+
+
+    .node-design,
+    .node-automation {
+        top: 314px;
+    }
+
+
+    .node-development,
+    .node-impact {
+        top: 560px;
+    }
+
+
+    .architecture-core {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .core-ring-one {
+        width: 92px;
+        height: 92px;
+    }
+
+
+    .core-ring-two {
+        width: 108px;
+        height: 108px;
+    }
+
+
+    .core-logo {
+        width: 42px;
+        height: 42px;
+
+        font-size: 14px;
+    }
+
+
+    .pipeline-track {
+        grid-template-columns: 1fr;
+
+        gap: 7px;
+    }
+
+
+    .pipeline-track > i {
+        transform:
+            rotate(90deg);
+    }
+
+
+    .pipeline-step {
+        min-height: 58px;
+    }
+
+
+    .architecture-inspector {
+        display: block;
+
+        height: auto;
+
+        padding:
+            22px
+            16px
+            25px;
+
+        border-left: 0;
+
+        border-top:
+            1px solid
+            rgba(84, 142, 178, .13);
+    }
+
+
+    .architecture-inspector
+    .inspector-divider:first-of-type {
+        display: block;
+    }
+
+
+    .architecture-inspector
+    > .module-caption {
+        display: block;
+
+        margin-top: 0;
+    }
+
+
+    .architecture-inspector
+    > .module-caption
+    + .inspector-stack {
+        margin-top: 9px;
+    }
+
+
+    .signal-board {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .architecture-cta {
+        margin-top: 18px;
+    }
+
+
+    .architecture-terminal {
+        width:
+            calc(
+                100%
+                -
+                24px
+            );
+
+        height:
+            min(
+                420px,
+                calc(
+                    100vh
+                    -
+                    110px
+                )
+            );
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .architecture-center-scroll {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .architecture-intro h1 {
+        font-size: 27px;
+    }
+
+
+    .system-map {
+        height: 680px;
+    }
+
+
+    .architecture-node {
+        width: 40%;
+        height: 68px;
+
+        padding: 7px;
+
+        grid-template-columns:
+            17px
+            27px
+            minmax(0, 1fr);
+    }
+
+
+    .node-icon {
+        width: 27px;
+        height: 27px;
+    }
+
+
+    .node-copy strong {
+        font-size: 6.7px;
+    }
+
+
+    .node-copy small {
+        font-size: 5px;
+    }
+
+
+    .architecture-core {
+        width: 108px;
+        height: 108px;
+
+        border-radius: 23px;
+    }
+
+
+    .core-ring-one {
+        width: 82px;
+        height: 82px;
+    }
+
+
+    .core-ring-two {
+        width: 96px;
+        height: 96px;
+    }
+
+
+    .core-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .architecture-core strong {
+        font-size: 5.7px;
+    }
+
+
+    .signal-board {
+        gap: 5px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .connection-line,
+    .core-ring,
+    .status-dot,
+    .status-light,
+    .health-light,
+    .pipeline-status span {
+        animation: none;
+    }
+
+
+    .architecture-node,
+    .architecture-core,
+    .architecture-cta {
+        transition: none;
+    }
+
+}

@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Architecture — Mohsin Builds
+    </title>
+
+    <meta
+        name="description"
+        content="Explore the connected system Mohsin Builds uses to move from research and design through development, automation and measurable real-world impact."
+    >
+
+    <link
+        rel="canonical"
+        href="https://mohsinbuilds.com/architecture.html"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020b13"
+    >
+
+
+    <!-- =====================================================
+         SOCIAL PREVIEW METADATA
+    ====================================================== -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Mohsin Builds"
+    >
+
+    <meta
+        property="og:title"
+        content="Architecture — Mohsin Builds"
+    >
+
+    <meta
+        property="og:description"
+        content="Explore the system behind how Mohsin Builds turns ideas into useful digital products, systems and real-world impact."
+    >
+
+    <meta
+        property="og:url"
+        content="https://mohsinbuilds.com/architecture.html"
+    >
+
+    <meta
+        property="og:image"
+        content="https://mohsinbuilds.com/assets/images/developer-os-wallpaper.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Mohsin Builds system architecture"
+    >
+
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Architecture — Mohsin Builds"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Research, design, development, product thinking, automation and impact connected as one build system."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://mohsinbuilds.com/assets/images/developer-os-wallpaper.png"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        href="favicon.ico"
+    >
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ICON LIBRARY
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         PAGE STYLES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/home.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/architecture.css"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+    ====================================================== -->
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-VRW30YBDE9"
+    ></script>
+
+    <script>
+
+        window.dataLayer =
+            window.dataLayer || [];
+
+
+        function gtag() {
+
+            dataLayer.push(
+                arguments
+            );
+
+        }
+
+
+        gtag(
+            "js",
+            new Date()
+        );
+
+
+        gtag(
+            "config",
+            "G-VRW30YBDE9"
+        );
+
+    </script>
+
+
+    <!-- =====================================================
+         STRUCTURED DATA
+    ====================================================== -->
+
+    <script type="application/ld+json">
+
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Mohsin Builds Architecture",
+            "url": "https://mohsinbuilds.com/architecture.html",
+            "description": "The connected operating system behind how Mohsin Builds moves from research and design to development, automation and measurable impact.",
+            "creator": {
+                "@type": "Person",
+                "name": "Mohsin Iqbal",
+                "url": "https://mohsinbuilds.com/"
+            }
+        }
+
+    </script>
+
+</head>
+
+
+<body class="architecture-page">
+
+
+<div
+    class="desktop architecture-desktop"
+    id="desktop"
+>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div
+        class="wallpaper"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="wallpaper-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="os-sidebar">
+
+
+        <a
+            href="index.html"
+            class="os-brand"
+            aria-label="Mohsin Builds Home"
+        >
+
+            <img
+                src="assets/images/logo-full.png"
+                alt="Mohsin Builds"
+                class="os-brand-logo"
+            >
+
+            <span class="os-brand-system">
+                DEVELOPER OS
+            </span>
+
+        </a>
+
+
+
+        <nav
+            class="side-nav"
+            aria-label="Portfolio navigation"
+        >
+
+
+            <a
+                href="index.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Home
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="projects.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Projects
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="about.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </span>
+
+                <span class="side-label">
+                    About
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="architecture.html"
+                class="side-item is-active"
+                aria-current="page"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Architecture
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="labs.html"
+                class="side-item"
+            >
+
+                <span class="side-icon side-icon-labs">
+
+                    <i class="fa-solid fa-flask"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Mohsin Labs
+                </span>
+
+            </a>
+
+
+
+            <button
+                class="side-item"
+                data-open-terminal
+                type="button"
+                aria-label="Open Terminal"
+                aria-controls="architectureTerminal"
+                aria-expanded="false"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-terminal"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Terminal
+                </span>
+
+            </button>
+
+
+
+            <a
+                href="contact.html"
+                class="side-item"
+            >
+
+                <span class="side-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </span>
+
+                <span class="side-label">
+                    Contact
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <div class="sidebar-status">
+
+            <span class="status-light"></span>
+
+            <strong>
+                AVAILABLE
+            </strong>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         SYSTEM BAR
+    ====================================================== -->
+
+    <header class="system-bar">
+
+
+        <div class="system-path">
+
+            <span class="path-home">
+
+                <i class="fa-solid fa-desktop"></i>
+
+            </span>
+
+            <span>
+                Desktop
+            </span>
+
+            <i class="fa-solid fa-chevron-right path-arrow"></i>
+
+            <strong>
+                Architecture
+            </strong>
+
+        </div>
+
+
+
+        <label
+            class="system-search architecture-search"
+            for="architectureSearchInput"
+        >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                id="architectureSearchInput"
+                type="search"
+                placeholder="Search systems, stages, technologies..."
+                autocomplete="off"
+                aria-label="Search architecture modules"
+            >
+
+            <kbd>
+                ⌘ K
+            </kbd>
+
+        </label>
+
+
+
+        <div class="system-right">
+
+
+            <div
+                class="system-indicators"
+                aria-hidden="true"
+            >
+
+                <i class="fa-solid fa-wifi"></i>
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                <i class="fa-solid fa-battery-three-quarters"></i>
+
+            </div>
+
+
+
+            <div class="system-time">
+
+                <span id="topDate">
+                    --
+                </span>
+
+                <strong id="topTime">
+                    --:--
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         ARCHITECTURE APPLICATION
+    ====================================================== -->
+
+    <main class="architecture-workspace">
+
+
+        <section
+            class="architecture-app"
+            aria-label="Mohsin Builds system architecture"
+        >
+
+
+            <!-- =================================================
+                 WINDOW BAR
+            ================================================== -->
+
+            <header class="architecture-app-bar">
+
+
+                <div class="architecture-title-left">
+
+
+                    <div
+                        class="window-controls"
+                        aria-hidden="true"
+                    >
+
+                        <span class="arch-dot dot-red"></span>
+
+                        <span class="arch-dot dot-yellow"></span>
+
+                        <span class="arch-dot dot-green"></span>
+
+                    </div>
+
+
+
+                    <div class="architecture-window-title">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        <span>
+                            Architecture.app
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="architecture-window-center">
+
+                    <span>
+                        MOHSIN BUILDS
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <strong>
+                        BUILD SYSTEM
+                    </strong>
+
+                </div>
+
+
+
+                <div class="architecture-window-status">
+
+                    <span class="status-dot"></span>
+
+                    SYSTEM ONLINE
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 WORKSPACE
+            ================================================== -->
+
+            <div class="architecture-grid">
+
+
+                <!-- =============================================
+                     SYSTEM LIBRARY
+                ============================================== -->
+
+                <aside class="architecture-library">
+
+
+                    <div class="library-heading">
+
+                        <span>
+                            SYSTEM MAP
+                        </span>
+
+                        <h2>
+                            From idea
+                            <br>
+                            to impact.
+                        </h2>
+
+                        <p>
+                            A repeatable operating system for turning
+                            business problems into useful digital products.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="architecture-mode">
+
+                        <span class="module-caption">
+                            OPERATING MODE
+                        </span>
+
+
+
+                        <div class="mode-card is-active">
+
+                            <span class="mode-icon">
+
+                                <i class="fa-solid fa-diagram-project"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    End-to-End Build
+                                </strong>
+
+                                <small>
+                                    Full project lifecycle
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="mode-card">
+
+                            <span class="mode-icon">
+
+                                <i class="fa-solid fa-code"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Development
+                                </strong>
+
+                                <small>
+                                    Production systems
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="mode-card">
+
+                            <span class="mode-icon">
+
+                                <i class="fa-solid fa-gears"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Automation
+                                </strong>
+
+                                <small>
+                                    Smarter workflows
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="architecture-principles">
+
+                        <span class="module-caption">
+                            CORE PRINCIPLES
+                        </span>
+
+
+
+                        <div class="principle-row">
+
+                            <span>
+                                01
+                            </span>
+
+                            <strong>
+                                Solve the real problem
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="principle-row">
+
+                            <span>
+                                02
+                            </span>
+
+                            <strong>
+                                Design before complexity
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="principle-row">
+
+                            <span>
+                                03
+                            </span>
+
+                            <strong>
+                                Build for actual use
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="principle-row">
+
+                            <span>
+                                04
+                            </span>
+
+                            <strong>
+                                Measure real impact
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="architecture-health">
+
+                        <div>
+
+                            <span class="health-light"></span>
+
+                            <div>
+
+                                <strong>
+                                    Build System Ready
+                                </strong>
+
+                                <small>
+                                    6 modules connected
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <span>
+                            100%
+                        </span>
+
+                    </div>
+
+
+                </aside>
+
+
+
+                <!-- =============================================
+                     SYSTEM CANVAS
+                ============================================== -->
+
+                <section class="architecture-center">
+
+
+                    <div
+                        class="architecture-center-scroll"
+                        id="architectureCenterScroll"
+                    >
+
+
+                        <!-- =====================================
+                             INTRODUCTION
+                        ====================================== -->
+
+                        <div class="architecture-intro">
+
+
+                            <div>
+
+                                <span class="architecture-eyebrow">
+                                    SYSTEM ARCHITECTURE
+                                </span>
+
+                                <h1>
+                                    Ideas flow.
+                                    <br>
+                                    Systems scale.
+                                    <br>
+                                    <em>People win.</em>
+                                </h1>
+
+                            </div>
+
+
+
+                            <div class="architecture-intro-copy">
+
+                                <p>
+                                    Every project moves through a connected system:
+                                    understand the problem, design the experience,
+                                    build the solution, automate what should scale,
+                                    deploy it properly and improve from real feedback.
+                                </p>
+
+
+                                <div class="architecture-intro-meta">
+
+                                    <span>
+                                        6 MODULES
+                                    </span>
+
+                                    <span>
+                                        CONNECTED SYSTEM
+                                    </span>
+
+                                    <span>
+                                        REAL-WORLD OUTPUT
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             INTERACTIVE SYSTEM MAP
+                        ====================================== -->
+
+                        <div
+                            class="system-map"
+                            id="systemMap"
+                        >
+
+
+                            <svg
+                                class="system-connections"
+                                viewBox="0 0 1000 540"
+                                preserveAspectRatio="none"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    class="connection-line"
+                                    d="M260 120 C360 120 390 220 500 270"
+                                ></path>
+
+                                <path
+                                    class="connection-line"
+                                    d="M260 270 C360 270 390 270 500 270"
+                                ></path>
+
+                                <path
+                                    class="connection-line"
+                                    d="M260 420 C360 420 390 320 500 270"
+                                ></path>
+
+                                <path
+                                    class="connection-line"
+                                    d="M500 270 C610 220 640 120 740 120"
+                                ></path>
+
+                                <path
+                                    class="connection-line"
+                                    d="M500 270 C610 270 640 270 740 270"
+                                ></path>
+
+                                <path
+                                    class="connection-line"
+                                    d="M500 270 C610 320 640 420 740 420"
+                                ></path>
+
+                            </svg>
+
+
+
+                            <button
+                                class="architecture-node node-research"
+                                data-stage="research"
+                                type="button"
+                                aria-pressed="false"
+                            >
+
+                                <span class="node-number">
+                                    01
+                                </span>
+
+                                <span class="node-icon">
+
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                                </span>
+
+                                <span class="node-copy">
+
+                                    <strong>
+                                        Research
+                                    </strong>
+
+                                    <small>
+                                        Understand
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+
+                            <button
+                                class="architecture-node node-design is-active"
+                                data-stage="design"
+                                type="button"
+                                aria-pressed="true"
+                            >
+
+                                <span class="node-number">
+                                    02
+                                </span>
+
+                                <span class="node-icon">
+
+                                    <i class="fa-solid fa-pen-ruler"></i>
+
+                                </span>
+
+                                <span class="node-copy">
+
+                                    <strong>
+                                        Design
+                                    </strong>
+
+                                    <small>
+                                        Structure
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+
+                            <button
+                                class="architecture-node node-development"
+                                data-stage="development"
+                                type="button"
+                                aria-pressed="false"
+                            >
+
+                                <span class="node-number">
+                                    03
+                                </span>
+
+                                <span class="node-icon">
+
+                                    <i class="fa-solid fa-code"></i>
+
+                                </span>
+
+                                <span class="node-copy">
+
+                                    <strong>
+                                        Development
+                                    </strong>
+
+                                    <small>
+                                        Build
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+
+                            <button
+                                class="architecture-core"
+                                data-stage="core"
+                                type="button"
+                                aria-pressed="false"
+                            >
+
+                                <span
+                                    class="core-ring core-ring-one"
+                                    aria-hidden="true"
+                                ></span>
+
+                                <span
+                                    class="core-ring core-ring-two"
+                                    aria-hidden="true"
+                                ></span>
+
+                                <span class="core-logo">
+                                    MB
+                                </span>
+
+                                <strong>
+                                    MOHSIN BUILDS
+                                </strong>
+
+                                <small>
+                                    SYSTEM CORE
+                                </small>
+
+                            </button>
+
+
+
+                            <button
+                                class="architecture-node node-product"
+                                data-stage="product"
+                                type="button"
+                                aria-pressed="false"
+                            >
+
+                                <span class="node-number">
+                                    04
+                                </span>
+
+                                <span class="node-icon">
+
+                                    <i class="fa-solid fa-cube"></i>
+
+                                </span>
+
+                                <span class="node-copy">
+
+                                    <strong>
+                                        Product
+                                    </strong>
+
+                                    <small>
+                                        Package
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+
+                            <button
+                                class="architecture-node node-automation"
+                                data-stage="automation"
+                                type="button"
+                                aria-pressed="false"
+                            >
+
+                                <span class="node-number">
+                                    05
+                                </span>
+
+                                <span class="node-icon">
+
+                                    <i class="fa-solid fa-gears"></i>
+
+                                </span>
+
+                                <span class="node-copy">
+
+                                    <strong>
+                                        Automation
+                                    </strong>
+
+                                    <small>
+                                        Scale
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+
+                            <button
+                                class="architecture-node node-impact"
+                                data-stage="impact"
+                                type="button"
+                                aria-pressed="false"
+                            >
+
+                                <span class="node-number">
+                                    06
+                                </span>
+
+                                <span class="node-icon">
+
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+
+                                </span>
+
+                                <span class="node-copy">
+
+                                    <strong>
+                                        Impact
+                                    </strong>
+
+                                    <small>
+                                        Improve
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+
+                            <div class="map-label map-label-input">
+                                IDEA IN
+                            </div>
+
+                            <div class="map-label map-label-output">
+                                IMPACT OUT
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             DELIVERY PIPELINE
+                        ====================================== -->
+
+                        <section class="delivery-system">
+
+
+                            <div class="delivery-heading">
+
+
+                                <div>
+
+                                    <span>
+                                        DELIVERY PIPELINE
+                                    </span>
+
+                                    <h2>
+                                        One connected workflow.
+                                    </h2>
+
+                                </div>
+
+
+
+                                <div class="pipeline-status">
+
+                                    <span></span>
+
+                                    Operational
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="pipeline-track">
+
+
+                                <div class="pipeline-step">
+
+                                    <span>
+                                        01
+                                    </span>
+
+                                    <strong>
+                                        Discover
+                                    </strong>
+
+                                    <small>
+                                        Need · Audience · Goal
+                                    </small>
+
+                                </div>
+
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i>
+
+
+                                <div class="pipeline-step">
+
+                                    <span>
+                                        02
+                                    </span>
+
+                                    <strong>
+                                        Design
+                                    </strong>
+
+                                    <small>
+                                        UX · UI · Structure
+                                    </small>
+
+                                </div>
+
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i>
+
+
+                                <div class="pipeline-step">
+
+                                    <span>
+                                        03
+                                    </span>
+
+                                    <strong>
+                                        Build
+                                    </strong>
+
+                                    <small>
+                                        Code · CMS · Systems
+                                    </small>
+
+                                </div>
+
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i>
+
+
+                                <div class="pipeline-step">
+
+                                    <span>
+                                        04
+                                    </span>
+
+                                    <strong>
+                                        Launch
+                                    </strong>
+
+                                    <small>
+                                        Deploy · Test · Track
+                                    </small>
+
+                                </div>
+
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i>
+
+
+                                <div class="pipeline-step">
+
+                                    <span>
+                                        05
+                                    </span>
+
+                                    <strong>
+                                        Improve
+                                    </strong>
+
+                                    <small>
+                                        Data · Iterate · Scale
+                                    </small>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </section>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =============================================
+                     MODULE INSPECTOR
+                ============================================== -->
+
+                <aside class="architecture-inspector">
+
+
+                    <div class="inspector-heading">
+
+                        <span>
+                            SELECTED MODULE
+                        </span>
+
+                        <strong id="stageNumber">
+                            02 / 06
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="inspector-module-icon">
+
+                        <i
+                            id="stageIcon"
+                            class="fa-solid fa-pen-ruler"
+                        ></i>
+
+                    </div>
+
+
+
+                    <span
+                        class="inspector-category"
+                        id="stageCategory"
+                    >
+                        EXPERIENCE SYSTEM
+                    </span>
+
+
+
+                    <h2 id="stageTitle">
+                        Design
+                    </h2>
+
+
+
+                    <p id="stageDescription">
+                        Translate strategy into clear structure, user journeys,
+                        interfaces and visual systems before development begins.
+                    </p>
+
+
+
+                    <div class="inspector-divider"></div>
+
+
+
+                    <span class="module-caption">
+                        PRIMARY OUTPUT
+                    </span>
+
+
+
+                    <div
+                        class="inspector-output"
+                        id="stageOutput"
+                    >
+
+                        <i class="fa-solid fa-check"></i>
+
+                        <span>
+                            Clear UX + polished interface
+                        </span>
+
+                    </div>
+
+
+
+                    <span class="module-caption">
+                        TOOLS / METHODS
+                    </span>
+
+
+
+                    <div
+                        class="inspector-stack"
+                        id="stageTools"
+                    >
+
+                        <span>
+                            Figma
+                        </span>
+
+                        <span>
+                            UX
+                        </span>
+
+                        <span>
+                            UI Systems
+                        </span>
+
+                        <span>
+                            Wireframes
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="inspector-divider"></div>
+
+
+
+                    <span class="module-caption">
+                        SYSTEM SIGNAL
+                    </span>
+
+
+
+                    <div class="signal-board">
+
+
+                        <div>
+
+                            <span>
+                                CLARITY
+                            </span>
+
+                            <strong id="signalClarity">
+                                94%
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                BUILD READY
+                            </span>
+
+                            <strong id="signalBuild">
+                                YES
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                STATUS
+                            </span>
+
+                            <strong class="signal-live">
+                                ACTIVE
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <a
+                        href="projects.html"
+                        class="architecture-cta"
+                    >
+
+                        See systems in action
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                </aside>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STATUS BAR
+            ================================================== -->
+
+            <footer class="architecture-statusbar">
+
+
+                <div>
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Architecture synchronized
+                    </span>
+
+                </div>
+
+
+
+                <span
+                    id="selectedStatus"
+                    aria-live="polite"
+                >
+                    Design module selected
+                </span>
+
+
+
+                <span
+                    id="architectureSearchStatus"
+                    aria-live="polite"
+                >
+                    BUILD SYSTEM READY
+                </span>
+
+
+            </footer>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         TERMINAL
+    ====================================================== -->
+
+    <section
+        class="architecture-terminal is-hidden"
+        id="architectureTerminal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Architecture Terminal"
+        aria-hidden="true"
+    >
+
+
+        <header class="architecture-terminal-bar">
+
+
+            <div
+                class="window-controls"
+                aria-hidden="true"
+            >
+
+                <span class="arch-dot dot-red"></span>
+
+                <span class="arch-dot dot-yellow"></span>
+
+                <span class="arch-dot dot-green"></span>
+
+            </div>
+
+
+
+            <div class="terminal-heading">
+
+                <i class="fa-solid fa-terminal"></i>
+
+                Terminal
+
+            </div>
+
+
+
+            <button
+                id="terminalClose"
+                class="architecture-terminal-close"
+                type="button"
+                aria-label="Close Terminal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </header>
+
+
+
+        <div
+            class="architecture-terminal-output"
+            id="terminalOutput"
+        >
+
+
+            <p>
+
+                <strong>
+                    mohsin@builds:~/architecture$
+                </strong>
+
+                system
+
+            </p>
+
+
+
+            <p>
+                Research → Design → Development → Product → Automation → Impact
+            </p>
+
+
+
+            <p>
+
+                <strong>
+                    mohsin@builds:~/architecture$
+                </strong>
+
+                help
+
+            </p>
+
+
+
+            <p>
+                system · research · design · development · product · automation · impact · projects · about · labs · contact · home · clear
+            </p>
+
+
+        </div>
+
+
+
+        <div class="architecture-terminal-input">
+
+            <span>
+                mohsin@builds:~/architecture$
+            </span>
+
+            <input
+                id="terminalInput"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Terminal command"
+            >
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DOCK
+    ====================================================== -->
+
+    <nav
+        class="os-dock architecture-dock"
+        id="osDock"
+        aria-label="Developer OS dock"
+    >
+
+
+        <a
+            href="index.html"
+            class="dock-item dock-app"
+            data-label="Home"
+            aria-label="Home"
+        >
+
+            <span class="dock-icon dock-home">
+
+                <i class="fa-solid fa-house"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="projects.html"
+            class="dock-item dock-app"
+            data-label="Projects"
+            aria-label="Projects"
+        >
+
+            <span class="dock-icon dock-projects">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="labs.html"
+            class="dock-item dock-app"
+            data-label="Mohsin Labs"
+            aria-label="Mohsin Labs"
+        >
+
+            <span class="dock-icon dock-labs">
+
+                <i class="fa-solid fa-flask"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <button
+            class="dock-item dock-app"
+            data-open-terminal
+            data-label="Terminal"
+            type="button"
+            aria-label="Terminal"
+            aria-controls="architectureTerminal"
+            aria-expanded="false"
+        >
+
+            <span class="dock-icon dock-terminal">
+
+                <i class="fa-solid fa-terminal"></i>
+
+            </span>
+
+        </button>
+
+
+
+        <a
+            href="about.html"
+            class="dock-item dock-app"
+            data-label="About"
+            aria-label="About"
+        >
+
+            <span class="dock-icon dock-about">
+
+                <i class="fa-solid fa-user"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <div
+            class="dock-divider"
+            aria-hidden="true"
+        ></div>
+
+
+
+        <a
+            href="https://linkedin.com/in/mohsinbuilds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-linkedin"
+            data-label="LinkedIn"
+            aria-label="LinkedIn"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://instagram.com/mohsinbuild"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-instagram"
+            data-label="Instagram"
+            aria-label="Instagram"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://x.com/Mohsinbuilds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-x"
+            data-label="X"
+            aria-label="X"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-x-twitter"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://www.upwork.com/freelancers/~01d1ae5333d044ed91"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-upwork"
+            data-label="Upwork"
+            aria-label="Upwork"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-upwork"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://www.behance.net/mohsinbuilds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-behance"
+            data-label="Behance"
+            aria-label="Behance"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-behance"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://github.com/mohsin-builds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-github"
+            data-label="GitHub"
+            aria-label="GitHub"
+        >
+
+            <span class="dock-icon">
+
+                <i class="fa-brands fa-github"></i>
+
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://www.fiverr.com/mohsinbuild/design-and-develop-a-modern-responsive-business-website"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dock-item social-fiverr"
+            data-label="Fiverr"
+            aria-label="Fiverr"
+        >
+
+            <span class="dock-icon fiverr-logo">
+                fi
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+</div>
+
+
+<script
+    src="js/architecture.js"
+    defer
+></script>
+
+
+</body>
+
+</html>

@@ -1,2090 +1,2116 @@
-/* =========================================================
-   MOHSIN BUILDS V2
-   FOUNDER STUDIO — BUILD 003
-   REAL THREE.JS ECOSYSTEM
-========================================================= */
+/**
+ * Mohsin Builds — Home Interface
+ *
+ * Controls the interactive Developer OS experience:
+ * window management, featured projects, terminal commands,
+ * command palette, dock magnification and pointer depth.
+ */
 
-import * as THREE from
-    "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
-
-
-/* =========================================================
-   SYSTEM CONTENT
-========================================================= */
-
-const systemData = {
-
-    core: {
-        index: "00 / 06",
-        label: "CENTRAL SYSTEM",
-        title: "Mohsin Builds",
-        description:
-            "The personal digital environment of Mohsin Iqbal — connecting design, development, products, automation and business systems.",
-        meta: [
-            "DESIGN",
-            "BUILD",
-            "SYSTEMS"
-        ]
-    },
-
-    labs: {
-        index: "01 / 06",
-        label: "FLAGSHIP PROJECT",
-        title: "Mohsin Labs",
-        description:
-            "Experimental digital products, intelligent systems and useful tools built around real-world problems.",
-        meta: [
-            "PRODUCT",
-            "SYSTEMS",
-            "LAB"
-        ]
-    },
-
-    web: {
-        index: "02 / 06",
-        label: "WEB EXPERIENCES",
-        title: "Digital Experiences",
-        description:
-            "Premium websites and interfaces designed around clarity, usability, performance and strong visual identity.",
-        meta: [
-            "DESIGN",
-            "FRONTEND",
-            "UX"
-        ]
-    },
-
-    commerce: {
-        index: "03 / 06",
-        label: "DIGITAL COMMERCE",
-        title: "E-Commerce",
-        description:
-            "Commerce experiences designed to connect product presentation, customer journeys and business growth.",
-        meta: [
-            "SHOPIFY",
-            "COMMERCE",
-            "GROWTH"
-        ]
-    },
-
-    automation: {
-        index: "04 / 06",
-        label: "INTELLIGENT SYSTEMS",
-        title: "AI & Automation",
-        description:
-            "Automation workflows and AI-assisted systems designed to reduce repetitive work and create leverage.",
-        meta: [
-            "AI",
-            "WORKFLOWS",
-            "AUTOMATION"
-        ]
-    },
-
-    business: {
-        index: "05 / 06",
-        label: "BUSINESS SYSTEMS",
-        title: "Systems Thinking",
-        description:
-            "Digital tools and processes designed around real operational problems, people and measurable outcomes.",
-        meta: [
-            "PROCESS",
-            "TOOLS",
-            "IMPACT"
-        ]
-    }
-
-};
+document.addEventListener("DOMContentLoaded", () => {
+    "use strict";
 
 
-/* =========================================================
-   DOM ELEMENTS
-========================================================= */
+    /* =========================================================
+       SELECTORS
+    ========================================================= */
 
-const canvas =
-    document.querySelector(
-        "#ecosystem-canvas"
-    );
+    const SELECTORS = {
+        desktop: ".desktop",
+        workspace: ".workspace",
 
-const ecosystemSceneElement =
-    document.querySelector(
-        ".ecosystem-scene"
-    );
+        windows: ".os-window",
+        openWindowButtons: "[data-open]",
 
-const detail =
-    document.querySelector(
-        "[data-system-detail]"
-    );
+        dock: "#osDock",
+        dockItems: ".dock-item",
 
-const founderStudio =
-    document.querySelector(
-        ".founder-studio"
-    );
+        commandOverlay: "#commandOverlay",
+        commandInput: "#commandInput",
+        commandResults: ".command-results > *",
 
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+        searchButton: "#searchButton",
+        currentWorkspace: "#currentWorkspace",
 
+        topDate: "#topDate",
+        topTime: "#topTime",
 
-/* =========================================================
-   THREE.JS GLOBALS
-========================================================= */
+        terminalInput: "#terminalInput",
+        terminalOutput: "#terminalOutput",
 
-let renderer;
-let scene;
-let camera;
-let world;
-
-const worldNodes = {};
-
-const animatedPackets = [];
-
-let targetCameraX = 8.2;
-let targetCameraY = 8.5;
+        featuredTitle: "#featuredTitle",
+        featuredDescription: "#featuredDescription",
+        featuredStack: "#featuredStack",
+        projectCounter: "#projectCounter",
+        previousProject: "#previousProject",
+        nextProject: "#nextProject"
+    };
 
 
-/* =========================================================
-   IMPORTANT — NODE POSITIONS
-   MUST EXIST BEFORE 3D INITIALIZATION
-========================================================= */
+    /* =========================================================
+       DOM HELPERS
+    ========================================================= */
 
-const nodePositions = {
-
-    labs:
-        new THREE.Vector3(
-            0,
-            -0.14,
-            -3
-        ),
-
-    web:
-        new THREE.Vector3(
-            -3.55,
-            -0.14,
-            -1.45
-        ),
-
-    commerce:
-        new THREE.Vector3(
-            -3.6,
-            -0.14,
-            2.15
-        ),
-
-    automation:
-        new THREE.Vector3(
-            0,
-            -0.14,
-            2.75
-        ),
-
-    business:
-        new THREE.Vector3(
-            3.65,
-            -0.14,
-            1.55
-        )
-
-};
+    const select = (
+        selector,
+        root = document
+    ) =>
+        root.querySelector(selector);
 
 
-/* =========================================================
-   RIGHT INFORMATION PANEL
-========================================================= */
-
-function showSystem(systemKey) {
-
-    const data =
-        systemData[systemKey];
-
-    if (!data) {
-        return;
-    }
+    const selectAll = (
+        selector,
+        root = document
+    ) =>
+        [
+            ...root.querySelectorAll(selector)
+        ];
 
 
-    /* HTML LABEL ACTIVE STATE */
+    /* =========================================================
+       DOM REFERENCES
+    ========================================================= */
 
-    document
-        .querySelectorAll(
-            "[data-world-node]"
-        )
-        .forEach((label) => {
+    const body =
+        document.body;
 
-            label.classList.toggle(
-                "is-active",
-                label.dataset.worldNode ===
-                    systemKey
+
+    const desktop =
+        select(
+            SELECTORS.desktop
+        );
+
+
+    const workspace =
+        select(
+            SELECTORS.workspace
+        );
+
+
+    const windows =
+        selectAll(
+            SELECTORS.windows
+        );
+
+
+    const openWindowButtons =
+        selectAll(
+            SELECTORS.openWindowButtons
+        );
+
+
+    const dock =
+        select(
+            SELECTORS.dock
+        );
+
+
+    const dockItems =
+        selectAll(
+            SELECTORS.dockItems
+        );
+
+
+    const commandOverlay =
+        select(
+            SELECTORS.commandOverlay
+        );
+
+
+    const commandInput =
+        select(
+            SELECTORS.commandInput
+        );
+
+
+    const commandResults =
+        selectAll(
+            SELECTORS.commandResults
+        );
+
+
+    const searchButton =
+        select(
+            SELECTORS.searchButton
+        );
+
+
+    const currentWorkspace =
+        select(
+            SELECTORS.currentWorkspace
+        );
+
+
+    const topDate =
+        select(
+            SELECTORS.topDate
+        );
+
+
+    const topTime =
+        select(
+            SELECTORS.topTime
+        );
+
+
+    const terminalInput =
+        select(
+            SELECTORS.terminalInput
+        );
+
+
+    const terminalOutput =
+        select(
+            SELECTORS.terminalOutput
+        );
+
+
+    const featuredTitle =
+        select(
+            SELECTORS.featuredTitle
+        );
+
+
+    const featuredDescription =
+        select(
+            SELECTORS.featuredDescription
+        );
+
+
+    const featuredStack =
+        select(
+            SELECTORS.featuredStack
+        );
+
+
+    const projectCounter =
+        select(
+            SELECTORS.projectCounter
+        );
+
+
+    const previousProject =
+        select(
+            SELECTORS.previousProject
+        );
+
+
+    const nextProject =
+        select(
+            SELECTORS.nextProject
+        );
+
+
+    /* =========================================================
+       ENVIRONMENT
+    ========================================================= */
+
+    const prefersReducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    const hasFinePointer =
+        window.matchMedia(
+            "(pointer: fine)"
+        ).matches;
+
+
+    let highestZIndex =
+        100;
+
+
+    let paletteReturnFocus =
+        null;
+
+
+    /* =========================================================
+       BOOT
+    ========================================================= */
+
+    requestAnimationFrame(
+        () => {
+
+            requestAnimationFrame(
+                () => {
+
+                    body.classList.add(
+                        "os-ready"
+                    );
+
+                }
             );
 
-        });
-
-
-    /* 3D HIGHLIGHT */
-
-    highlightWorld(
-        systemKey
+        }
     );
 
 
-    if (!detail) {
-        return;
-    }
+    /* =========================================================
+       SYSTEM CLOCK
+    ========================================================= */
+
+    function updateClock() {
+
+        const now =
+            new Date();
 
 
-    const index =
-        detail.querySelector(
-            ".system-detail__index"
-        );
+        if (topTime) {
 
-    const label =
-        detail.querySelector(
-            ".system-detail__label"
-        );
+            topTime.textContent =
+                now.toLocaleTimeString(
+                    [],
+                    {
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    }
+                );
 
-    const title =
-        detail.querySelector(
-            "h2"
-        );
-
-    const description =
-        detail.querySelector(
-            "h2 + p"
-        );
-
-    const meta =
-        detail.querySelector(
-            ".system-detail__meta"
-        );
+        }
 
 
-    if (index) {
-        index.textContent =
-            data.index;
-    }
+        if (topDate) {
 
-    if (label) {
-        label.textContent =
-            data.label;
-    }
+            topDate.textContent =
+                now.toLocaleDateString(
+                    [],
+                    {
+                        weekday: "short",
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                    }
+                );
 
-    if (title) {
-        title.textContent =
-            data.title;
-    }
-
-    if (description) {
-        description.textContent =
-            data.description;
-    }
-
-    if (meta) {
-
-        meta.innerHTML =
-            data.meta
-                .map(
-                    (item) =>
-                        `<span>${item}</span>`
-                )
-                .join("");
+        }
 
     }
 
 
-    detail.classList.remove(
-        "is-changing"
+    updateClock();
+
+
+    window.setInterval(
+        updateClock,
+        30_000
     );
 
-    void detail.offsetWidth;
 
-    detail.classList.add(
-        "is-changing"
-    );
+    /* =========================================================
+       WORKSPACE LABEL
+    ========================================================= */
 
-}
-
-
-/* =========================================================
-   INITIALIZE THREE.JS
-========================================================= */
-
-function initThreeWorld() {
-
-    if (
-        !canvas ||
-        !ecosystemSceneElement
+    function setWorkspaceLabel(
+        label
     ) {
-        return;
+
+        if (!currentWorkspace) {
+            return;
+        }
+
+
+        currentWorkspace.textContent =
+            label;
+
     }
 
 
-    scene =
-        new THREE.Scene();
+    /* =========================================================
+       WINDOW FOCUS
+    ========================================================= */
+
+    function focusWindow(
+        windowElement
+    ) {
+
+        if (!windowElement) {
+            return;
+        }
 
 
-    camera =
-        new THREE.PerspectiveCamera(
-            38,
-            1,
-            0.1,
-            100
+        windows.forEach(
+            (item) => {
+
+                item.classList.remove(
+                    "is-focused"
+                );
+
+            }
         );
 
 
-    camera.position.set(
-        8.2,
-        8.5,
-        11.5
+        highestZIndex +=
+            1;
+
+
+        windowElement.style.zIndex =
+            String(
+                highestZIndex
+            );
+
+
+        windowElement.classList.add(
+            "is-focused"
+        );
+
+    }
+
+
+    /* =========================================================
+       WINDOW VISIBILITY
+    ========================================================= */
+
+    function closeWindow(
+        windowElement
+    ) {
+
+        if (!windowElement) {
+            return;
+        }
+
+
+        windowElement.classList.add(
+            "is-hidden"
+        );
+
+
+        windowElement.classList.remove(
+            "is-focused",
+            "is-opening"
+        );
+
+
+        windowElement.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        if (
+            windowElement.dataset.window ===
+            "terminal"
+        ) {
+
+            setWorkspaceLabel(
+                "Home"
+            );
+
+        }
+
+    }
+
+
+    function openWindow(
+        name
+    ) {
+
+        const windowElement =
+            select(
+                `[data-window="${name}"]`
+            );
+
+
+        if (!windowElement) {
+            return;
+        }
+
+
+        windowElement.classList.remove(
+            "is-hidden",
+            "is-minimized",
+            "is-opening"
+        );
+
+
+        windowElement.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        /*
+         * A single layout read allows the opening animation
+         * to restart after a previously closed window reopens.
+         */
+        void windowElement.offsetWidth;
+
+
+        windowElement.classList.add(
+            "is-opening"
+        );
+
+
+        focusWindow(
+            windowElement
+        );
+
+
+        setWorkspaceLabel(
+            name === "terminal"
+                ? "Terminal"
+                : "Home"
+        );
+
+
+        if (
+            name === "terminal"
+        ) {
+
+            window.setTimeout(
+                () => {
+
+                    terminalInput
+                        ?.focus();
+
+                },
+                120
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       WINDOW MAXIMIZATION
+    ========================================================= */
+
+    function toggleMaximize(
+        windowElement
+    ) {
+
+        if (!windowElement) {
+            return;
+        }
+
+
+        windowElement.classList.toggle(
+            "is-maximized"
+        );
+
+
+        windowElement.classList.remove(
+            "is-minimized"
+        );
+
+
+        focusWindow(
+            windowElement
+        );
+
+    }
+
+
+    /* =========================================================
+       WINDOW OPEN TRIGGERS
+    ========================================================= */
+
+    openWindowButtons.forEach(
+        (button) => {
+
+            button.addEventListener(
+                "click",
+                (event) => {
+
+                    const windowName =
+                        button.dataset.open;
+
+
+                    if (!windowName) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    openWindow(
+                        windowName
+                    );
+
+
+                    closeCommandPalette({
+                        restoreFocus: false
+                    });
+
+                }
+            );
+
+        }
     );
 
 
-    camera.lookAt(
-        0,
-        0.6,
-        0
+    /* =========================================================
+       WINDOW CONTROLS
+    ========================================================= */
+
+    windows.forEach(
+        (windowElement) => {
+
+            windowElement.addEventListener(
+                "pointerdown",
+                () => {
+
+                    focusWindow(
+                        windowElement
+                    );
+
+                }
+            );
+
+
+            const closeButton =
+                select(
+                    '[data-action="close"]',
+                    windowElement
+                );
+
+
+            const minimizeButton =
+                select(
+                    '[data-action="minimize"]',
+                    windowElement
+                );
+
+
+            const maximizeButton =
+                select(
+                    '[data-action="maximize"]',
+                    windowElement
+                );
+
+
+            const titleBar =
+                select(
+                    ".window-bar",
+                    windowElement
+                );
+
+
+            closeButton
+                ?.addEventListener(
+                    "click",
+                    (event) => {
+
+                        event.stopPropagation();
+
+
+                        closeWindow(
+                            windowElement
+                        );
+
+                    }
+                );
+
+
+            minimizeButton
+                ?.addEventListener(
+                    "click",
+                    (event) => {
+
+                        event.stopPropagation();
+
+
+                        windowElement
+                            .classList
+                            .toggle(
+                                "is-minimized"
+                            );
+
+
+                        windowElement
+                            .classList
+                            .remove(
+                                "is-maximized"
+                            );
+
+
+                        focusWindow(
+                            windowElement
+                        );
+
+                    }
+                );
+
+
+            maximizeButton
+                ?.addEventListener(
+                    "click",
+                    (event) => {
+
+                        event.stopPropagation();
+
+
+                        toggleMaximize(
+                            windowElement
+                        );
+
+                    }
+                );
+
+
+            titleBar
+                ?.addEventListener(
+                    "dblclick",
+                    (event) => {
+
+                        if (
+                            event.target.closest(
+                                ".window-controls, a, button"
+                            )
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        toggleMaximize(
+                            windowElement
+                        );
+
+                    }
+                );
+
+
+            enableDragging(
+                windowElement
+            );
+
+        }
     );
 
 
-    renderer =
-        new THREE.WebGLRenderer({
-            canvas: canvas,
-            alpha: true,
-            antialias: true,
-            powerPreference:
-                "high-performance"
-        });
+    /* =========================================================
+       WINDOW DRAGGING
+    ========================================================= */
+
+    function enableDragging(
+        windowElement
+    ) {
+
+        const handle =
+            select(
+                ".drag-handle",
+                windowElement
+            );
 
 
-    renderer.setPixelRatio(
-        Math.min(
-            window.devicePixelRatio,
-            1.8
-        )
-    );
+        if (
+            !handle ||
+            !workspace
+        ) {
+
+            return;
+
+        }
 
 
-    renderer.outputColorSpace =
-        THREE.SRGBColorSpace;
+        let isDragging =
+            false;
 
 
-    renderer.toneMapping =
-        THREE.ACESFilmicToneMapping;
+        let pointerStartX =
+            0;
 
 
-    renderer.toneMappingExposure =
-        1.25;
+        let pointerStartY =
+            0;
 
 
-    world =
-        new THREE.Group();
+        let windowStartLeft =
+            0;
 
 
-    scene.add(
-        world
-    );
+        let windowStartTop =
+            0;
 
 
-    createLighting();
+        handle.addEventListener(
+            "pointerdown",
+            (event) => {
 
-    createPlatform();
+                /*
+                 * Desktop dragging is intentionally disabled
+                 * for touch/tablet layouts.
+                 */
 
-    createGrid();
+                if (
+                    event.button !== 0
+                ) {
 
-    createCentralCore();
+                    return;
 
-    createLabsTower();
-
-    createSatelliteNodes();
-
-    createConnections();
-
-    createParticles();
-
-
-    resizeRenderer();
+                }
 
 
-    window.addEventListener(
-        "resize",
-        resizeRenderer
-    );
+                if (
+                    event.target.closest(
+                        ".window-controls, a, button"
+                    )
+                ) {
+
+                    return;
+
+                }
 
 
-    ecosystemSceneElement
-        .addEventListener(
+                if (
+                    window.innerWidth <=
+                    1220
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    windowElement
+                        .classList
+                        .contains(
+                            "is-maximized"
+                        )
+                ) {
+
+                    return;
+
+                }
+
+
+                const workspaceRect =
+                    workspace
+                        .getBoundingClientRect();
+
+
+                const windowRect =
+                    windowElement
+                        .getBoundingClientRect();
+
+
+                isDragging =
+                    true;
+
+
+                pointerStartX =
+                    event.clientX;
+
+
+                pointerStartY =
+                    event.clientY;
+
+
+                windowStartLeft =
+                    windowRect.left
+                    -
+                    workspaceRect.left;
+
+
+                windowStartTop =
+                    windowRect.top
+                    -
+                    workspaceRect.top;
+
+
+                focusWindow(
+                    windowElement
+                );
+
+
+                handle.setPointerCapture(
+                    event.pointerId
+                );
+
+            }
+        );
+
+
+        handle.addEventListener(
             "pointermove",
-            handleWorldPointer
+            (event) => {
+
+                if (!isDragging) {
+                    return;
+                }
+
+
+                const workspaceRect =
+                    workspace
+                        .getBoundingClientRect();
+
+
+                const maxLeft =
+                    Math.max(
+                        8,
+
+                        workspaceRect.width
+                        -
+                        windowElement.offsetWidth
+                        -
+                        8
+                    );
+
+
+                const maxTop =
+                    Math.max(
+                        8,
+
+                        workspaceRect.height
+                        -
+                        windowElement.offsetHeight
+                        -
+                        90
+                    );
+
+
+                const proposedLeft =
+                    windowStartLeft
+                    +
+                    event.clientX
+                    -
+                    pointerStartX;
+
+
+                const proposedTop =
+                    windowStartTop
+                    +
+                    event.clientY
+                    -
+                    pointerStartY;
+
+
+                const nextLeft =
+                    Math.max(
+                        8,
+
+                        Math.min(
+                            maxLeft,
+                            proposedLeft
+                        )
+                    );
+
+
+                const nextTop =
+                    Math.max(
+                        8,
+
+                        Math.min(
+                            maxTop,
+                            proposedTop
+                        )
+                    );
+
+
+                windowElement.style.left =
+                    `${nextLeft}px`;
+
+
+                windowElement.style.top =
+                    `${nextTop}px`;
+
+
+                windowElement.style.right =
+                    "auto";
+
+            }
         );
 
 
-    ecosystemSceneElement
-        .addEventListener(
-            "pointerleave",
-            resetWorldPointer
+        function stopDragging(
+            event
+        ) {
+
+            if (!isDragging) {
+                return;
+            }
+
+
+            isDragging =
+                false;
+
+
+            if (
+                handle.hasPointerCapture(
+                    event.pointerId
+                )
+            ) {
+
+                handle.releasePointerCapture(
+                    event.pointerId
+                );
+
+            }
+
+        }
+
+
+        handle.addEventListener(
+            "pointerup",
+            stopDragging
         );
 
 
-    animate();
-
-}
-
-
-/* =========================================================
-   LIGHTING
-========================================================= */
-
-function createLighting() {
-
-    const ambient =
-        new THREE.AmbientLight(
-            0x33547d,
-            1.05
+        handle.addEventListener(
+            "pointercancel",
+            stopDragging
         );
 
+    }
 
-    scene.add(
-        ambient
-    );
 
+    /* =========================================================
+       FEATURED PROJECT DATA
+    ========================================================= */
 
-    const blueLight =
-        new THREE.PointLight(
-            0x2d8cff,
-            34,
-            20,
-            1.8
-        );
-
-
-    blueLight.position.set(
-        0,
-        5,
-        2
-    );
-
-
-    scene.add(
-        blueLight
-    );
-
-
-    const violetLight =
-        new THREE.PointLight(
-            0x8a5cff,
-            20,
-            13,
-            1.7
-        );
-
-
-    violetLight.position.set(
-        0,
-        5,
-        -3.8
-    );
-
-
-    scene.add(
-        violetLight
-    );
-
-
-    const warmLight =
-        new THREE.PointLight(
-            0xe79b58,
-            7,
-            12,
-            2
-        );
-
-
-    warmLight.position.set(
-        5,
-        3,
-        4
-    );
-
-
-    scene.add(
-        warmLight
-    );
-
-}
-
-
-/* =========================================================
-   MATERIALS
-========================================================= */
-
-function darkMaterial(
-    color = 0x07101c
-) {
-
-    return new THREE.MeshStandardMaterial({
-        color: color,
-        roughness: 0.3,
-        metalness: 0.7
-    });
-
-}
-
-
-function glassMaterial(
-    color = 0x4d9fff,
-    opacity = 0.2
-) {
-
-    return new THREE.MeshPhysicalMaterial({
-        color: color,
-        transparent: true,
-        opacity: opacity,
-        roughness: 0.16,
-        metalness: 0.08,
-        transmission: 0.1,
-        emissive: color,
-        emissiveIntensity: 0.18,
-        side:
-            THREE.DoubleSide
-    });
-
-}
-
-
-function emissiveMaterial(
-    color
-) {
-
-    return new THREE.MeshStandardMaterial({
-        color: color,
-        emissive: color,
-        emissiveIntensity: 2.1,
-        roughness: 0.2,
-        metalness: 0.45
-    });
-
-}
-
-
-/* =========================================================
-   MAIN PLATFORM
-========================================================= */
-
-function createPlatform() {
-
-    const base =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                10.8,
-                0.34,
-                8.2
-            ),
-            darkMaterial(
-                0x050a10
-            )
-        );
-
-
-    base.position.y =
-        -0.75;
-
-
-    world.add(
-        base
-    );
-
-
-    const upper =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                10.25,
-                0.16,
-                7.65
-            ),
-            new THREE.MeshStandardMaterial({
-                color:
-                    0x08111d,
-                roughness:
-                    0.24,
-                metalness:
-                    0.72
-            })
-        );
-
-
-    upper.position.y =
-        -0.52;
-
-
-    world.add(
-        upper
-    );
-
-
-    const edgeGeometry =
-        new THREE.EdgesGeometry(
-            new THREE.BoxGeometry(
-                10.28,
-                0.18,
-                7.68
-            )
-        );
-
-
-    const edge =
-        new THREE.LineSegments(
-            edgeGeometry,
-            new THREE.LineBasicMaterial({
-                color:
-                    0x287bea,
-                transparent:
-                    true,
-                opacity:
-                    0.33
-            })
-        );
-
-
-    edge.position.y =
-        -0.515;
-
-
-    world.add(
-        edge
-    );
-
-}
-
-
-/* =========================================================
-   GRID
-========================================================= */
-
-function createGrid() {
-
-    const grid =
-        new THREE.GridHelper(
-            10,
-            18,
-            0x2867ae,
-            0x17314e
-        );
-
-
-    grid.position.y =
-        -0.41;
-
-
-    grid.material.transparent =
-        true;
-
-
-    grid.material.opacity =
-        0.19;
-
-
-    world.add(
-        grid
-    );
-
-}
-
-
-/* =========================================================
-   PEDESTAL FACTORY
-========================================================= */
-
-function createPedestal(
-    x,
-    z,
-    width,
-    depth,
-    color
-) {
-
-    const group =
-        new THREE.Group();
-
-
-    group.position.set(
-        x,
-        0,
-        z
-    );
-
-
-    const lower =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                width,
-                0.32,
-                depth
-            ),
-            darkMaterial(
-                0x07101a
-            )
-        );
-
-
-    lower.position.y =
-        -0.28;
-
-
-    group.add(
-        lower
-    );
-
-
-    const trim =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                width * 0.94,
-                0.08,
-                depth * 0.94
-            ),
-            emissiveMaterial(
-                color
-            )
-        );
-
-
-    trim.position.y =
-        -0.08;
-
-
-    group.add(
-        trim
-    );
-
-
-    const top =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                width * 0.88,
-                0.15,
-                depth * 0.88
-            ),
-            darkMaterial(
-                0x09131e
-            )
-        );
-
-
-    top.position.y =
-        0.03;
-
-
-    group.add(
-        top
-    );
-
-
-    world.add(
-        group
-    );
-
-
-    return group;
-
-}
-
-
-/* =========================================================
-   CENTRAL MOHSIN BUILDS CORE
-========================================================= */
-
-function createCentralCore() {
-
-    const group =
-        createPedestal(
-            0,
-            0,
-            2.6,
-            2.2,
-            0x2787ff
-        );
-
-
-    const towerGroup =
-        new THREE.Group();
-
-
-    group.add(
-        towerGroup
-    );
-
-
-    const levels = [
+    const projects = [
 
         {
-            size: 1.55,
-            height: 0.55
+            title:
+                "Product Opportunity Engine",
+
+            description:
+                "A decision-support system for discovering, evaluating and comparing product opportunities using structured market data.",
+
+            stack: [
+                "JavaScript",
+                "Data Analysis",
+                "APIs",
+                "Product Research"
+            ]
         },
 
-        {
-            size: 1.28,
-            height: 0.58
-        },
 
         {
-            size: 1.0,
-            height: 0.68
+            title:
+                "Website Cost Calculator",
+
+            description:
+                "An interactive business tool that helps companies understand website scope, required features and estimated project investment.",
+
+            stack: [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "UX"
+            ]
         },
 
+
         {
-            size: 0.72,
-            height: 0.82
+            title:
+                "Mohsin Builds",
+
+            description:
+                "A developer-focused portfolio system built to showcase digital products, interface design, architecture and real-world work.",
+
+            stack: [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "UI/UX"
+            ]
         }
 
     ];
 
 
-    let currentY =
-        0.35;
+    let projectIndex =
+        0;
 
 
-    levels.forEach(
-        (level, index) => {
+    /* =========================================================
+       FEATURED PROJECT RENDERING
+    ========================================================= */
 
-            const mesh =
-                new THREE.Mesh(
-                    new THREE.BoxGeometry(
-                        level.size,
-                        level.height,
-                        level.size
-                    ),
+    function renderProject() {
 
-                    index ===
-                    levels.length - 1
-
-                        ? glassMaterial(
-                            0x4ca5ff,
-                            0.32
-                        )
-
-                        : darkMaterial(
-                            0x08182a
-                        )
-                );
+        const project =
+            projects[
+                projectIndex
+            ];
 
 
-            mesh.position.y =
-                currentY;
+        if (!project) {
+            return;
+        }
 
 
-            towerGroup.add(
-                mesh
-            );
+        if (featuredTitle) {
 
-
-            const border =
-                new THREE.LineSegments(
-                    new THREE.EdgesGeometry(
-                        mesh.geometry
-                    ),
-                    new THREE.LineBasicMaterial({
-                        color:
-                            0x3896ff,
-                        transparent:
-                            true,
-                        opacity:
-                            0.58
-                    })
-                );
-
-
-            border.position.copy(
-                mesh.position
-            );
-
-
-            towerGroup.add(
-                border
-            );
-
-
-            currentY +=
-                level.height;
+            featuredTitle.textContent =
+                project.title;
 
         }
-    );
 
 
-    const coreLight =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                0.34,
-                2.3,
-                0.34
-            ),
-            emissiveMaterial(
-                0x2f8cff
-            )
-        );
+        if (featuredDescription) {
+
+            featuredDescription.textContent =
+                project.description;
+
+        }
 
 
-    coreLight.position.y =
-        1.55;
+        if (featuredStack) {
+
+            const fragment =
+                document
+                    .createDocumentFragment();
 
 
-    towerGroup.add(
-        coreLight
-    );
+            project.stack.forEach(
+                (item) => {
+
+                    const chip =
+                        document
+                            .createElement(
+                                "span"
+                            );
 
 
-    worldNodes.core =
-        group;
-
-}
+                    chip.textContent =
+                        item;
 
 
-/* =========================================================
-   MOHSIN LABS FLAGSHIP TOWER
-========================================================= */
+                    fragment.appendChild(
+                        chip
+                    );
 
-function createLabsTower() {
-
-    const group =
-        createPedestal(
-            0,
-            -3.0,
-            2.15,
-            1.55,
-            0x8c58ff
-        );
+                }
+            );
 
 
-    const building =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                1.13,
-                1.75,
-                0.88
-            ),
-            glassMaterial(
-                0x8651ff,
-                0.36
-            )
-        );
+            featuredStack.replaceChildren(
+                fragment
+            );
+
+        }
 
 
-    building.position.y =
-        0.95;
+        if (projectCounter) {
 
-
-    group.add(
-        building
-    );
-
-
-    const inside =
-        new THREE.Mesh(
-            new THREE.BoxGeometry(
-                0.55,
-                1.37,
-                0.39
-            ),
-            emissiveMaterial(
-                0x8651ff
-            )
-        );
-
-
-    inside.position.y =
-        0.95;
-
-
-    group.add(
-        inside
-    );
-
-
-    const edges =
-        new THREE.LineSegments(
-            new THREE.EdgesGeometry(
-                building.geometry
-            ),
-            new THREE.LineBasicMaterial({
-                color:
-                    0xbf9aff,
-                transparent:
-                    true,
-                opacity:
-                    0.78
-            })
-        );
-
-
-    edges.position.copy(
-        building.position
-    );
-
-
-    group.add(
-        edges
-    );
-
-
-    worldNodes.labs =
-        group;
-
-}
-
-
-/* =========================================================
-   SATELLITE BUILDING FACTORY
-========================================================= */
-
-function createSatelliteBuilding(
-    key,
-    x,
-    z,
-    color,
-    variant
-) {
-
-    const group =
-        createPedestal(
-            x,
-            z,
-            1.8,
-            1.45,
-            color
-        );
-
-
-    const count =
-        variant === "cluster"
-            ? 3
-            : 2;
-
-
-    for (
-        let i = 0;
-        i < count;
-        i++
-    ) {
-
-        const height =
-            0.72 +
-            i * 0.24;
-
-
-        const building =
-            new THREE.Mesh(
-                new THREE.BoxGeometry(
-                    0.42,
-                    height,
-                    0.52
-                ),
-                darkMaterial(
-                    0x091521
+            const current =
+                String(
+                    projectIndex + 1
                 )
-            );
+                    .padStart(
+                        2,
+                        "0"
+                    );
 
 
-        building.position.set(
-
-            (
-                i -
-                (
-                    count -
-                    1
+            const total =
+                String(
+                    projects.length
                 )
-                /
-                2
-            )
-            *
-            0.48,
-
-            0.24 +
-            height /
-            2,
-
-            (
-                i % 2
-            )
-            *
-            0.15
-
-        );
-
-
-        group.add(
-            building
-        );
-
-
-        const edge =
-            new THREE.LineSegments(
-                new THREE.EdgesGeometry(
-                    building.geometry
-                ),
-                new THREE.LineBasicMaterial({
-                    color:
-                        color,
-                    transparent:
-                        true,
-                    opacity:
-                        0.42
-                })
-            );
-
-
-        edge.position.copy(
-            building.position
-        );
-
-
-        group.add(
-            edge
-        );
-
-    }
-
-
-    const beacon =
-        new THREE.Mesh(
-            new THREE.CylinderGeometry(
-                0.055,
-                0.055,
-                0.45,
-                16
-            ),
-            emissiveMaterial(
-                color
-            )
-        );
-
-
-    beacon.position.y =
-        0.56;
-
-
-    group.add(
-        beacon
-    );
-
-
-    worldNodes[key] =
-        group;
-
-}
-
-
-/* =========================================================
-   CREATE SATELLITES
-========================================================= */
-
-function createSatelliteNodes() {
-
-    createSatelliteBuilding(
-        "web",
-        -3.55,
-        -1.45,
-        0x2b8dff,
-        "cluster"
-    );
-
-
-    createSatelliteBuilding(
-        "commerce",
-        -3.6,
-        2.15,
-        0x3e9fff,
-        "standard"
-    );
-
-
-    createSatelliteBuilding(
-        "automation",
-        0,
-        2.75,
-        0x45beff,
-        "cluster"
-    );
-
-
-    createSatelliteBuilding(
-        "business",
-        3.65,
-        1.55,
-        0xe68b4d,
-        "cluster"
-    );
-
-}
-
-
-/* =========================================================
-   CONNECTION PATHS
-========================================================= */
-
-function createConnections() {
-
-    Object
-        .entries(
-            nodePositions
-        )
-        .forEach(
-            (
-                [
-                    key,
-                    destination
-                ],
-                index
-            ) => {
-
-                const start =
-                    new THREE.Vector3(
-                        0,
-                        -0.14,
-                        0
+                    .padStart(
+                        2,
+                        "0"
                     );
 
 
-                const mid =
-                    new THREE.Vector3(
-                        destination.x * 0.5,
-                        -0.10,
-                        destination.z * 0.5
-                    );
-
-
-                const curve =
-                    new THREE.CatmullRomCurve3([
-                        start,
-                        mid,
-                        destination
-                    ]);
-
-
-                const geometry =
-                    new THREE.TubeGeometry(
-                        curve,
-                        48,
-                        0.025,
-                        8,
-                        false
-                    );
-
-
-                const color =
-                    key === "labs"
-
-                        ? 0x8e61ff
-
-                        : key === "business"
-
-                            ? 0xe98d55
-
-                            : 0x328fff;
-
-
-                const material =
-                    new THREE.MeshBasicMaterial({
-                        color:
-                            color,
-                        transparent:
-                            true,
-                        opacity:
-                            0.63
-                    });
-
-
-                const tube =
-                    new THREE.Mesh(
-                        geometry,
-                        material
-                    );
-
-
-                world.add(
-                    tube
-                );
-
-
-                createPacket(
-                    curve,
-                    color,
-                    index * 0.19
-                );
-
-            }
-        );
-
-}
-
-
-/* =========================================================
-   MOVING ENERGY PACKETS
-========================================================= */
-
-function createPacket(
-    curve,
-    color,
-    offset
-) {
-
-    const packet =
-        new THREE.Mesh(
-            new THREE.SphereGeometry(
-                0.075,
-                12,
-                12
-            ),
-            emissiveMaterial(
-                color
-            )
-        );
-
-
-    world.add(
-        packet
-    );
-
-
-    animatedPackets.push({
-        mesh:
-            packet,
-        curve:
-            curve,
-        progress:
-            offset
-    });
-
-}
-
-
-/* =========================================================
-   PARTICLES
-========================================================= */
-
-function createParticles() {
-
-    const count =
-        85;
-
-
-    const positions =
-        new Float32Array(
-            count * 3
-        );
-
-
-    for (
-        let i = 0;
-        i < count;
-        i++
-    ) {
-
-        positions[
-            i * 3
-        ] =
-            (
-                Math.random() -
-                0.5
-            )
-            *
-            11;
-
-
-        positions[
-            i * 3 +
-            1
-        ] =
-            Math.random()
-            *
-            4.5;
-
-
-        positions[
-            i * 3 +
-            2
-        ] =
-            (
-                Math.random() -
-                0.5
-            )
-            *
-            8;
-
-    }
-
-
-    const geometry =
-        new THREE.BufferGeometry();
-
-
-    geometry.setAttribute(
-        "position",
-        new THREE.BufferAttribute(
-            positions,
-            3
-        )
-    );
-
-
-    const material =
-        new THREE.PointsMaterial({
-            color:
-                0x4a91e8,
-            size:
-                0.025,
-            transparent:
-                true,
-            opacity:
-                0.38
-        });
-
-
-    const points =
-        new THREE.Points(
-            geometry,
-            material
-        );
-
-
-    world.add(
-        points
-    );
-
-}
-
-
-/* =========================================================
-   3D NODE HIGHLIGHT
-========================================================= */
-
-function highlightWorld(
-    key
-) {
-
-    Object
-        .entries(
-            worldNodes
-        )
-        .forEach(
-            (
-                [
-                    nodeKey,
-                    group
-                ]
-            ) => {
-
-                const active =
-                    nodeKey === key;
-
-
-                group.traverse(
-                    (child) => {
-
-                        if (
-                            child.material &&
-                            "emissiveIntensity"
-                                in child.material
-                        ) {
-
-                            child.material
-                                .emissiveIntensity =
-                                    active
-                                        ? 3.2
-                                        : 1.25;
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-}
-
-
-/* =========================================================
-   HTML WORLD LABEL INTERACTION
-========================================================= */
-
-document
-    .querySelectorAll(
-        "[data-world-node]"
-    )
-    .forEach(
-        (label) => {
-
-            const key =
-                label.dataset.worldNode;
-
-
-            label.addEventListener(
-                "mouseenter",
-                () => {
-
-                    showSystem(
-                        key
-                    );
-
-                }
-            );
-
-
-            label.addEventListener(
-                "focus",
-                () => {
-
-                    showSystem(
-                        key
-                    );
-
-                }
-            );
-
-
-            label.addEventListener(
-                "click",
-                () => {
-
-                    showSystem(
-                        key
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   CAMERA POINTER MOVEMENT
-========================================================= */
-
-function handleWorldPointer(
-    event
-) {
-
-    if (
-        reducedMotion ||
-        !ecosystemSceneElement
-    ) {
-        return;
-    }
-
-
-    const rect =
-        ecosystemSceneElement
-            .getBoundingClientRect();
-
-
-    const normalizedX =
-        (
-            event.clientX -
-            rect.left
-        )
-        /
-        rect.width;
-
-
-    const normalizedY =
-        (
-            event.clientY -
-            rect.top
-        )
-        /
-        rect.height;
-
-
-    targetCameraX =
-        8.2 +
-        (
-            normalizedX -
-            0.5
-        )
-        *
-        1.6;
-
-
-    targetCameraY =
-        8.5 +
-        (
-            0.5 -
-            normalizedY
-        )
-        *
-        0.9;
-
-}
-
-
-function resetWorldPointer() {
-
-    targetCameraX =
-        8.2;
-
-
-    targetCameraY =
-        8.5;
-
-}
-
-
-/* =========================================================
-   RENDERER RESIZE
-========================================================= */
-
-function resizeRenderer() {
-
-    if (
-        !renderer ||
-        !camera ||
-        !ecosystemSceneElement
-    ) {
-        return;
-    }
-
-
-    const rect =
-        ecosystemSceneElement
-            .getBoundingClientRect();
-
-
-    const width =
-        Math.max(
-            rect.width,
-            1
-        );
-
-
-    const height =
-        Math.max(
-            rect.height,
-            1
-        );
-
-
-    renderer.setSize(
-        width,
-        height,
-        false
-    );
-
-
-    camera.aspect =
-        width /
-        height;
-
-
-    camera.updateProjectionMatrix();
-
-}
-
-
-/* =========================================================
-   ANIMATION LOOP
-========================================================= */
-
-const clock =
-    new THREE.Clock();
-
-
-function animate() {
-
-    requestAnimationFrame(
-        animate
-    );
-
-
-    if (
-        !renderer ||
-        !scene ||
-        !camera
-    ) {
-        return;
-    }
-
-
-    const delta =
-        clock.getDelta();
-
-
-    const time =
-        clock.elapsedTime;
-
-
-    if (!reducedMotion) {
-
-        camera.position.x +=
-            (
-                targetCameraX -
-                camera.position.x
-            )
-            *
-            0.035;
-
-
-        camera.position.y +=
-            (
-                targetCameraY -
-                camera.position.y
-            )
-            *
-            0.035;
-
-
-        camera.lookAt(
-            0,
-            0.6,
-            0
-        );
-
-
-        if (
-            worldNodes.core
-        ) {
-
-            worldNodes.core
-                .rotation.y =
-                    Math.sin(
-                        time * 0.32
-                    )
-                    *
-                    0.025;
+            projectCounter.textContent =
+                `${current} / ${total}`;
 
         }
 
-
-        if (
-            worldNodes.labs
-        ) {
-
-            worldNodes.labs
-                .position.y =
-                    Math.sin(
-                        time * 1.05
-                    )
-                    *
-                    0.045;
-
-        }
+    }
 
 
-        animatedPackets
-            .forEach(
-                (
-                    packet,
-                    index
-                ) => {
+    previousProject
+        ?.addEventListener(
+            "click",
+            () => {
 
-                    packet.progress +=
-                        delta
-                        *
-                        (
-                            0.085 +
-                            index *
-                            0.007
-                        );
-
-
-                    if (
-                        packet.progress >
+                projectIndex =
+                    (
+                        projectIndex
+                        -
                         1
-                    ) {
-
-                        packet.progress =
-                            0;
-
-                    }
-
-
-                    const point =
-                        packet.curve
-                            .getPointAt(
-                                packet.progress
-                            );
+                        +
+                        projects.length
+                    )
+                    %
+                    projects.length;
 
 
-                    packet.mesh
-                        .position
-                        .copy(
-                            point
-                        );
+                renderProject();
 
-                }
-            );
+            }
+        );
+
+
+    nextProject
+        ?.addEventListener(
+            "click",
+            () => {
+
+                projectIndex =
+                    (
+                        projectIndex
+                        +
+                        1
+                    )
+                    %
+                    projects.length;
+
+
+                renderProject();
+
+            }
+        );
+
+
+    renderProject();
+
+
+    /* =========================================================
+       TERMINAL COMMANDS
+    ========================================================= */
+
+    const terminalCommands = {
+
+        whoami:
+            "Mohsin Iqbal — designer, developer and product builder.",
+
+
+        projects:
+            "Product Opportunity Engine | Website Cost Calculator | Mohsin Builds | Mohsin Labs",
+
+
+        skills:
+            "Web Design | Development | WordPress | E-Commerce | AI | Automation | Product Thinking",
+
+
+        labs:
+            "Mohsin Labs — my product and experiment lab for useful digital products, AI tools and systems.",
+
+
+        contact:
+            "Email: mohsinbuilds@gmail.com",
+
+
+        help:
+            "Commands: whoami, projects, skills, labs, contact, clear"
+
+    };
+
+
+    /* =========================================================
+       TERMINAL OUTPUT
+    ========================================================= */
+
+    function appendTerminalPrompt(
+        command
+    ) {
+
+        if (!terminalOutput) {
+            return;
+        }
+
+
+        const line =
+            document
+                .createElement(
+                    "p"
+                );
+
+
+        const prompt =
+            document
+                .createElement(
+                    "strong"
+                );
+
+
+        prompt.textContent =
+            "mohsin@builds:~$";
+
+
+        line.append(
+            prompt,
+
+            document.createTextNode(
+                ` ${command}`
+            )
+        );
+
+
+        terminalOutput.appendChild(
+            line
+        );
 
     }
 
 
-    renderer.render(
-        scene,
-        camera
-    );
+    function appendTerminalResponse(
+        message
+    ) {
 
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuToggle =
-    document.querySelector(
-        ".menu-toggle"
-    );
-
-const mobileMenu =
-    document.querySelector(
-        ".mobile-menu"
-    );
+        if (!terminalOutput) {
+            return;
+        }
 
 
-if (
-    menuToggle &&
-    mobileMenu
-) {
-
-    menuToggle
-        .addEventListener(
-            "click",
-            () => {
-
-                const open =
-                    mobileMenu
-                        .classList
-                        .toggle(
-                            "is-open"
-                        );
-
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    String(
-                        open
-                    )
+        const line =
+            document
+                .createElement(
+                    "p"
                 );
 
 
-                mobileMenu.setAttribute(
-                    "aria-hidden",
-                    String(
-                        !open
-                    )
-                );
+        line.textContent =
+            message;
 
-            }
+
+        terminalOutput.appendChild(
+            line
         );
 
-
-    mobileMenu
-        .querySelectorAll(
-            "a"
-        )
-        .forEach(
-            (link) => {
-
-                link.addEventListener(
-                    "click",
-                    () => {
-
-                        mobileMenu
-                            .classList
-                            .remove(
-                                "is-open"
-                            );
+    }
 
 
-                        menuToggle
-                            .setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
+    terminalInput
+        ?.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (
+                    event.key !==
+                    "Enter"
+                ) {
+
+                    return;
+
+                }
 
 
-                        mobileMenu
-                            .setAttribute(
-                                "aria-hidden",
-                                "true"
-                            );
+                const command =
+                    terminalInput
+                        .value
+                        .trim()
+                        .toLowerCase();
 
-                    }
+
+                if (!command) {
+                    return;
+                }
+
+
+                appendTerminalPrompt(
+                    command
                 );
-
-            }
-        );
-
-}
-
-
-/* =========================================================
-   ENTER ENVIRONMENT BUTTON
-========================================================= */
-
-const enterEnvironment =
-    document.querySelector(
-        "[data-enter-environment]"
-    );
-
-
-if (
-    enterEnvironment &&
-    ecosystemSceneElement
-) {
-
-    enterEnvironment
-        .addEventListener(
-            "click",
-            () => {
-
-                ecosystemSceneElement
-                    .scrollIntoView({
-                        behavior:
-                            reducedMotion
-                                ? "auto"
-                                : "smooth",
-                        block:
-                            "center"
-                    });
 
 
                 if (
-                    typeof window.gtag ===
-                    "function"
+                    command ===
+                    "clear"
                 ) {
 
-                    window.gtag(
-                        "event",
-                        "enter_environment"
+                    terminalOutput
+                        ?.replaceChildren();
+
+                }
+
+                else {
+
+                    appendTerminalResponse(
+                        terminalCommands[
+                            command
+                        ]
+                        ??
+                        `Command not found: ${command}. Type "help".`
                     );
+
+                }
+
+
+                terminalInput.value =
+                    "";
+
+
+                if (terminalOutput) {
+
+                    terminalOutput.scrollTop =
+                        terminalOutput.scrollHeight;
 
                 }
 
             }
         );
 
-}
+
+    /* =========================================================
+       COMMAND PALETTE FILTER
+    ========================================================= */
+
+    function filterCommandResults(
+        query
+    ) {
+
+        const normalizedQuery =
+            query
+                .trim()
+                .toLowerCase();
 
 
-/* =========================================================
-   HEADER NAVIGATION ACTIVE STATE
-========================================================= */
+        commandResults.forEach(
+            (item) => {
 
-const navLinks =
-    document.querySelectorAll(
-        ".main-nav__link"
+                const isMatch =
+                    item
+                        .textContent
+                        .toLowerCase()
+                        .includes(
+                            normalizedQuery
+                        );
+
+
+                item.hidden =
+                    !isMatch;
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       COMMAND PALETTE VISIBILITY
+    ========================================================= */
+
+    function openCommandPalette() {
+
+        if (!commandOverlay) {
+            return;
+        }
+
+
+        paletteReturnFocus =
+            document.activeElement;
+
+
+        commandOverlay
+            .classList
+            .remove(
+                "is-hidden"
+            );
+
+
+        commandOverlay.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        searchButton
+            ?.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+
+        window.setTimeout(
+            () => {
+
+                commandInput
+                    ?.focus();
+
+            },
+            40
+        );
+
+    }
+
+
+    function closeCommandPalette(
+        {
+            restoreFocus = true
+        } = {}
+    ) {
+
+        if (
+            !commandOverlay ||
+            commandOverlay
+                .classList
+                .contains(
+                    "is-hidden"
+                )
+        ) {
+
+            return;
+
+        }
+
+
+        commandOverlay
+            .classList
+            .add(
+                "is-hidden"
+            );
+
+
+        commandOverlay.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        searchButton
+            ?.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+
+        if (commandInput) {
+
+            commandInput.value =
+                "";
+
+
+            filterCommandResults(
+                ""
+            );
+
+        }
+
+
+        if (
+            restoreFocus
+            &&
+            paletteReturnFocus
+            instanceof HTMLElement
+            &&
+            paletteReturnFocus.isConnected
+        ) {
+
+            paletteReturnFocus.focus();
+
+        }
+
+
+        paletteReturnFocus =
+            null;
+
+    }
+
+
+    /* =========================================================
+       COMMAND PALETTE EVENTS
+    ========================================================= */
+
+    searchButton
+        ?.addEventListener(
+            "click",
+            openCommandPalette
+        );
+
+
+    commandOverlay
+        ?.addEventListener(
+            "click",
+            (event) => {
+
+                if (
+                    event.target ===
+                    commandOverlay
+                ) {
+
+                    closeCommandPalette();
+
+                }
+
+            }
+        );
+
+
+    commandInput
+        ?.addEventListener(
+            "input",
+            () => {
+
+                filterCommandResults(
+                    commandInput.value
+                );
+
+            }
+        );
+
+
+    /* =========================================================
+       GLOBAL KEYBOARD CONTROLS
+    ========================================================= */
+
+    window.addEventListener(
+        "keydown",
+        (event) => {
+
+            const commandShortcut =
+                (
+                    event.ctrlKey
+                    ||
+                    event.metaKey
+                )
+                &&
+                event.key
+                    .toLowerCase()
+                ===
+                "k";
+
+
+            if (commandShortcut) {
+
+                event.preventDefault();
+
+
+                if (
+                    commandOverlay
+                        ?.classList
+                        .contains(
+                            "is-hidden"
+                        )
+                ) {
+
+                    openCommandPalette();
+
+                }
+
+                else {
+
+                    closeCommandPalette();
+
+                }
+
+
+                return;
+
+            }
+
+
+            const paletteIsOpen =
+                Boolean(
+                    commandOverlay
+                    &&
+                    !commandOverlay
+                        .classList
+                        .contains(
+                            "is-hidden"
+                        )
+                );
+
+
+            /*
+             * Command palette navigation shortcuts
+             * match the labels shown in the interface.
+             */
+
+            if (
+                paletteIsOpen
+                &&
+                event.altKey
+            ) {
+
+                const navigationShortcuts = {
+
+                    p:
+                        "projects.html",
+
+                    a:
+                        "about.html",
+
+                    r:
+                        "architecture.html",
+
+                    l:
+                        "labs.html",
+
+                    c:
+                        "contact.html"
+
+                };
+
+
+                const shortcut =
+                    event.key
+                        .toLowerCase();
+
+
+                if (
+                    shortcut ===
+                    "t"
+                ) {
+
+                    event.preventDefault();
+
+
+                    openWindow(
+                        "terminal"
+                    );
+
+
+                    closeCommandPalette({
+                        restoreFocus: false
+                    });
+
+
+                    return;
+
+                }
+
+
+                if (
+                    navigationShortcuts[
+                        shortcut
+                    ]
+                ) {
+
+                    event.preventDefault();
+
+
+                    window.location.href =
+                        navigationShortcuts[
+                            shortcut
+                        ];
+
+
+                    return;
+
+                }
+
+            }
+
+
+            if (
+                event.key !==
+                "Escape"
+            ) {
+
+                return;
+
+            }
+
+
+            if (paletteIsOpen) {
+
+                closeCommandPalette();
+
+                return;
+
+            }
+
+
+            const terminalWindow =
+                select(
+                    '[data-window="terminal"]'
+                );
+
+
+            if (
+                terminalWindow
+                &&
+                !terminalWindow
+                    .classList
+                    .contains(
+                        "is-hidden"
+                    )
+            ) {
+
+                closeWindow(
+                    terminalWindow
+                );
+
+            }
+
+        }
     );
 
 
-navLinks.forEach(
-    (link) => {
+    /* =========================================================
+       POINTER INTERACTIONS
+    ========================================================= */
 
-        link.addEventListener(
-            "click",
-            () => {
+    if (
+        !prefersReducedMotion
+        &&
+        hasFinePointer
+    ) {
 
-                navLinks.forEach(
-                    (item) => {
+        enableWindowHighlights();
 
-                        item.classList.remove(
-                            "is-active"
-                        );
+        enableDockMagnification();
+
+        enableDesktopDepth();
+
+    }
+
+
+    /* =========================================================
+       WINDOW POINTER HIGHLIGHT
+    ========================================================= */
+
+    function enableWindowHighlights() {
+
+        windows.forEach(
+            (windowElement) => {
+
+                let animationFrame =
+                    0;
+
+
+                let pointerX =
+                    0;
+
+
+                let pointerY =
+                    0;
+
+
+                windowElement.addEventListener(
+                    "pointermove",
+                    (event) => {
+
+                        const rect =
+                            windowElement
+                                .getBoundingClientRect();
+
+
+                        pointerX =
+                            event.clientX
+                            -
+                            rect.left;
+
+
+                        pointerY =
+                            event.clientY
+                            -
+                            rect.top;
+
+
+                        if (animationFrame) {
+                            return;
+                        }
+
+
+                        animationFrame =
+                            window.requestAnimationFrame(
+                                () => {
+
+                                    windowElement
+                                        .style
+                                        .setProperty(
+                                            "--mx",
+                                            `${pointerX}px`
+                                        );
+
+
+                                    windowElement
+                                        .style
+                                        .setProperty(
+                                            "--my",
+                                            `${pointerY}px`
+                                        );
+
+
+                                    animationFrame =
+                                        0;
+
+                                }
+                            );
 
                     }
                 );
 
 
-                link.classList.add(
-                    "is-active"
+                windowElement.addEventListener(
+                    "pointerleave",
+                    () => {
+
+                        windowElement
+                            .style
+                            .setProperty(
+                                "--mx",
+                                "50%"
+                            );
+
+
+                        windowElement
+                            .style
+                            .setProperty(
+                                "--my",
+                                "50%"
+                            );
+
+                    }
                 );
 
             }
         );
 
     }
-);
 
 
-/* =========================================================
-   CINEMATIC POINTER LIGHT
-========================================================= */
+    /* =========================================================
+       DOCK MAGNIFICATION
+    ========================================================= */
 
-if (
-    founderStudio &&
-    !reducedMotion
-) {
+    function enableDockMagnification() {
 
-    founderStudio
-        .addEventListener(
+        if (!dock) {
+            return;
+        }
+
+
+        let animationFrame =
+            0;
+
+
+        let pointerX =
+            0;
+
+
+        dock.addEventListener(
             "pointermove",
             (event) => {
 
-                const rect =
-                    founderStudio
-                        .getBoundingClientRect();
+                pointerX =
+                    event.clientX;
 
 
-                const x =
-                    (
-                        (
-                            event.clientX -
-                            rect.left
-                        )
-                        /
-                        rect.width
-                    )
-                    *
-                    100;
+                if (animationFrame) {
+                    return;
+                }
 
 
-                const y =
-                    (
-                        (
-                            event.clientY -
-                            rect.top
-                        )
-                        /
-                        rect.height
-                    )
-                    *
-                    100;
+                animationFrame =
+                    window.requestAnimationFrame(
+                        () => {
+
+                            dockItems.forEach(
+                                (item) => {
+
+                                    const rect =
+                                        item
+                                            .getBoundingClientRect();
 
 
-                founderStudio
-                    .style
-                    .setProperty(
-                        "--pointer-x",
-                        `${x}%`
-                    );
+                                    const centerX =
+                                        rect.left
+                                        +
+                                        rect.width / 2;
 
 
-                founderStudio
-                    .style
-                    .setProperty(
-                        "--pointer-y",
-                        `${y}%`
+                                    const distance =
+                                        Math.abs(
+                                            pointerX
+                                            -
+                                            centerX
+                                        );
+
+
+                                    const influence =
+                                        Math.max(
+                                            0,
+
+                                            1
+                                            -
+                                            distance / 92
+                                        );
+
+
+                                    const scale =
+                                        1
+                                        +
+                                        influence
+                                        *
+                                        .34;
+
+
+                                    item
+                                        .style
+                                        .setProperty(
+                                            "--dock-scale",
+                                            scale
+                                                .toFixed(
+                                                    3
+                                                )
+                                        );
+
+                                }
+                            );
+
+
+                            animationFrame =
+                                0;
+
+                        }
                     );
 
             }
         );
 
-}
+
+        dock.addEventListener(
+            "pointerleave",
+            () => {
+
+                dockItems.forEach(
+                    (item) => {
+
+                        item
+                            .style
+                            .setProperty(
+                                "--dock-scale",
+                                "1"
+                            );
+
+                    }
+                );
+
+            }
+        );
+
+    }
 
 
-/* =========================================================
-   START THREE.JS
-========================================================= */
+    /* =========================================================
+       DESKTOP POINTER DEPTH
+    ========================================================= */
 
-if (
-    canvas &&
-    ecosystemSceneElement
-) {
+    function enableDesktopDepth() {
 
-    initThreeWorld();
-
-}
+        if (!desktop) {
+            return;
+        }
 
 
-/* =========================================================
-   DEFAULT ACTIVE SYSTEM
-========================================================= */
+        let animationFrame =
+            0;
 
-showSystem(
-    "labs"
-);
+
+        let depthX =
+            0;
+
+
+        let depthY =
+            0;
+
+
+        function commitDepth() {
+
+            desktop
+                .style
+                .setProperty(
+                    "--mb-depth-x",
+                    `${depthX.toFixed(2)}px`
+                );
+
+
+            desktop
+                .style
+                .setProperty(
+                    "--mb-depth-y",
+                    `${depthY.toFixed(2)}px`
+                );
+
+
+            animationFrame =
+                0;
+
+        }
+
+
+        document.addEventListener(
+            "pointermove",
+            (event) => {
+
+                const normalizedX =
+                    event.clientX
+                    /
+                    window.innerWidth
+                    -
+                    .5;
+
+
+                const normalizedY =
+                    event.clientY
+                    /
+                    window.innerHeight
+                    -
+                    .5;
+
+
+                depthX =
+                    normalizedX
+                    *
+                    4;
+
+
+                depthY =
+                    normalizedY
+                    *
+                    3;
+
+
+                if (!animationFrame) {
+
+                    animationFrame =
+                        window
+                            .requestAnimationFrame(
+                                commitDepth
+                            );
+
+                }
+
+            }
+        );
+
+
+        document
+            .documentElement
+            .addEventListener(
+                "mouseleave",
+                () => {
+
+                    depthX =
+                        0;
+
+
+                    depthY =
+                        0;
+
+
+                    if (!animationFrame) {
+
+                        animationFrame =
+                            window
+                                .requestAnimationFrame(
+                                    commitDepth
+                                );
+
+                    }
+
+                }
+            );
+
+    }
+
+
+    /* =========================================================
+       INITIAL WINDOW FOCUS
+    ========================================================= */
+
+    window.setTimeout(
+        () => {
+
+            focusWindow(
+                select(
+                    '[data-window="featured"]'
+                )
+            );
+
+        },
+        700
+    );
+
+});

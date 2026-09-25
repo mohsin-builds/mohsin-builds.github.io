@@ -28,6 +28,30 @@ document.addEventListener("DOMContentLoaded", () => {
         "mohsinbuilds@gmail.com";
 
 
+    function trackAnalyticsEvent(
+        eventName,
+        parameters = {}
+    ) {
+
+        if (
+            typeof window.gtag !==
+            "function"
+        ) {
+
+            return;
+
+        }
+
+
+        window.gtag(
+            "event",
+            eventName,
+            parameters
+        );
+
+    }
+
+
     const serviceOrder = [
         "Website",
         "E-Commerce",
@@ -301,6 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
 
             return;
+
         }
 
 
@@ -566,6 +591,18 @@ document.addEventListener("DOMContentLoaded", () => {
             "click",
             async () => {
 
+                trackAnalyticsEvent(
+                    "email_click",
+                    {
+                        contact_method:
+                            "copy_email",
+
+                        source:
+                            "contact_page"
+                    }
+                );
+
+
                 if (
                     state.copyResetTimer
                 ) {
@@ -738,6 +775,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
 
 
+                    trackAnalyticsEvent(
+                        "generate_lead",
+                        {
+                            lead_source:
+                                "mohsin_builds_contact_form",
+
+                            project_type:
+                                service
+                        }
+                    );
+
+
                     elements.projectForm
                         .reset();
 
@@ -796,6 +845,66 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
 
                 }
+
+            }
+        );
+
+
+    /* =========================================================
+       CONTACT ANALYTICS
+    ========================================================= */
+
+    $$(
+        'a[href*="wa.me/"]'
+    )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        trackAnalyticsEvent(
+                            "whatsapp_click",
+                            {
+                                contact_method:
+                                    "whatsapp",
+
+                                source:
+                                    "contact_page"
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    $$(
+        'a[href^="mailto:"]'
+    )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        trackAnalyticsEvent(
+                            "email_click",
+                            {
+                                contact_method:
+                                    "mailto",
+
+                                source:
+                                    "contact_page"
+                            }
+                        );
+
+                    }
+                );
 
             }
         );
@@ -1723,6 +1832,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             case "email":
+
+                trackAnalyticsEvent(
+                    "email_click",
+                    {
+                        contact_method:
+                            "terminal_email",
+
+                        source:
+                            "contact_terminal"
+                    }
+                );
+
 
                 window.location.href =
                     `mailto:${CONTACT_EMAIL}`;

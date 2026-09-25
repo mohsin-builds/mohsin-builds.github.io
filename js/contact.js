@@ -624,119 +624,10 @@ document.addEventListener("DOMContentLoaded", () => {
        PROJECT FORM
     ========================================================= */
 
-    function buildProjectEmail() {
-
-        const name =
-            elements.clientName
-                ?.value
-                .trim()
-            ||
-            "";
-
-
-        const senderEmail =
-            elements.clientEmail
-                ?.value
-                .trim()
-            ||
-            "";
-
-
-        const project =
-            elements.projectName
-                ?.value
-                .trim()
-            ||
-            "";
-
-
-        const budget =
-            elements.projectBudget
-                ?.value
-            ||
-            "Not specified";
-
-
-        const timeline =
-            elements.projectTimeline
-                ?.value
-            ||
-            "Flexible";
-
-
-        const message =
-            elements.projectMessage
-                ?.value
-                .trim()
-            ||
-            "";
-
-
-        const service =
-            elements.projectType
-                ?.value
-            ||
-            state.selectedService;
-
-
-        const subject =
-            `Project Inquiry — ${service}` +
-            `${project ? ` — ${project}` : ""}`;
-
-
-        const body = [
-
-            "Hi Mohsin,",
-
-            "",
-
-            "I'd like to discuss a project.",
-
-            "",
-
-            `Name: ${name}`,
-
-            `Email: ${senderEmail}`,
-
-            `Project Type: ${service}`,
-
-            `Company / Project: ${project || "Not specified"}`,
-
-            `Budget: ${budget}`,
-
-            `Timeline: ${timeline}`,
-
-            "",
-
-            "Project Details:",
-
-            message,
-
-            "",
-
-            "Sent from Mohsin Builds Contact.app"
-
-        ]
-            .join(
-                "\n"
-            );
-
-
-        return {
-
-            subject,
-
-            body
-
-        };
-
-    }
-
-
     elements.projectForm
         ?.addEventListener(
             "submit",
-            event => {
+            async event => {
 
                 event.preventDefault();
 
@@ -755,17 +646,55 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
 
-                const {
-                    subject,
-                    body
-                } =
-                    buildProjectEmail();
+                const submitButton =
+                    elements.projectForm
+                        .querySelector(
+                            ".send-project"
+                        );
 
 
-                const mailto =
-                    `mailto:${CONTACT_EMAIL}` +
-                    `?subject=${encodeURIComponent(subject)}` +
-                    `&body=${encodeURIComponent(body)}`;
+                const originalButtonHTML =
+                    submitButton
+                        ?.innerHTML
+                    ||
+                    "";
+
+
+                const formData =
+                    new FormData(
+                        elements.projectForm
+                    );
+
+
+                const service =
+                    elements.projectType
+                        ?.value
+                    ||
+                    state.selectedService;
+
+
+                formData.set(
+                    "_subject",
+                    `Mohsin Builds Project Inquiry — ${service}`
+                );
+
+
+                if (submitButton) {
+
+                    submitButton.disabled =
+                        true;
+
+
+                    submitButton.setAttribute(
+                        "aria-busy",
+                        "true"
+                    );
+
+
+                    submitButton.textContent =
+                        "Sending...";
+
+                }
 
 
                 if (
@@ -773,13 +702,100 @@ document.addEventListener("DOMContentLoaded", () => {
                 ) {
 
                     elements.contactStatus.textContent =
-                        "Project brief prepared";
+                        "Sending project brief...";
 
                 }
 
 
-                window.location.href =
-                    mailto;
+                try {
+
+                    const response =
+                        await fetch(
+                            elements.projectForm.action,
+                            {
+                                method:
+                                    "POST",
+
+                                body:
+                                    formData,
+
+                                headers: {
+                                    Accept:
+                                        "application/json"
+                                }
+                            }
+                        );
+
+
+                    if (
+                        !response.ok
+                    ) {
+
+                        throw new Error(
+                            "Formspree submission failed"
+                        );
+
+                    }
+
+
+                    elements.projectForm
+                        .reset();
+
+
+                    selectService(
+                        "Website"
+                    );
+
+
+                    if (
+                        elements.contactStatus
+                    ) {
+
+                        elements.contactStatus.textContent =
+                            "✓ Project brief sent. I'll get back to you soon.";
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    console.error(
+                        "Project form submission failed:",
+                        error
+                    );
+
+
+                    if (
+                        elements.contactStatus
+                    ) {
+
+                        elements.contactStatus.textContent =
+                            "Unable to send right now. Please try again.";
+
+                    }
+
+                }
+
+                finally {
+
+                    if (submitButton) {
+
+                        submitButton.disabled =
+                            false;
+
+
+                        submitButton.removeAttribute(
+                            "aria-busy"
+                        );
+
+
+                        submitButton.innerHTML =
+                            originalButtonHTML;
+
+                    }
+
+                }
 
             }
         );

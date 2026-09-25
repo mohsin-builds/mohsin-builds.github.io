@@ -782,31 +782,14 @@ body.contact-page {
 
     overscroll-behavior: contain;
 
-    scrollbar-width: thin;
-
-    scrollbar-color:
-        rgba(76, 172, 216, .28)
-        transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .contact-center-scroll::-webkit-scrollbar {
-    width: 5px;
-}
-
-.contact-center-scroll::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.contact-center-scroll::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-
-    background:
-        rgba(76, 172, 216, .28);
-}
-
-.contact-center-scroll::-webkit-scrollbar-thumb:hover {
-    background:
-        rgba(88, 192, 236, .46);
+    width: 0;
+    height: 0;
+    display: none;
 }
 
 
@@ -2328,4 +2311,91 @@ body.contact-page {
         transition: none;
     }
 
+}
+
+/* =========================================================
+   CONTACT FORM — PRODUCTION POLISH
+========================================================= */
+
+/* Keep browser autofill inside the Developer OS visual system */
+.form-field input:-webkit-autofill,
+.form-field input:-webkit-autofill:hover,
+.form-field input:-webkit-autofill:focus,
+.form-field input:-webkit-autofill:active {
+    -webkit-text-fill-color: #c3d2da !important;
+
+    -webkit-box-shadow:
+        0 0 0 1000px #061521 inset !important;
+
+    box-shadow:
+        0 0 0 1000px #061521 inset !important;
+
+    caret-color: #c3d2da;
+
+    transition:
+        background-color 9999s ease-out 0s;
+}
+
+
+/* Cleaner native selects */
+.form-field select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    color-scheme: dark;
+
+    padding-right: 36px;
+
+    cursor: pointer;
+
+    background-color: rgba(3, 15, 25, .55);
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #6b8ea1 50%),
+        linear-gradient(135deg, #6b8ea1 50%, transparent 50%);
+
+    background-position:
+        calc(100% - 16px) 18px,
+        calc(100% - 11px) 18px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+.form-field select option {
+    color: #d7e5eb;
+    background: #071722;
+}
+
+
+/* Submission feedback */
+.project-form-status {
+    min-height: 18px;
+
+    margin: 2px 0 0;
+
+    color: #718b9b;
+
+    font-family: var(--mono);
+
+    font-size: 6px;
+
+    line-height: 1.5;
+}
+
+.project-form-status--success {
+    color: #42e0a5;
+}
+
+.project-form-status--error {
+    color: #ff7b86;
+}
+
+.send-project:disabled {
+    opacity: .65;
+    cursor: wait;
+    transform: none;
 }

@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
         featuredStack: "#featuredStack",
         projectCounter: "#projectCounter",
         previousProject: "#previousProject",
-        nextProject: "#nextProject"
+        nextProject: "#nextProject",
+        featuredPrimary: ".project-primary",
+        featuredSecondary: ".project-secondary"
     };
 
 
@@ -197,6 +199,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextProject =
         select(
             SELECTORS.nextProject
+        );
+
+    const featuredPrimary =
+        select(
+            SELECTORS.featuredPrimary
+        );
+
+    const featuredSecondary =
+        select(
+            SELECTORS.featuredSecondary
         );
 
 
@@ -966,6 +978,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             title:
+                "Mohsin OS",
+
+            description:
+                "A production agentic operating system for commerce, jobs and business workflows, combining automation with evidence and protected human approval.",
+
+            stack: [
+                "Next.js",
+                "TypeScript",
+                "Fastify",
+                "Supabase"
+            ],
+
+            liveUrl:
+                "https://mohsin-os.vercel.app",
+
+            caseStudyUrl:
+                "https://mohsinlabs.com/mohsin-os.html"
+        },
+
+
+        {
+            title:
                 "Product Opportunity Engine",
 
             description:
@@ -976,7 +1010,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Data Analysis",
                 "APIs",
                 "Product Research"
-            ]
+            ],
+
+            liveUrl:
+                "https://mohsinbuilds.com/product-opportunity-engine/",
+
+            caseStudyUrl:
+                "https://mohsinbuilds.com/projects.html"
         },
 
 
@@ -992,7 +1032,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 "CSS",
                 "JavaScript",
                 "UX"
-            ]
+            ],
+
+            liveUrl:
+                "https://mohsinbuilds.com/website-cost-calculator/",
+
+            caseStudyUrl:
+                "https://mohsinbuilds.com/projects.html"
         },
 
 
@@ -1008,7 +1054,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 "CSS",
                 "JavaScript",
                 "UI/UX"
-            ]
+            ],
+
+            liveUrl:
+                "https://mohsinbuilds.com/",
+
+            caseStudyUrl:
+                "https://mohsinbuilds.com/projects.html"
         }
 
     ];
@@ -1084,6 +1136,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 fragment
             );
 
+        }
+
+
+        if (featuredPrimary) {
+            featuredPrimary.href =
+                project.liveUrl ||
+                "projects.html";
+        }
+
+        if (featuredSecondary) {
+            featuredSecondary.href =
+                project.caseStudyUrl ||
+                "projects.html";
         }
 
 
@@ -1175,7 +1240,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         projects:
-            "Product Opportunity Engine | Website Cost Calculator | Mohsin Builds | Mohsin Labs",
+            "Mohsin OS | Product Opportunity Engine | Website Cost Calculator | Mohsin Builds | Mohsin Labs",
 
 
         skills:

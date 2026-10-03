@@ -7,6 +7,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const projects = [
         {
+            id: "mohsin-os",
+            title: "Mohsin OS",
+            category: "systems",
+            categoryLabel: "Agentic Operating System",
+            icon: "fa-microchip",
+
+            cover:
+                "assets/projects/mohsin-os/cover.svg",
+
+            preview:
+                "assets/projects/mohsin-os/preview-01.svg",
+
+            gallery: [
+                "assets/projects/mohsin-os/preview-01.svg",
+                "assets/projects/mohsin-os/preview-02.svg",
+                "assets/projects/mohsin-os/preview-03.svg"
+            ],
+
+            description:
+                "A production agentic operating system for commerce, jobs and business workflows, combining a Next.js interface, Fastify API, Supabase persistence, task execution, provider integrations and explicit human approval before external actions.",
+
+            short:
+                "Agentic operating system connecting evidence, automation and human-controlled execution.",
+
+            stack: [
+                "Next.js",
+                "TypeScript",
+                "Fastify",
+                "Supabase"
+            ],
+
+            keywords: [
+                "AI Automation",
+                "Agents",
+                "Commerce",
+                "Jobs",
+                "PostgreSQL",
+                "Product Engineering"
+            ],
+
+            status: "Production Alpha",
+
+            role:
+                "Founder & Product Engineer",
+
+            liveUrl:
+                "https://mohsin-os.vercel.app"
+        },
+
+
+        {
             id: "product-opportunity-engine",
             title: "Product Opportunity Engine",
             category: "tools",

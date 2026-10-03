@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
             id: "mohsin-os",
+            featured: true,
             title: "Mohsin OS",
             category: "systems",
             categoryLabel: "Agentic Operating System",
@@ -757,6 +758,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             .sort(
                 (a, b) => {
+
+                    if (a.featured && !b.featured) {
+                        return -1;
+                    }
+
+                    if (!a.featured && b.featured) {
+                        return 1;
+                    }
 
                     const comparison =
                         a.title.localeCompare(

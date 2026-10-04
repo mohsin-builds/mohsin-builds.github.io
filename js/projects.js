@@ -1724,8 +1724,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
 
+                const projectId =
+                    card.dataset.projectId;
+
+
+                const isTouchLike =
+                    window.matchMedia(
+                        "(pointer: coarse)"
+                    ).matches
+
+                    ||
+
+                    window.matchMedia(
+                        "(max-width: 760px)"
+                    ).matches;
+
+
+                if (isTouchLike) {
+
+                    openProjectViewer(
+                        projectId
+                    );
+
+                    return;
+
+                }
+
+
                 selectProject(
-                    card.dataset.projectId
+                    projectId
                 );
 
             }

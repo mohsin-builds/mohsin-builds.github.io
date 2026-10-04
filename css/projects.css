@@ -2422,7 +2422,23 @@ body.projects-page {
 
 
     .viewer-open-link {
+        width: 100%;
+        min-height: 48px;
+
         margin-top: 18px;
+
+        padding:
+            0
+            16px;
+
+        display: flex !important;
+
+        font-size: 11px;
+    }
+
+
+    .viewer-open-link.is-hidden-link {
+        display: none !important;
     }
 
 

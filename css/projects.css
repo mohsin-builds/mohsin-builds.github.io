@@ -2397,41 +2397,61 @@ body.projects-page {
 
 
     .viewer-content {
+        height: auto;
+        min-height: 100%;
+
         padding: 18px;
 
-        grid-template-columns: 1fr;
-
-        grid-template-rows:
-            auto
-            minmax(
-                260px,
-                1fr
-            );
+        display: flex;
+        flex-direction: column;
 
         gap: 18px;
 
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
 
     .viewer-project-info {
+        width: 100%;
         height: auto;
+
+        flex: 0 0 auto;
 
         overflow: visible;
     }
 
 
     .viewer-open-link {
+        position: relative;
+
+        z-index: 4;
+
         width: 100%;
         min-height: 48px;
 
         margin-top: 18px;
+        margin-bottom: 2px;
 
         padding:
             0
             16px;
 
+        flex: 0 0 48px;
+
         display: flex !important;
+
+        align-items: center;
+        justify-content: space-between;
+
+        color: #07141d;
+
+        background:
+            linear-gradient(
+                115deg,
+                #64e5ff,
+                #49bbff
+            );
 
         font-size: 11px;
     }
@@ -2439,6 +2459,22 @@ body.projects-page {
 
     .viewer-open-link.is-hidden-link {
         display: none !important;
+    }
+
+
+    .viewer-demo {
+        width: 100%;
+        min-height: 300px;
+
+        flex: 0 0 300px;
+
+        position: relative;
+        z-index: 1;
+    }
+
+
+    .viewer-real-preview {
+        min-height: 300px;
     }
 
 

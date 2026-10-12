@@ -978,10 +978,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             title:
-                "Mohsin OS",
+                "Mohsin Labs OS",
 
             description:
-                "A production agentic operating system for commerce, jobs and business workflows, combining automation with evidence and protected human approval.",
+                "A deployed company operating system bringing CRM, AI workflows, business overview, client projects, automation tools and product management together. Explore its isolated interactive demo.",
 
             stack: [
                 "Next.js",
@@ -991,7 +991,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
 
             liveUrl:
-                "https://mohsin-os.vercel.app",
+                "https://app.mohsinlabs.com/demo",
 
             caseStudyUrl:
                 "https://mohsinlabs.com/mohsin-os.html"
@@ -1240,7 +1240,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         projects:
-            "Mohsin OS | Product Opportunity Engine | Website Cost Calculator | Mohsin Builds | Mohsin Labs",
+            "Mohsin Labs OS | Product Opportunity Engine | Website Cost Calculator | Mohsin Builds | Mohsin Labs",
 
 
         skills:
@@ -1248,7 +1248,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         labs:
-            "Mohsin Labs — my product and experiment lab for useful digital products, AI tools and systems.",
+            "Mohsin Labs — a product venture building real company software, including Mohsin Labs OS. Demo: app.mohsinlabs.com/demo.",
 
 
         contact:

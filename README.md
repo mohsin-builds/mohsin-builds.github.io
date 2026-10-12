@@ -16,6 +16,14 @@ Mohsin Builds combines design, development and product thinking to create polish
 
 The portfolio itself is designed as a desktop-inspired **Developer OS experience**, giving visitors an interactive way to explore my work, skills, projects and product ecosystem.
 
+## Flagship product — Mohsin Labs OS
+
+A deployed full-stack company operating system covering Company HQ, CRM, AI agent workflows, business overview, client management, automations and product studio. The public interactive demo uses fictional data; the source repository is private and paid SaaS accounts are not yet open.
+
+- **Demo:** https://app.mohsinlabs.com/demo
+- **Engineering case study:** https://mohsinlabs.com/mohsin-os.html
+- **Future workspace access:** https://app.mohsinlabs.com/access
+
 ## Featured Projects
 
 ### Product Opportunity Engine

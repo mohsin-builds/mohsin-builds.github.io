@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             id: "mohsin-os",
             featured: true,
-            title: "Mohsin OS",
+            title: "Mohsin Labs OS",
             category: "systems",
-            categoryLabel: "Agentic Operating System",
+            categoryLabel: "Company Operating System",
             icon: "fa-microchip",
 
             cover:
@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
 
             description:
-                "A production agentic operating system for commerce, jobs and business workflows, combining a Next.js interface, Fastify API, Supabase persistence, task execution, provider integrations and explicit human approval before external actions.",
+                "A deployed company operating system combining Company HQ, OwnCRM, AI workflow design, business overview, client projects, automation tools and product studio. Explore the isolated interactive demo with fictional company data.",
 
             short:
-                "Agentic operating system connecting evidence, automation and human-controlled execution.",
+                "Interactive demo of a premium, unified company workspace built with Next.js, TypeScript and Supabase.",
 
             stack: [
                 "Next.js",
@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Product Engineering"
             ],
 
-            status: "Production Alpha",
+            status: "Live Demo · Private OS",
 
             role:
                 "Founder & Product Engineer",
 
             liveUrl:
-                "https://mohsin-os.vercel.app"
+                "https://app.mohsinlabs.com/demo"
         },
 
 

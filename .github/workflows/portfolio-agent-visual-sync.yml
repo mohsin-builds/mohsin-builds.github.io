@@ -1,0 +1,63 @@
+name: Portfolio Agent — Capture Real Mohsin Labs OS Demo
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/portfolio-agent-visual-sync.yml"
+      - "scripts/portfolio-agent/capture-os-demo.mjs"
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: portfolio-visual-capture
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install screenshot browser
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install chromium --with-deps
+      - name: Capture verified public-demo screenshots
+        run: node scripts/portfolio-agent/capture-os-demo.mjs
+      - name: Check generated screenshots and asset links
+        run: |
+          node --check scripts/portfolio-agent/capture-os-demo.mjs
+          for asset in cover preview-01 preview-02 preview-03 social; do
+            test -s "assets/projects/mohsin-os/${asset}.jpg"
+            file "assets/projects/mohsin-os/${asset}.jpg" | grep -q JPEG
+          done
+          grep -q 'assets/projects/mohsin-os/cover.jpg' js/projects.js
+          ! grep -q 'assets/projects/mohsin-os/cover.svg' js/projects.js
+      - name: Create visual review branch
+        id: branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch="portfolio-agent/os-visuals-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add assets/projects/mohsin-os/*.jpg assets/projects/mohsin-os/visual-manifest.json js/projects.js
+          git diff --cached --quiet && { echo "No visual changes"; exit 0; }
+          git commit -m "chore(portfolio-agent): capture real OS demo and update project imagery"
+          git push origin "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          echo "Prepared visual review branch: $branch"
+      - name: Request human approval before publishing
+        if: steps.branch.outputs.branch != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.branch.outputs.branch }}
+        run: |
+          gh pr create --base main --head "$BRANCH" \
+            --title "Portfolio Agent: review latest real OS screenshots" \
+            --body "Screenshots captured from public, isolated https://app.mohsinlabs.com/demo (no private login). Replaces obsolete SVG visuals for the Mohsin Labs OS portfolio project. Please review before merging.\n\nAfter approval, company-site product image and OS case-study OG image reference the canonical portfolio assets." \
+            || echo "PR creation blocked by repository policy; open a PR manually from branch $BRANCH"

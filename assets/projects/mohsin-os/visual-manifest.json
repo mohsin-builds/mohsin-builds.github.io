@@ -1,0 +1,32 @@
+{
+  "source": "https://app.mohsinlabs.com/demo",
+  "policy": "Public fictional-data demo only — never screenshot authenticated workspace",
+  "capturedAt": "2026-10-12T14:14:44.988Z",
+  "assets": [
+    {
+      "path": "assets/projects/mohsin-os/cover.jpg",
+      "bytes": 141332,
+      "sha256": "a59d067d26659c7c20ff7a3585933fa81fb6e7f10bb8e16ce4e734b398f591ab"
+    },
+    {
+      "path": "assets/projects/mohsin-os/social.jpg",
+      "bytes": 82072,
+      "sha256": "b2978e78f1289c7aed911f42b6228ea78cf57f8a4c2631a5012689d8b4ea91f2"
+    },
+    {
+      "path": "assets/projects/mohsin-os/preview-01.jpg",
+      "bytes": 86355,
+      "sha256": "b9d1fce210240e421bcfcf51aa468ffaac065b29cd4b6de118424af5ea8de9c5"
+    },
+    {
+      "path": "assets/projects/mohsin-os/preview-02.jpg",
+      "bytes": 112652,
+      "sha256": "0ca142a9fe81dd04a6e323fece3eb517b32aaa98271eb22ce879a43374930dc4"
+    },
+    {
+      "path": "assets/projects/mohsin-os/preview-03.jpg",
+      "bytes": 75573,
+      "sha256": "e2baea902811619e1e090a3050b02845856be72f37ef2ed373cf764e4f2ae35f"
+    }
+  ]
+}

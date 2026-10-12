@@ -15,15 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
             icon: "fa-microchip",
 
             cover:
-                "assets/projects/mohsin-os/cover.svg",
+                "assets/projects/mohsin-os/cover.jpg",
 
             preview:
-                "assets/projects/mohsin-os/preview-01.svg",
+                "assets/projects/mohsin-os/preview-01.jpg",
 
             gallery: [
-                "assets/projects/mohsin-os/preview-01.svg",
-                "assets/projects/mohsin-os/preview-02.svg",
-                "assets/projects/mohsin-os/preview-03.svg"
+                "assets/projects/mohsin-os/preview-01.jpg",
+                "assets/projects/mohsin-os/preview-02.jpg",
+                "assets/projects/mohsin-os/preview-03.jpg"
             ],
 
             description:

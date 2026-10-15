@@ -294,3 +294,27 @@
     .case-index-page .case-links { align-items: stretch; }
     .case-index-page .index-footercta { padding: 22px; }
 }
+
+/* Reusable three-product case study collection */
+.case-index-page .case-collection{display:grid;gap:21px;padding-bottom:12px}
+.case-index-page .case-collection-heading{margin:0 0 3px}
+.case-index-page .case-collection-heading h2{font-size:clamp(24px,2.5vw,34px);margin:9px 0 9px}
+.case-index-page .case-collection-heading p{font-size:13px;line-height:1.75;margin:0;max-width:770px}
+.case-index-page .case-entry{border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.17)}
+.case-index-page .case-entry .case-feature{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);align-items:center;min-height:0}
+.case-index-page .case-feature-visual{padding:12px;background:#092033;min-width:0;display:flex;align-items:center;justify-content:center}
+.case-index-page .case-feature-visual img{width:100%;height:auto;max-height:320px;object-fit:contain;object-position:center;display:block}
+.case-index-page .case-entry .case-feature-copy{padding:clamp(19px,2.4vw,29px)}
+.case-index-page .case-entry .case-feature-copy h2{font-size:clamp(21px,2.1vw,28px);line-height:1.24;margin:9px 0 12px}
+.case-index-page .case-entry .case-feature-copy p{font-size:12.5px;line-height:1.7}
+.case-index-page .case-entry .case-feature-copy .tech{margin:11px 0 17px}
+.case-index-page .case-entry .case-links{gap:10px}
+.case-index-page .case-entry .case-links .button{min-height:39px;padding:9px 13px;font-size:11.5px}
+.case-index-page .case-collection-end{padding:16px 0 40px;border:0}
+.case-index-page .case-collection-end .index-footercta{margin:25px 0 34px}
+.product-study-page .shots{grid-template-columns:repeat(2,minmax(0,1fr))}
+.product-study-page .shot:first-child{grid-column:auto}
+.product-study-page .shot img{width:100%;height:auto;max-height:none;object-fit:contain;aspect-ratio:auto}
+.product-study-page .flow{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1080px){.case-index-page .case-entry .case-feature{grid-template-columns:1fr}.case-index-page .case-feature-visual img{max-height:none}.case-index-page .case-entry .case-feature-copy{padding:23px}}
+@media(max-width:720px){.case-index-page .case-collection{gap:17px}.case-index-page .case-entry .case-feature-copy h2{font-size:23px}.product-study-page .shots{grid-template-columns:1fr}.product-study-page .flow{grid-template-columns:1fr}}

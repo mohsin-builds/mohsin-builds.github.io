@@ -54,7 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Founder & Product Engineer",
 
             liveUrl:
-                "https://app.mohsinlabs.com/demo"
+                "https://app.mohsinlabs.com/demo",
+
+            caseStudyUrl:
+                "https://mohsinbuilds.com/mohsin-labs-os.html"
         },
 
 
@@ -1380,7 +1383,7 @@ document.addEventListener("DOMContentLoaded", () => {
         configureProjectLink(
             elements.liveProjectLink,
             project,
-            "Live Site"
+            "Live Demo"
         );
 
 
@@ -1488,6 +1491,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             gallery.length;
 
+
+        // Make the engineering story discoverable from the existing viewer.
+        if (elements.viewerOpenLink) {
+            const existing = elements.projectViewer.querySelector(".case-study-link");
+            existing?.remove();
+            if (project.caseStudyUrl) {
+                const caseLink = document.createElement("a");
+                caseLink.className = "case-study-link";
+                caseLink.href = project.caseStudyUrl;
+                caseLink.target = "_blank";
+                caseLink.rel = "noopener noreferrer";
+                caseLink.textContent = "Read Full Case Study ↗";
+                caseLink.style.cssText = "display:inline-flex;margin:8px 0 16px;padding:11px 15px;border:1px solid #777dbd;border-radius:10px;color:#e8e1ff;font-size:12px;font-weight:700;text-decoration:none";
+                elements.viewerOpenLink.insertAdjacentElement("afterend", caseLink);
+            }
+        }
 
         renderViewerImage(
             project

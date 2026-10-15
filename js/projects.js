@@ -62,6 +62,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         {
+            id: "mohsin-tools",
+            title: "Mohsin Tools",
+            category: "tools",
+            categoryLabel: "Free Image Utilities",
+            icon: "fa-images",
+            cover: "assets/projects/mohsin-tools/cover.svg",
+            preview: "assets/projects/mohsin-tools/cover.svg",
+            gallery: ["assets/projects/mohsin-tools/cover.svg"],
+            description: "An independent, free browser-based toolkit for meeting exact image size limits, resizing photos and signatures, and converting JPG, PNG and WebP without uploading files to a server. Deployed on Cloudflare Pages under tools.mohsinlabs.com.",
+            short: "Private, free image compressor, photo and signature resizer, and image format converter.",
+            stack: ["HTML", "CSS", "JavaScript", "Canvas API", "Cloudflare Pages"],
+            keywords: ["Image Compression", "Signatures", "Image Conversion", "Privacy", "Utility"],
+            status: "Live",
+            role: "Product Designer & Developer",
+            liveUrl: "https://tools.mohsinlabs.com/"
+        },
+
+        {
             id: "product-opportunity-engine",
             title: "Product Opportunity Engine",
             category: "tools",

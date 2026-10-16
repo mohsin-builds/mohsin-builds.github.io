@@ -65,18 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
             id: "mohsin-tools",
             title: "Mohsin Tools",
             category: "tools",
-            categoryLabel: "Free Image Utilities",
+            categoryLabel: "Free Browser Toolkit · 26 Tools",
             icon: "fa-images",
-            cover: "assets/projects/mohsin-tools/cover.svg",
-            preview: "assets/projects/mohsin-tools/cover.svg",
-            gallery: ["assets/projects/mohsin-tools/cover.svg"],
-            description: "An independent, free browser-based toolkit for meeting exact image size limits, resizing photos and signatures, and converting JPG, PNG and WebP without uploading files to a server. Deployed on Cloudflare Pages under tools.mohsinlabs.com.",
-            short: "Private, free image compressor, photo and signature resizer, and image format converter.",
+            cover: "assets/projects/mohsin-tools/cover.webp",
+            preview: "assets/projects/mohsin-tools/cover.webp",
+            gallery: ["assets/projects/mohsin-tools/cover.webp"],
+            description: "An independent collection of 26 free tools across image and PDF tasks, text, developer utilities and everyday calculations. Runs as a static website with local browser processing for supported inputs.",
+            short: "26 free browser utilities in four categories, without signup.",
             stack: ["HTML", "CSS", "JavaScript", "Canvas API", "Cloudflare Pages"],
             keywords: ["Image Compression", "Signatures", "Image Conversion", "Privacy", "Utility"],
             status: "Live",
             role: "Product Designer & Developer",
-            liveUrl: "https://tools.mohsinlabs.com/"
+            liveUrl: "https://tools.mohsinlabs.com/",
+            caseStudyUrl: "https://mohsinbuilds.com/mohsin-tools-case-study.html"
         },
 
         {

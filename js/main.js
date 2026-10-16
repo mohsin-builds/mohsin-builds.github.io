@@ -999,6 +999,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         {
+            title: "Mohsin Tools",
+            description: "26 free browser utilities for images, PDFs, text, developer workflows and everyday tasks. Built by Mohsin Labs.",
+            stack: ["JavaScript", "Browser APIs", "Cloudflare Pages", "UI/UX"],
+            liveUrl: "https://tools.mohsinlabs.com/",
+            caseStudyUrl: "https://mohsinbuilds.com/mohsin-tools-case-study.html"
+        },
+
+        {
             title:
                 "Product Opportunity Engine",
 

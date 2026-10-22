@@ -63,20 +63,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             id: "mohsin-tools",
-            title: "Mohsin Tools",
+            title: "Utility Platform",
             category: "tools",
-            categoryLabel: "Free Browser Toolkit · 26 Tools",
+            categoryLabel: "Free Browser Toolkit · 57 Tool Pages",
             icon: "fa-images",
             cover: "assets/projects/mohsin-tools/cover.webp",
             preview: "assets/projects/mohsin-tools/cover.webp",
             gallery: ["assets/projects/mohsin-tools/cover.webp"],
-            description: "An independent collection of 26 free tools across image and PDF tasks, text, developer utilities and everyday calculations. Runs as a static website with local browser processing for supported inputs.",
-            short: "26 free browser utilities in four categories, without signup.",
+            description: "An independent free online platform with 57 tool pages across PDF, images, documents, writing, developer and everyday utilities, with browser-based processing for supported inputs.",
+            short: "57 tool pages across PDF, image, document and everyday workflows, without signup.",
             stack: ["HTML", "CSS", "JavaScript", "Canvas API", "Cloudflare Pages"],
             keywords: ["Image Compression", "Signatures", "Image Conversion", "Privacy", "Utility"],
             status: "Live",
             role: "Product Designer & Developer",
-            liveUrl: "https://tools.mohsinlabs.com/",
+            liveUrl: "https://utility-platform.pages.dev/",
             caseStudyUrl: "https://mohsinbuilds.com/mohsin-tools-case-study.html"
         },
 

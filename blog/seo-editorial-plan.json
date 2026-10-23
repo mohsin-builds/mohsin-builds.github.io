@@ -1,0 +1,157 @@
+{
+  "project": "Mohsin Builds Insights",
+  "review_date": "2026-10-23",
+  "source": "Editorial planning. No verified keyword volumes or Google ranking claims.",
+  "keyword_status": "provisional",
+  "priority_candidates": [
+    "small-business-website-cost-italy",
+    "restaurant-website-booking-checklist",
+    "website-redesign-checklist-small-business"
+  ],
+  "guides": [
+    {
+      "slug": "small-business-website-cost-italy",
+      "title": "WEBSITE PROJECT SCOPE",
+      "language": "en",
+      "intent": "COST PLANNING",
+      "steps": [
+        "GOALS",
+        "SCOPE",
+        "QUOTE"
+      ],
+      "alt": "Compare deliverables, not isolated prices"
+    },
+    {
+      "slug": "restaurant-website-booking-checklist",
+      "title": "RESTAURANT BOOKING FLOW",
+      "language": "en",
+      "intent": "GUEST JOURNEY",
+      "steps": [
+        "DISCOVER",
+        "MENU",
+        "BOOK"
+      ],
+      "alt": "Remove friction before guests reserve"
+    },
+    {
+      "slug": "sito-web-impresa-pulizie-preventivi",
+      "title": "SITO PER IMPRESA DI PULIZIE",
+      "language": "it",
+      "intent": "CONTATTI QUALIFICATI",
+      "steps": [
+        "SERVIZI",
+        "ZONA",
+        "PREVENTIVO"
+      ],
+      "alt": "Dalla ricerca al contatto corretto"
+    },
+    {
+      "slug": "sito-web-artigiani-richieste-preventivo",
+      "title": "SITO WEB PER ARTIGIANI",
+      "language": "it",
+      "intent": "LAVORO E FIDUCIA",
+      "steps": [
+        "SERVIZI",
+        "PROVE",
+        "CONTATTO"
+      ],
+      "alt": "Il cliente deve capire come richiedere un lavoro"
+    },
+    {
+      "slug": "seo-locale-piccole-imprese-checklist",
+      "title": "SEO LOCALE PER IMPRESE",
+      "language": "it",
+      "intent": "VISIBILITÀ REALE",
+      "steps": [
+        "PROFILO",
+        "SITO",
+        "RICHIESTE"
+      ],
+      "alt": "Informazioni accurate e presenza locale"
+    },
+    {
+      "slug": "rifacimento-sito-aziendale-quando-conviene",
+      "title": "RIFACIMENTO SITO AZIENDALE",
+      "language": "it",
+      "intent": "AUDIT PRIMA DEL DESIGN",
+      "steps": [
+        "PROBLEMA",
+        "PRIORITÀ",
+        "TEST"
+      ],
+      "alt": "Correggere, aggiornare o ricostruire?"
+    },
+    {
+      "slug": "prenotazioni-online-centro-estetico-guida",
+      "title": "PRENOTAZIONI CENTRO ESTETICO",
+      "language": "it",
+      "intent": "FLUSSO APPUNTAMENTI",
+      "steps": [
+        "SERVIZIO",
+        "ORARIO",
+        "CONFERMA"
+      ],
+      "alt": "Un calendario che rispetta l'operatività"
+    },
+    {
+      "slug": "website-redesign-checklist-small-business",
+      "title": "WEBSITE REDESIGN CHECKLIST",
+      "language": "en",
+      "intent": "CUSTOMER JOURNEY",
+      "steps": [
+        "AUDIT",
+        "FIX",
+        "TEST"
+      ],
+      "alt": "Prioritize the issues customers actually feel"
+    },
+    {
+      "slug": "wordpress-vs-custom-website-small-business",
+      "title": "WORDPRESS OR CUSTOM?",
+      "language": "en",
+      "intent": "PLATFORM DECISIONS",
+      "steps": [
+        "EDITING",
+        "MAINTENANCE",
+        "OWNERSHIP"
+      ],
+      "alt": "Choose for your workflow, not fashion"
+    },
+    {
+      "slug": "small-business-website-maintenance-checklist",
+      "title": "WEBSITE MAINTENANCE",
+      "language": "en",
+      "intent": "RELIABILITY ROUTINE",
+      "steps": [
+        "BACKUPS",
+        "FORMS",
+        "SECURITY"
+      ],
+      "alt": "Protect the contact journey after launch"
+    },
+    {
+      "slug": "automate-client-inquiries-small-business",
+      "title": "AUTOMATE CLIENT INQUIRIES",
+      "language": "en",
+      "intent": "HUMAN APPROVAL",
+      "steps": [
+        "CAPTURE",
+        "REVIEW",
+        "FOLLOW-UP"
+      ],
+      "alt": "Never automate away accountability"
+    },
+    {
+      "slug": "local-service-business-website-leads",
+      "title": "LOCAL SERVICE LEAD FLOW",
+      "language": "en",
+      "intent": "QUALIFIED INQUIRIES",
+      "steps": [
+        "DISCOVERY",
+        "SERVICE",
+        "CONTACT"
+      ],
+      "alt": "Make every next step clear and honest"
+    }
+  ]
+}

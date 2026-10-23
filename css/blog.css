@@ -91,3 +91,15 @@
 .insights-page .post-related{border-top:1px solid rgba(100,175,217,.26);margin-top:40px;padding-top:20px}
 .insights-page .post-related h2{font-size:23px}
 @media(max-width:640px){.insights-page .insights-entry .window-strip{font-size:8px}.insights-page .insights-entry .insights-visual{min-height:120px}}
+
+/* Illustrated Insights covers and topic explainers. */
+.insights-page .insights-cover-link{display:block;position:relative;overflow:hidden;border-bottom:1px solid rgba(93,171,210,.26);aspect-ratio:1200/630;background:#061525}
+.insights-page .insights-cover-link img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .28s ease}
+.insights-page .insights-entry:hover .insights-cover-link img{transform:scale(1.018)}
+.insights-page .insights-featured{margin:15px 0 30px;overflow:hidden;background:#061525;border:1px solid rgba(94,186,234,.27);border-radius:14px}
+.insights-page .insights-featured img{width:100%;height:auto;display:block}
+.insights-page .insights-featured figcaption{padding:10px 17px;font:10px/1.65 var(--mono);color:#8aa8c2}
+.insights-page .insights-deep-dive{margin:34px 0;border-top:1px solid rgba(87,171,209,.24);padding-top:9px}
+.insights-page .insights-deep-dive h3{margin:25px 0 10px}
+@media(max-width:1100px){.insights-page .insights-entry .insights-cover-link{height:100%;aspect-ratio:auto}.insights-page .insights-entry .insights-cover-link img{height:100%;object-fit:cover}}
+@media(max-width:640px){.insights-page .insights-entry .insights-cover-link{height:auto;aspect-ratio:1200/630}}

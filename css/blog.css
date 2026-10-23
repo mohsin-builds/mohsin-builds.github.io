@@ -78,3 +78,16 @@
 @media(max-width:850px){.insights-page .reading{grid-template-columns:1fr}.insights-page .toc{display:none}.insights-page .insights-cta-inner{flex-direction:column;align-items:flex-start}}
 @media(max-width:640px){.insights-page .insights-grid{grid-template-columns:1fr}.insights-page .insights-entry{display:flex}.insights-page .insights-visual{border-right:0;border-bottom:1px solid #21506b;min-height:172px}.insights-page .visual-screen{flex-direction:row;align-items:center}.insights-page .insights-hero{padding:35px 0 43px}.insights-page .insights-hero h1{font-size:clamp(38px,9vw,53px)}.insights-page .insights-card-copy{padding:23px}.insights-page .reading{padding:21px}.insights-page .insights-article{padding:30px 0 42px}.insights-page .window-strip{font-size:8px;padding:0 10px}.insights-page .insights-cta-inner{padding:23px}.insights-page .insights-reading-window .window-strip span:last-child{display:none}}
 @media(prefers-reduced-motion:reduce){.insights-page .insights-entry{transition:none}}
+
+/* Compact Insights catalog: retained Developer OS visual language. */
+.insights-page .insights-grid{align-items:stretch}
+.insights-page .insights-entry .insights-visual{min-height:130px;padding:16px 20px}
+.insights-page .insights-entry .visual-screen{min-height:62px;padding:12px 17px}
+.insights-page .insights-entry .visual-amount{font-size:32px;letter-spacing:0}
+.insights-page .insights-entry .insights-card-copy{padding:20px 23px 23px}
+.insights-page .insights-entry .insights-card-copy h3{font-size:clamp(20px,1.9vw,25px)}
+.insights-page .insights-entry .window-strip{font-size:9px}
+.insights-page .insights-entry .visual-id{overflow-wrap:anywhere}
+.insights-page .post-related{border-top:1px solid rgba(100,175,217,.26);margin-top:40px;padding-top:20px}
+.insights-page .post-related h2{font-size:23px}
+@media(max-width:640px){.insights-page .insights-entry .window-strip{font-size:8px}.insights-page .insights-entry .insights-visual{min-height:120px}}

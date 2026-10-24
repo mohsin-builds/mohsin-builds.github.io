@@ -80,7 +80,7 @@ def setup_translation():
     print("Installing free Argos EN→IT language model...",flush=True)
     package.update_package_index()
     found=[x for x in package.get_available_packages()
-           if x.from_code=="en" and x.to_code=="it" and x.type=="translate"]
+           if x.from_code=="en" and x.to_code=="it"]
     if not found: raise RuntimeError("No official English-to-Italian model available")
     selected=found[0]
     package.install_from_path(selected.download())

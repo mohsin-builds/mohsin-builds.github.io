@@ -9,29 +9,29 @@ root=Path('.')
 assets=root/'assets/insights'
 blog=root/'blog'
 entries=[
-("menu-digitale-ristorante-sito-o-pdf","FO1cBVKu90o","Marielle Ursua","Customer using a smartphone to scan a restaurant QR code"),
-("modulo-preventivo-sito-artigiano-esempi","iPheGw7_UaI","Vitaly Gariev","People reviewing business paperwork at a table"),
-("promemoria-appuntamenti-centro-estetico-no-show","211NmLyOzYU","Yaqing Wei","Desktop appointment calendar and books"),
-("google-business-profile-website-local-service-checklist","OsEuCtV1yss","Nicholas Ng","Independent local bakery storefront"),
-("website-handover-checklist-small-business","GvEK_mHiH4g","Unsplash contributor","Laptop user working through a digital project"),
-("sito-web-bb-prenotazioni-dirette-guida","UvVHCAz9mFY","Clay Banks","Real guest bedroom with made bed"),
-("sito-web-officina-auto-prenotazioni-preventivi","s4d_ESS0ylA","Unsplash contributor","Mechanic working on a car engine"),
-("sito-web-palestra-corsi-prova-iscrizioni","Il9YbhIBiOA","Jakub Żerdzicki","Gym equipment prepared for a workout"),
-("sito-web-impresa-edile-foto-lavori-sopralluoghi","E5S7Aks1fFY","shraga kopstein","Construction worker at a building site"),
-("negozio-fisico-catalogo-online-o-ecommerce","qnKhZJPKFD8","Clark Street Mercantile","Real clothing boutique with merchandise racks"),
-("small-business-website-speed-audit-priorities","k27hkqXuveo","Eric Stoynov","Computer server racks and electronics"),
-("business-website-accessibility-practical-checklist","hqaeIsK3S2w","Unsplash contributor","Wheelchair user working on a computer"),
-("multilingual-small-business-website-seo-guide","F6_mI0aGdZU","Fiona Murray-deGraaff","Laptop and notebook on a working desk"),
-("online-booking-software-vs-simple-form-small-business","8PfM1CFFiRc","Unsplash contributor","Calendar on an office desk"),
-("website-migration-seo-checklist-small-business","klWUhr-wPJ8","Unsplash contributor","Computer data center server racks"),
-("small-business-domain-professional-email-setup","kKV8Y2bcrh4","Unsplash contributor","Notebook and keyboard at a desk for business email planning"),
-("sito-web-agenzia-immobiliare-schede-immobili-visite","uZQGEo9DGe8","Brian Wangenheim","Residential property exterior"),
-("landing-page-vs-full-website-small-business","ekUGdwVwfgU","Unsplash contributor","Planner and keyboard for web project preparation"),
+("menu-digitale-ristorante-sito-o-pdf","19399416","Walls.io","Calendar and desk planning for restaurant menu publication"),
+("modulo-preventivo-sito-artigiano-esempi","8152735","Pavel Danilyuk","Business paperwork being completed by hand"),
+("promemoria-appuntamenti-centro-estetico-no-show","29996969","Viridiana Rivera","Colorful planner and calendar for appointments"),
+("google-business-profile-website-local-service-checklist","15032857","Esra Nur Kalay","Genuine local coffee shop exterior"),
+("website-handover-checklist-small-business","7841499","RDNE Stock project","Professional signing paperwork at office desk"),
+("sito-web-bb-prenotazioni-dirette-guida","33753444","Scenehaus Production","A tidy hotel guest bedroom"),
+("sito-web-officina-auto-prenotazioni-preventivi","20041497","Joaquin Delgado","Auto mechanic working on a car"),
+("sito-web-palestra-corsi-prova-iscrizioni","28320723","Jason Morrison","Workout machines inside a gym"),
+("sito-web-impresa-edile-foto-lavori-sopralluoghi","5493658","Antoni Shkraba","Construction worker plastering a wall"),
+("negozio-fisico-catalogo-online-o-ecommerce","5424922","Arina Krasnikova","Clothing boutique racks of merchandise"),
+("small-business-website-speed-audit-priorities","34804016","Daniil Komov","Modern laptop developer workspace"),
+("business-website-accessibility-practical-checklist","5926382","Sora Shimazaki","Hands using a keyboard on a laptop"),
+("multilingual-small-business-website-seo-guide","34804003","Daniil Komov","Workstation for website content and design"),
+("online-booking-software-vs-simple-form-small-business","28353119","Natalia S","Open planner and calendar on a desk"),
+("website-migration-seo-checklist-small-business","36706460","Zayed Hossain","Developer moving and testing website code"),
+("small-business-domain-professional-email-setup","4078343","Mario Amé","Professional working at a laptop"),
+("sito-web-agenzia-immobiliare-schede-immobili-visite","7641842","Alena Darmel","Real estate related paperwork signing"),
+("landing-page-vs-full-website-small-business","35184836","MASUD GAANWALA","Web developer planning a website on laptop"),
 ]
 assert len(entries)==18
 def photo(slug,id):
     # Unsplash's public photograph download endpoint; never publish a fake/empty image.
-    link=f'https://unsplash.com/photos/{quote(id)}/download?force=true&w=1600'
+    link=f'https://images.pexels.com/photos/{id}/pexels-photo-{id}.jpeg?auto=compress&cs=tinysrgb&w=1600'
     req=Request(link,headers={"User-Agent":"Mozilla/5.0","Accept":"image/jpeg,image/*"})
     with urlopen(req, timeout=35) as response:
         data=response.read(9000000)
@@ -50,9 +50,9 @@ for slug,id,author,alt in entries:
     digest=hashlib.sha256(Path(path).read_bytes()).hexdigest()
     assert digest not in hashes, 'duplicate cover '+slug
     hashes.add(digest)
-    source='https://unsplash.com/photos/'+id
+    source='https://www.pexels.com/photo/'+id+'/'
     credit={'article':'https://mohsinbuilds.com/blog/'+slug+'.html','file':path,
-        'photographer':author,'source':source,'source_license':'https://unsplash.com/license',
+        'photographer':author,'source':source,'source_license':'https://www.pexels.com/license/',
         'usage':'Editorial photograph, not client work','description':alt}
     credits['photos']=[x for x in credits['photos'] if x.get('article')!=credit['article']]
     credits['photos'].append(credit)
@@ -64,7 +64,7 @@ for slug,id,author,alt in entries:
     content=re.sub(r'(<meta name="twitter:image" content=")[^"]+(")',lambda m:m.group(1)+'https://mohsinbuilds.com/assets/insights/'+slug+'-cover.jpg'+m.group(2),content,count=1)
     content=re.sub(r'(<meta property="og:image:alt" content=")[^"]+(")',lambda m:m.group(1)+alt+m.group(2),content,count=1)
     content=re.sub(r'(<img\s+src="../assets/insights/[^"]+"\s+width="1200"\s+height="630"\s+alt=")[^"]+(")',lambda m:m.group(1)+alt+m.group(2),content,count=1)
-    content=re.sub(r'<figcaption>[\s\S]*?</figcaption>',lambda _:f'<figcaption>Editorial photograph: {author} via <a href="{source}" target="_blank" rel="noopener noreferrer">Unsplash</a>. Not a Mohsin Builds client project.</figcaption>',content,count=1)
+    content=re.sub(r'<figcaption>[\s\S]*?</figcaption>',lambda _:f'<figcaption>Editorial photograph: {author} via <a href="{source}" target="_blank" rel="noopener noreferrer">Pexels</a>. Not a Mohsin Builds client project.</figcaption>',content,count=1)
     content=re.sub(r'("image":\[")[^"]+("\])',lambda m:m.group(1)+'https://mohsinbuilds.com/assets/insights/'+slug+'-cover.jpg'+m.group(2),content,count=1)
     f.write_text(content)
     # Find the card linking to exactly this article.

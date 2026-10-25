@@ -26,3 +26,5 @@ jobs:
           git diff --cached --check
           git commit -m "fix: provide each of 30 Insights articles a distinct real photo"
           git push origin HEAD:fix/insights-30-unique-photos-and-topics-20261025
+
+# Retry with source-verified Pexels CDN photograph URLs.

@@ -28,3 +28,5 @@ jobs:
           git push origin HEAD:fix/insights-30-unique-photos-and-topics-20261025
 
 # Retry with source-verified Pexels CDN photograph URLs.
+
+# Run again after adding the final three article cards to Insights.

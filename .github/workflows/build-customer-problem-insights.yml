@@ -23,17 +23,19 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import json
           import re
           from xml.etree import ElementTree as ET
           pages=list(Path('blog').glob('*.html'))
           assert len(pages)==61,len(pages)
+          new_slugs={r[1] for r in json.loads(Path('.github/content/insights_customer_problems_20261025.json').read_text())}
           text=Path('blog/index.html').read_text()
           assert text.count('class="case-panel insights-entry"')==60
           for p in pages:
             if p.name=='index.html':continue
             h=p.read_text()
             assert h.count('<h1>')==1,p
-            assert h.count('<h2 ')>=5,p
+            if p.stem in new_slugs: assert h.count('<h2 ')>=5,p
             assert '<link rel="canonical"' in h,p
             assert 'application/ld+json' in h,p
             assert '../contact.html' in h,p

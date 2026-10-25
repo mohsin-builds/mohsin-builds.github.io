@@ -50,3 +50,5 @@ jobs:
           git push origin HEAD:content/30-customer-frustrations-guides-20261025
 
 # Recheck licensed Commons image discovery with expanded search.
+
+# Inspect source metadata before accepting photos.

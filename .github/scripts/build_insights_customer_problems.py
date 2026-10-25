@@ -22,46 +22,25 @@ def get_json(url):
 def get_image(url):
   req=Request(url,headers={"User-Agent":"Mozilla/5.0 (MohsinBuilds/1.0)","Accept":"image/jpeg,image/*"})
   with urlopen(req,timeout=30) as r:return r.read(9_000_000)
+pexels=json.loads((root/".github/content/insights_verified_photographs_20261025.json").read_text())
+assert len(pexels)==30 and len({p[0] for p in pexels})==30
 def licensed_photo(query,slug):
-  api="https://commons.wikimedia.org/w/api.php"
-  queries=[query+" photograph",query,"professional "+query]
-  for q in queries:
-    params={"action":"query","generator":"search","gsrsearch":q,"gsrnamespace":"6","gsrlimit":30,"prop":"imageinfo","iiprop":"url|extmetadata|size|mime","iiurlwidth":"1600","format":"json"}
-    try:
-      res=get_json(api+"?"+urlencode(params))
-    except Exception as e:
-      print("Commons search unavailable:",str(e)[:180],flush=True);continue
-    pages=list(res.get("query",{}).get("pages",{}).values())
-    pages.sort(key=lambda x:x.get("index",99))
-    print("Commons query",q,"candidates",len(pages),flush=True)
-    for p in pages:
-      infos=p.get("imageinfo",[])
-      if not infos:continue
-      info=infos[0];mime=info.get("mime","")
-      if p.get("index",99)<7: print("Candidate",str(p.get("title",""))[:80],"mime",mime,"license",info.get("extmetadata",{}).get("LicenseShortName",{}).get("value","?"),"size",info.get("width"),info.get("height"),flush=True)
-      if mime not in ("image/jpeg","image/png","image/webp"):continue
-      if info.get("width",0)<640 or info.get("height",0)<380:continue
-      meta=info.get("extmetadata",{})
-      lic=meta.get("LicenseShortName",{}).get("value","")
-      if not any(x in lic.lower() for x in ["cc by","cc0","public domain"]):continue
-      source=info.get("descriptionurl",info.get("url",""))
-      if not source or source in already:continue
-      uri=info.get("thumburl",info.get("url"))
-      try:
-        raw=get_image(uri)
-        im=Image.open(BytesIO(raw)).convert("RGB")
-        if im.width<640 or im.height<380:continue
-        im=ImageOps.fit(im,(1200,630),method=Image.Resampling.LANCZOS)
-        out=BytesIO();im.save(out,"JPEG",quality=81,optimize=True)
-        blob=out.getvalue()
-        if len(blob)<22000:continue
-        filename=slug+"-cover.jpg"
-        file=assets/filename;file.write_bytes(blob)
-        author=re.sub(r"<[^>]*>","",meta.get("Artist",{}).get("value","Wikimedia Commons contributor"))[:150]
-        already.add(source)
-        return {"file":str(file),"source":source,"photographer":author,"source_license":meta.get("LicenseUrl",{}).get("value",lic),"description":q,"license_short":lic}
-      except Exception as e: print("Image retry",slug,str(e)[:95],flush=True)
-  raise RuntimeError("Could not verify distinct photograph with eligible license: "+slug)
+  idx=next(i for i,x in enumerate(items) if x[1]==slug)
+  photo_id,author,description=pexels[idx]
+  url=f"https://images.pexels.com/photos/{photo_id}/pexels-photo-{photo_id}.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  raw=get_image(url)
+  im=Image.open(BytesIO(raw)).convert("RGB")
+  if im.width<640 or im.height<380:
+    raise RuntimeError("Not an adequate photograph: "+slug)
+  im=ImageOps.fit(im,(1200,630),method=Image.Resampling.LANCZOS)
+  out=BytesIO();im.save(out,"JPEG",quality=81,optimize=True)
+  blob=out.getvalue()
+  if len(blob)<18000:
+    raise RuntimeError("Invalid image payload: "+slug)
+  file=assets/(slug+"-cover.jpg")
+  file.write_bytes(blob)
+  source=f"https://www.pexels.com/photo/{photo_id}/"
+  return {"file":str(file),"source":source,"photographer":author,"source_license":"https://www.pexels.com/license/","description":description}
 def article_html(item,idx,credit):
   lang,slug,title,pain,scenario,diagnosis,fix,warning,photoquery=item
   it=lang=="it";base="https://mohsinbuilds.com/blog/";url=base+slug+".html";image="https://mohsinbuilds.com/assets/insights/"+slug+"-cover.jpg"
@@ -80,7 +59,7 @@ def article_html(item,idx,credit):
   toc="".join(f'<a href="#sec-{i+1}">{escape(h)}</a>' for i,(h,_) in enumerate(sections))
   metadata=f'<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><meta name="theme-color" content="#030a13"><title>{escape(title)} | Mohsin Builds</title><meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{url}"><meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:description" content="{escape(desc,quote=True)}"><meta property="og:url" content="{url}"><meta property="og:type" content="article"><meta property="og:image" content="{image}"><meta property="og:image:type" content="image/jpeg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{image}"><link rel="stylesheet" href="../css/home.css"><link rel="stylesheet" href="../css/case-studies.css?v=20261023"><link rel="stylesheet" href="../css/blog.css?v=20261023-os"><link rel="stylesheet" href="/css/google-translate-choice.css?v=1"><link rel="icon" href="../favicon.ico"><script type="application/ld+json">'+json.dumps({"@context":"https://schema.org","@type":"BlogPosting","headline":title,"description":desc,"inLanguage":lang,"datePublished":"2026-10-25","dateModified":"2026-10-25","author":{"@type":"Organization","name":"Mohsin Builds","url":"https://mohsinbuilds.com/about.html"},"publisher":{"@type":"Organization","name":"Mohsin Builds","url":"https://mohsinbuilds.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":url},"image":[image]},ensure_ascii=False).replace("<","\\u003c")+'</script></head>'
   credit_url=escape(credit["source"],quote=True)
-  photo=f'<figure class="insights-featured"><img src="../assets/insights/{slug}-cover.jpg?v=20261025-empathy" width="1200" height="630" alt="{escape(photoquery,quote=True)}" decoding="async" fetchpriority="high"><figcaption>{"Fotografia" if it else "Photograph"}: {escape(credit["photographer"])} <a href="{credit_url}" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>. {"Immagine editoriale, non un caso cliente." if it else "Editorial image, not a Mohsin Builds client project."}</figcaption></figure>'
+  photo=f'<figure class="insights-featured"><img src="../assets/insights/{slug}-cover.jpg?v=20261025-empathy" width="1200" height="630" alt="{escape(photoquery,quote=True)}" decoding="async" fetchpriority="high"><figcaption>{"Fotografia" if it else "Photograph"}: {escape(credit["photographer"])} <a href="{credit_url}" target="_blank" rel="noopener noreferrer">Pexels</a>. {"Immagine editoriale, non un caso cliente." if it else "Editorial image, not a Mohsin Builds client project."}</figcaption></figure>'
   pitch=f'<div class="pitch"><span class="eyebrow">{"PARLIAMO DEL PROGETTO" if it else "DISCUSS THE PRACTICAL NEXT STEP"}</span><h2>{"Vuoi risolvere questo problema senza complicare il sito?" if it else "Want to fix this without an unnecessary rebuild?"}</h2><p>{"Descrivi la situazione reale, il sito e il prossimo passo che un cliente dovrebbe riuscire a fare." if it else "Share the actual problem, your website and the action a customer should be able to complete."}</p><a class="button primary" href="../contact.html">{"Contattaci ↗" if it else "Discuss a project ↗"}</a></div>'
   article=f'<article class="insights-article"><span class="eyebrow">{"PROBLEMI REALI / GUIDA PRATICA" if it else "CUSTOMER FRICTION / PRACTICAL GUIDE"}</span><h1>{escape(title)}</h1><p class="lead">{escape(lead)}</p><div class="metadata"><span>MOHSIN BUILDS</span><time datetime="2026-10-25">{"25 OTTOBRE 2026" if it else "25 OCTOBER 2026"}</time></div>{photo}<section class="case-panel insights-reading-window"><div class="window-strip"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>{idx:02} / {slug}.md</span><span>INSIGHTS / 2026</span></div><div class="reading"><div class="copy"><p>{escape(lead)}</p>{block}{pitch}<section class="post-related"><h2>{"Leggi anche" if it else "Explore related guidance"}</h2><p><a href="./">{"Tutte le guide Insights" if it else "All Insights guides"}</a> · <a href="../case-studies.html">{"Progetti e casi studio" if it else "Case studies"}</a></p></section></div><aside><nav class="toc" aria-label="{"In questa guida" if it else "In this guide"}"><strong>{"IN QUESTA GUIDA" if it else "IN THIS GUIDE"}</strong>{toc}</nav></aside></div></section></article>'
   html=template.replace('<html lang="en">','<html lang="'+lang+'">')

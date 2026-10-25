@@ -103,10 +103,3 @@
 .insights-page .insights-deep-dive h3{margin:25px 0 10px}
 @media(max-width:1100px){.insights-page .insights-entry .insights-cover-link{height:100%;aspect-ratio:auto}.insights-page .insights-entry .insights-cover-link img{height:100%;object-fit:cover}}
 @media(max-width:640px){.insights-page .insights-entry .insights-cover-link{height:auto;aspect-ratio:1200/630}}
-
-/* Native bilingual switch: matches the existing Developer OS palette. */
-.insights-page .insights-lang{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:6px;margin:14px 0 22px}
-.insights-page .insights-lang a{display:inline-flex;align-items:center;justify-content:center;min-width:66px;padding:9px 13px;border:1px solid rgba(100,188,232,.33);border-radius:10px;background:rgba(5,20,36,.85);color:#c6dceb;font:700 12px/1.3 var(--mono,monospace);text-decoration:none;transition:border-color .2s,background .2s}
-.insights-page .insights-lang a:hover,.insights-page .insights-lang a:focus-visible{border-color:#69dcff;background:rgba(19,60,87,.87);color:#fff}
-.insights-page .insights-lang a[aria-current="page"]{border-color:#69dcff;background:rgba(34,112,146,.35);color:#e7fbff}
-@media(max-width:640px){.insights-page .insights-lang{justify-content:center;margin:12px 0 20px}.insights-page .insights-lang a{min-width:84px}}

@@ -26,19 +26,20 @@ def licensed_photo(query,slug):
   api="https://commons.wikimedia.org/w/api.php"
   queries=[query+" photograph",query,"professional "+query]
   for q in queries:
-    params={"action":"query","generator":"search","gsrsearch":q+" filetype:bitmap","gsrnamespace":"6","gsrlimit":30,"prop":"imageinfo","iiprop":"url|extmetadata|size|mime","iiurlwidth":"1600","format":"json"}
+    params={"action":"query","generator":"search","gsrsearch":q,"gsrnamespace":"6","gsrlimit":30,"prop":"imageinfo","iiprop":"url|extmetadata|size|mime","iiurlwidth":"1600","format":"json"}
     try:
       res=get_json(api+"?"+urlencode(params))
     except Exception as e:
       print("Commons search unavailable:",str(e)[:180],flush=True);continue
     pages=list(res.get("query",{}).get("pages",{}).values())
     pages.sort(key=lambda x:x.get("index",99))
+    print("Commons query",q,"candidates",len(pages),flush=True)
     for p in pages:
       infos=p.get("imageinfo",[])
       if not infos:continue
       info=infos[0];mime=info.get("mime","")
       if mime not in ("image/jpeg","image/png","image/webp"):continue
-      if info.get("width",0)<900 or info.get("height",0)<470:continue
+      if info.get("width",0)<640 or info.get("height",0)<380:continue
       meta=info.get("extmetadata",{})
       lic=meta.get("LicenseShortName",{}).get("value","")
       if not any(x in lic.lower() for x in ["cc by","cc0","public domain"]):continue
@@ -48,7 +49,7 @@ def licensed_photo(query,slug):
       try:
         raw=get_image(uri)
         im=Image.open(BytesIO(raw)).convert("RGB")
-        if im.width<900 or im.height<470:continue
+        if im.width<640 or im.height<380:continue
         im=ImageOps.fit(im,(1200,630),method=Image.Resampling.LANCZOS)
         out=BytesIO();im.save(out,"JPEG",quality=81,optimize=True)
         blob=out.getvalue()

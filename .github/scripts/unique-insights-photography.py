@@ -24,7 +24,7 @@ entries=[
 ("multilingual-small-business-website-seo-guide","F6_mI0aGdZU","Fiona Murray-deGraaff","Laptop and notebook on a working desk"),
 ("online-booking-software-vs-simple-form-small-business","8PfM1CFFiRc","Unsplash contributor","Calendar on an office desk"),
 ("website-migration-seo-checklist-small-business","klWUhr-wPJ8","Unsplash contributor","Computer data center server racks"),
-("small-business-domain-professional-email-setup","FO1cBVKu90o","Marielle Ursua","Person using a connected laptop and phone"),
+("small-business-domain-professional-email-setup","kKV8Y2bcrh4","Unsplash contributor","Notebook and keyboard at a desk for business email planning"),
 ("sito-web-agenzia-immobiliare-schede-immobili-visite","uZQGEo9DGe8","Brian Wangenheim","Residential property exterior"),
 ("landing-page-vs-full-website-small-business","ekUGdwVwfgU","Unsplash contributor","Planner and keyboard for web project preparation"),
 ]

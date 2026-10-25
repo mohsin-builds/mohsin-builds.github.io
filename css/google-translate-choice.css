@@ -1,0 +1,6 @@
+/* Minimal language control using the existing Developer OS colors. */
+.mb-auto-language{display:inline-flex;align-items:center;gap:3px;margin-left:10px;padding:3px;border:1px solid rgba(107,198,239,.35);border-radius:9px;background:#07182a;z-index:20}
+.mb-auto-language a{font:700 11px/1.2 "Space Mono",monospace;text-decoration:none!important;padding:8px 10px;border-radius:6px;color:#b3d2e7!important;min-width:28px;text-align:center}
+.mb-auto-language a[aria-current=page]{color:#fff!important;background:rgba(52,166,223,.3)}
+.mb-auto-language a:hover,.mb-auto-language a:focus-visible{color:#fff!important;outline:1px solid #66d4fc}
+@media(max-width:700px){.system-bar .mb-auto-language,.system-right .mb-auto-language,.case-system-actions .mb-auto-language{position:fixed;right:10px;top:9px;z-index:9999}}

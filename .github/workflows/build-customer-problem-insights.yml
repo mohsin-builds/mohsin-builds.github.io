@@ -1,0 +1,50 @@
+name: Build 30 customer-problem Insights guides
+on:
+  push:
+    branches: [content/30-customer-frustrations-guides-20261025]
+    paths: [.github/workflows/build-customer-problem-insights.yml]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/30-customer-frustrations-guides-20261025
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pillow
+      - name: Find licensed photographs and build all 30 articles
+        run: python .github/scripts/build_insights_customer_problems.py
+      - name: Validate article URLs, unique photos and structure
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          from xml.etree import ElementTree as ET
+          pages=list(Path('blog').glob('*.html'))
+          assert len(pages)==61,len(pages)
+          text=Path('blog/index.html').read_text()
+          assert text.count('class="case-panel insights-entry"')==60
+          for p in pages:
+            if p.name=='index.html':continue
+            h=p.read_text()
+            assert h.count('<h1>')==1,p
+            assert h.count('<h2 ')>=5,p
+            assert '<link rel="canonical"' in h,p
+            assert 'application/ld+json' in h,p
+            assert '../contact.html' in h,p
+          ET.parse('sitemap.xml')
+          print('60 articles validated.')
+          PY
+      - name: Commit final articles and real photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog/ assets/insights/ sitemap.xml
+          git diff --cached --check
+          git commit -m "content: publishable 30 customer-frustration guides with 30 unique Commons photos"
+          git push origin HEAD:content/30-customer-frustrations-guides-20261025

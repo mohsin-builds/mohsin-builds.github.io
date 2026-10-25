@@ -38,6 +38,7 @@ def licensed_photo(query,slug):
       infos=p.get("imageinfo",[])
       if not infos:continue
       info=infos[0];mime=info.get("mime","")
+      if p.get("index",99)<7: print("Candidate",str(p.get("title",""))[:80],"mime",mime,"license",info.get("extmetadata",{}).get("LicenseShortName",{}).get("value","?"),"size",info.get("width"),info.get("height"),flush=True)
       if mime not in ("image/jpeg","image/png","image/webp"):continue
       if info.get("width",0)<640 or info.get("height",0)<380:continue
       meta=info.get("extmetadata",{})

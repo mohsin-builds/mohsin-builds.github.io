@@ -1402,7 +1402,7 @@ document.addEventListener("DOMContentLoaded", () => {
         configureProjectLink(
             elements.liveProjectLink,
             project,
-            "Live Demo"
+            `Live Demo — ${project.title}`
         );
 
 
@@ -1629,7 +1629,7 @@ document.addEventListener("DOMContentLoaded", () => {
         configureProjectLink(
             elements.viewerOpenLink,
             project,
-            "Open Live Site"
+            `Open ${project.title} live site`
         );
 
 

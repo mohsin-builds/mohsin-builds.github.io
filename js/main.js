@@ -1024,7 +1024,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "https://mohsinbuilds.com/product-opportunity-engine/",
 
             caseStudyUrl:
-                "https://mohsinbuilds.com/projects.html"
+                "https://mohsinbuilds.com/product-opportunity-engine-case-study.html"
         },
 
 
@@ -1046,7 +1046,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "https://mohsinbuilds.com/website-cost-calculator/",
 
             caseStudyUrl:
-                "https://mohsinbuilds.com/projects.html"
+                "https://mohsinbuilds.com/website-cost-calculator-case-study.html"
         },
 
 
@@ -1065,10 +1065,10 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
 
             liveUrl:
-                "https://mohsinbuilds.com/",
+                "https://mohsinbuilds.com/projects.html",
 
             caseStudyUrl:
-                "https://mohsinbuilds.com/projects.html"
+                "https://mohsinbuilds.com/case-studies.html"
         }
 
     ];
